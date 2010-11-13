@@ -25,6 +25,8 @@ class UserSessionsController < ApplicationController
       puts 'Done creating user'
       
       flash[:notice] = "Login successful!"
+          puts 'xxxxxxxxxxxxx'
+          puts user_path
       redirect_to '/hubhome'
       
     else

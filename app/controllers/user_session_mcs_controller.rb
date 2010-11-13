@@ -2,6 +2,8 @@ class UserSessionMcsController < ApplicationController
   
   layout :choose_layout
   def login
+    # Validate login being skipped???
+    # create action here has redirect code that makes things complicated or has to be considered
     @user_session = UserSession.new
   end
   
@@ -14,7 +16,8 @@ class UserSessionMcsController < ApplicationController
       respond_to do |wants|
         wants.html do 
           flash[:notice] = "Login successful!"
-          redirect_to user_path
+          #redirect_to user_path
+          redirect_to '/hubhome'
         end
         
         wants.js { render :redirect }

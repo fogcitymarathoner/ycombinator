@@ -38,7 +38,7 @@ html, body{	background: #fff;
 }
 
 body#projects, body#profile, body#hubpage_read, body#project_admin_team, body#project_admin_plan,body#project_participant_plan,body#myparticipation, #project_participant_mentor, #project_participant_team, #project_admin, #project_public, body#faq_inside, body#hubpage, body#project, body#project_team, body#myproject, body#myaccount, body#myresearch, body#noproject {background: #978f75; height:auto; margin: 0 0 1px; padding: 0;}
-body#project_public_h1 {background-image: url('../images/proj_pub_h1_bg.png'); background-repeat:repeat-x; background-color:#fff;}
+body#project_public_h1 {background-image: url('/images/proj_pub_h1_bg.png'); background-repeat:repeat-x; background-color:#fff;}
 
 
 strong{font-weight: bold;}
@@ -78,7 +78,7 @@ strong{font-weight: bold;}
 .topsectionmenu li a{color: #333; font-family:arial; font-size:11px;}
 .topsectionmenu li a img { position:relative; top:3px; }
 .topsectionmenu li a:hover{color: #1e1e1e;}
-.topsectionmenu li a {background-image: url('../images/outside_topmenu_bg.png'); position:absolute; top: 9990px;}
+.topsectionmenu li a {background-image: url('/images/outside_topmenu_bg.png'); position:absolute; top: 9990px;}
 
 /*Header:Main Menu*/
 .mainmenu{float: right; padding-right:18px; height:29px; width:913px; margin:0 auto;}
@@ -96,7 +96,7 @@ strong{font-weight: bold;}
 .inside_topsectionmenu_right{float: right;padding-top: 0px; }
 .inside_topsectionmenu_right li{float: left;padding-left: 15px; height: 66px;}
 .inside_mainsectionmenu_top{margin: 0px auto ;height: 1px; width:1140px; }
-.inside_mainsectionmenu {height: 30px; float: left;padding-top: -20px; background-image:url('../images/inside_bg_top.png'); background-repeat:no-repeat; background-position:bottom; overflow: hidden; width: inherit; }
+.inside_mainsectionmenu {height: 30px; float: left;padding-top: -20px; background-image:url('/images/inside_bg_top.png'); background-repeat:no-repeat; background-position:bottom; overflow: hidden; width: inherit; }
 .inside_mainsectionmenu li{float: left; padding-left: 15px; height: 20px;font-weight: bold;}
 
 
@@ -129,63 +129,63 @@ ul#inside_nav a:hover {
 }
 /*--Assign an image and width to each link--*/
 ul#topnav li.signup a {
-	background-image: url('../images/outside_topnav_signup.png');
+	background-image: url('/images/outside_topnav_signup.png');
 	width: 96px;
 	margin-top:42px;
 }
 ul#topnav li.login a {
-	background-image: url('../images/outside_topnav_login.png');
+	background-image: url('/images/outside_topnav_login.png');
 	width: 96px;
 	margin-top:42px;
 }
 
 ul#thinnav li.signup a {
-	background-image: url('../images/outside_thinnav_signup.png');
+	background-image: url('/images/outside_thinnav_signup.png');
 	width: 64px;
 	float:right;
 }
 ul#thinnav li.login a {
-	background-image: url('../images/outside_thinnav_login.png');
+	background-image: url('/images/outside_thinnav_login.png');
 	width: 64px;
 	float:right;
 	}
 
 ul#topnav li.twitter a {
-	background-image: url('../images/twitter_32.png');
+	background-image: url('/images/twitter_32.png');
 	width: 27px;
 	margin-top:42px;
 }
 
 ul#topnav li.fb a {
-	background-image: url('../images/facebook_32.png');
+	background-image: url('/images/facebook_32.png');
 	width: 27px;
 	margin-top:42px;
 }
 
 ul#topnav li.blog a {
-	background-image: url('../images/blog_button.png');
+	background-image: url('/images/blog_button.png');
 	width: 112px;
 	margin-right:17px;
 	margin-top:42px;
 }
 
 ul#nav li.projects a {
-	background-image: url('../images/outside_nav_projects.png');
+	background-image: url('/images/outside_nav_projects.png');
 	width: 150px;
 }
 
 ul#nav li.about a {
-	background-image: url('../images/outside_nav_about.png');
+	background-image: url('/images/outside_nav_about.png');
 	width: 150px;
 }
 
 ul#nav li.investors a {
-	background-image: url('../images/outside_nav_investors.png');
+	background-image: url('/images/outside_nav_investors.png');
 	width: 150px;
 }
 
 ul#nav li.entrepreneurs a {
-	background-image: url('../images/outside_nav_entrepreneurs.png');
+	background-image: url('/images/outside_nav_entrepreneurs.png');
 	width: 150px;
 }
 
@@ -193,19 +193,19 @@ ul#nav li.entrepreneurs a {
 ul#navlogo li.logo a {
 	background-position: left 0px;
 	width:96px;
-	background-image: url('../images/3strides_logo_139w.png');
+	background-image: url('/images/3strides_logo_139w.png');
 }
 
 ul#navlogo_thin li.logo a {
 	background-position: left 0px;
 	width:136px;
-	background-image: url('../images/3strides_logo_thin.png');
+	background-image: url('/images/3strides_logo_thin.png');
 }
 
 ul#navlogo_thin li.home_logo a {
 	background-position: left 0px;
 	width:139px; height: 66px;
-	background-image: url('../images/3strides_logo_139w.png');
+	background-image: url('/images/3strides_logo_139w.png');
 }
 
 ul#navlogo li.logo a:hover {
@@ -213,7 +213,7 @@ ul#navlogo li.logo a:hover {
 }
 
 ul#inside_topnav li.account a {
-	background-image: url('../images/inside_topnav_account.gif');
+	background-image: url('/images/inside_topnav_account.gif');
 	background-position: left 20px;
 	background-repeat: no-repeat;
 	width: 56px;
@@ -221,7 +221,7 @@ ul#inside_topnav li.account a {
 	}
 	
 ul#inside_topnav li.profile a {
-	background-image: url('../images/inside_topnav_profile.gif');
+	background-image: url('/images/inside_topnav_profile.gif');
 	background-position: left 20px;
 	background-repeat: no-repeat;
 	width: 56px;
@@ -229,7 +229,7 @@ ul#inside_topnav li.profile a {
 	}
 	
 ul#inside_topnav li.tools a {
-	background-image: url('../images/inside_topnav_tools.gif');
+	background-image: url('/images/inside_topnav_tools.gif');
 	background-position: left 20px;
 	background-repeat: no-repeat;
 	width: 56px;
@@ -239,11 +239,11 @@ ul#inside_topnav li.tools a {
 ul#inside_navlogo li.logo a {
 	background-position: left 5px;
 	width:139px;
-	background-image: url('../images/inside_logo.gif');
+	background-image: url('/images/inside_logo.gif');
 }
 
 ul#inside_topnav li.FAQ a {
-	background-image: url('../images/inside_topnav_FAQ.gif');
+	background-image: url('/images/inside_topnav_FAQ.gif');
 	background-repeat: no-repeat;
 	background-position: bottom;
 	width: 56px;
@@ -252,7 +252,7 @@ ul#inside_topnav li.FAQ a {
 	}
 	
 ul#inside_topnav li.logout a {
-	background-image: url('../images/inside_topnav_logout.gif');
+	background-image: url('/images/inside_topnav_logout.gif');
 		background-repeat: no-repeat;
 	background-position: bottom;
 	width: 56px;
@@ -267,44 +267,44 @@ ul#inside_topnav li.logged_in {
 	}
 
 #hubpage_read #inside_nav li.hubpage a, #hubpage #inside_nav li.hubpage a, #myparticipation #inside_nav li.hubpage a {
-	background-image: url('../images/inside_menu_hub_active.png');
+	background-image: url('/images/inside_menu_hub_active.png');
 	width: 86px;
 	height: 30px;
 	z-index:-1;
 	}
 	
 #projects #inside_nav li.projects a {
-	background-image: url('../images/inside_menu_hub_projects_active.png');
+	background-image: url('/images/inside_menu_hub_projects_active.png');
 	width: 86px;
 	height: 30px;
 	}
 
 #inside_nav li.projects a {
-	background-image: url('../images/inside_menu_hub_projects.png');
+	background-image: url('/images/inside_menu_hub_projects.png');
 	width: 86px;
 	height: 30px;
 	}
 	
 #project_admin #inside_nav li.myproject a, #project_admin_plan #inside_nav li.myproject a, #project_admin_plan_key #inside_nav li.myproject a{
-	background-image: url('../images/inside_menu_hub_myproject_active.png');
+	background-image: url('/images/inside_menu_hub_myproject_active.png');
 	width: 86px;
 	height: 30px;
 	}
 	
 #myaccount #inside_nav li.myaccount a {
-	background-image: url('../images/inside_menu_hub_myaccount_active.png');
+	background-image: url('/images/inside_menu_hub_myaccount_active.png');
 	width: 86px;
 	height: 30px;
 	}
 	
 #myresearch #inside_nav li.myresearch a {
-	background-image: url('../images/inside_menu_hub_myresearch_active.png');
+	background-image: url('/images/inside_menu_hub_myresearch_active.png');
 	width: 86px;
 	height: 30px;
 	}
 
 #inside_nav li.create_research a {
-	background-image: url('../images/create_research_button.png');
+	background-image: url('/images/create_research_button.png');
 	width: 155px;
 	height: 30px;
 	margin-left: 440px;
@@ -312,33 +312,33 @@ ul#inside_topnav li.logged_in {
 	}
 	
 #inside_nav li.myproject a {
-	background-image: url('../images/inside_menu_hub_myproject.png');
+	background-image: url('/images/inside_menu_hub_myproject.png');
 	width: 86px;
 	height: 30px;
 	}
 	
 #inside_nav li.myaccount a {
-	background-image: url('../images/inside_menu_hub_myaccount.png');
+	background-image: url('/images/inside_menu_hub_myaccount.png');
 	width: 86px;
 	height: 30px;
 	}
 	
 #inside_nav li.myresearch a {
-	background-image: url('../images/inside_menu_hub_myresearch.png');
+	background-image: url('/images/inside_menu_hub_myresearch.png');
 	width: 86px;
 	height: 30px;
 	}
 	
 #inside_nav li.hubpage a{
-	background-image: url('../images/inside_menu_hub.png');
+	background-image: url('/images/inside_menu_hub.png');
 	width: 86px;
 	height: 30px;
 	}
 
-.menubanner{height: 54px;background: url('../images/menubanner.png') repeat-x;}
+.menubanner{height: 54px;background: url('/images/menubanner.png') repeat-x;}
 .home-menubanner{ }
 div.submenuSpacer { height:2px; background:#fff;}
-.menubannercontent{margin: 0px auto;padding-left: 11px; clear:both; background:#FFF url('../images/header-bg-blue.png') repeat-x bottom left; border-top:1px solid #162540;}
+.menubannercontent{margin: 0px auto;padding-left: 11px; clear:both; background:#FFF url('/images/header-bg-blue.png') repeat-x bottom left; border-top:1px solid #162540;}
 .logo{display: block;float: left;}
 
 /*Outside_Content*/
@@ -347,13 +347,13 @@ div.submenuSpacer { height:2px; background:#fff;}
 		margin-top: 27px;
 		width: 961px;
 		height: 30px;
-		background-image:url('../images/outside_content_bkg_top.png');
+		background-image:url('/images/outside_content_bkg_top.png');
 	}
 	
 .content_bkg_outside 
 	{
 		width: 961px;
-		background-image:url('../images/outside_content_bkg.png');
+		background-image:url('/images/outside_content_bkg.png');
 	}
 
 .content_bkg_outside_bottom 
@@ -361,7 +361,7 @@ div.submenuSpacer { height:2px; background:#fff;}
 		width: 961px;
 		height: 30px;
 		margin-bottom:10px;
-		background-image:url('../images/outside_content_bkg_bottom.png');
+		background-image:url('/images/outside_content_bkg_bottom.png');
 	}
 	
 .content_container_outside_top 
@@ -369,7 +369,7 @@ div.submenuSpacer { height:2px; background:#fff;}
 		width: 961px;
 		height: 28px;
 		margin-left: 27px;
-		background-image:url('../images/outside_content_top.png');
+		background-image:url('/images/outside_content_top.png');
   		background-repeat: no-repeat;
 	}
 	
@@ -386,15 +386,15 @@ div.submenuSpacer { height:2px; background:#fff;}
 		height: 28px;
 		margin-top:-30px;
 		margin-left: 27px;
-		background-image:url('../images/outside_content_bottom.png');
+		background-image:url('/images/outside_content_bottom.png');
 		background-repeat: no-repeat;
 	}
 .signup-container {padding:50px 0 30px 0; height:auto; width:961px; margin:0 auto; clear:both; background: #978f75;}
 .login-container {padding:50px 0 30px 0; height:auto;min-height:100%; width:961px; margin:0 auto; clear:both; background: #978f75;}
-.inside-container_top {height:20px; width:1148px; margin:0 auto; clear:both; background-image:url('../images/hub_container_bg_top.png');}
+.inside-container_top {height:20px; width:1148px; margin:0 auto; clear:both; background-image:url('/images/hub_container_bg_top.png');}
 
 .inside-container {padding:30px 0 30px 0px; height:100%; width:1140px; margin:auto; clear:both; background:#fff;}
-.inside-container_btm {height:20px; width:1148px; margin:0 auto; clear:both; background-image:url('../images/hub_container_bg_btm.png');}
+.inside-container_btm {height:20px; width:1148px; margin:0 auto; clear:both; background-image:url('/images/hub_container_bg_btm.png');}
 .content-container{background: #FFF;}
 .learnmore-container{background: #FFF;}
 .learnmore-container h1 {color:#162540; font-size:34px; font-style:italic; margin-top:20px;}
@@ -415,11 +415,11 @@ div.submenuSpacer { height:2px; background:#fff;}
 .project_admin_main h4{display:block; font-size: 18px; font-style: italic; color:#555; margin-left:20px; padding-bottom: 10px;}
 .project_admin_main_head {background:#d5e4ff; border-bottom:solid 1px #163540;}
 .project_admin_main_head ul{display:block; float:right; width:500px; margin-top:-30px;}
-#myproject_menu a.btm {text-indent:-9999px; float:left; background-image:url('../images/myresearch_leftnav_btm.gif'); background-repeat:no-repeat; width:228px; height:24px; padding-top:24px; display:block; }
+#myproject_menu a.btm {text-indent:-9999px; float:left; background-image:url('/images/myresearch_leftnav_btm.gif'); background-repeat:no-repeat; width:228px; height:24px; padding-top:24px; display:block; }
 .myproject_main {}
-.myproject_glance {float:left; background-image:url('../images/myproject_glance_bg.png'); background-repeat:no-repeat; width:506px; height:268px; }
+.myproject_glance {float:left; background-image:url('/images/myproject_glance_bg.png'); background-repeat:no-repeat; width:506px; height:268px; }
 .myproject_glance h1 {font-family:arial, non-serif; font-size: 18px; color:#162540; display: block; margin-top: 15px; text-indent: 15px;}
-.myproject_noproject {float:left; background-image:url('../images/myproject_noproject_bg.png'); background-position: 70px, 40px; background-repeat:no-repeat; background-position: 80 80; width:1140x; height:600px; }
+.myproject_noproject {float:left; background-image:url('/images/myproject_noproject_bg.png'); background-position: 70px, 40px; background-repeat:no-repeat; background-position: 80 80; width:1140x; height:600px; }
 .myproject_noproject h1 {font-family:arial, non-serif; font-size: 22px; color:#162540; margin-top: 40px; text-indent: 40px;}
 .myproject_createproject {font-size: 18px; margin: 10px 30px 0px 510px;line-height: 1.5em;}
 .myproject_createproject_form {font-size: 15px; width: 500px; ; line-height: 1.5em;   }
@@ -429,15 +429,15 @@ div.submenuSpacer { height:2px; background:#fff;}
 .myproject_noproject_explain {font-size: 18px; margin: 50px 30px 0 720px;line-height: 1.5em;}
 .myproject_noproject_explain h2 {margin-bottom:20px;}
 #explain1, #explain2, #explain3,#explain4  {line-height: 1.1em; font-size:14px; color:#333;margin-bottom: 10px;}
-.myproject_dashboard {float:left; background-image:url('../images/myproject_dashboard.png'); background-repeat:no-repeat; width:228px; height:37px; margin-top:-10px; }
-.myproject_leftnav_top {float:left; background-image:url('../images/myresearch_leftnav_top.png'); background-repeat:no-repeat; width:228px; height:24px; }
+.myproject_dashboard {float:left; background-image:url('/images/myproject_dashboard.png'); background-repeat:no-repeat; width:228px; height:37px; margin-top:-10px; }
+.myproject_leftnav_top {float:left; background-image:url('/images/myresearch_leftnav_top.png'); background-repeat:no-repeat; width:228px; height:24px; }
 .myproject_leftnav {float:left; background:#162540; width:198px; height:24px; margin-right:30px; margin-top:24px; height:auto; }
 .myproject_leftnav h2 {text-indent: 5px; color:#fff; margin-bottom: 3px;}
-.myproject_leftnav_menufield_top {float:left; background-image:url('../images/myresearch_leftnav_bytag_top.png'); height:24px; width:164px; margin-top:30px;}
-.myproject_leftnav_menufield {float:left; background-image:url('../images/myproject_leftnav_both_bg.gif'); height:24px; width:194px;}
-#myproject_menu a {float:left; background-image:url('../images/myproject_leftnav_toplevel_bg.gif'); height:30px; width:168px; padding-right:30px; margin-right:30px; line-height: 2.1em; text-indent:15px; font-weight: bold; color:#162540;}
-#myproject_menu ul, #myproject_menu2, #myproject_menu1, #myproject_menu3,#myproject_menu4 {font-weight:bold; float:left; background-image:url('../images/myproject_leftnav_both_bg.gif'); height:auto; width:168px; padding-right:30px; margin-right:30px;  text-indent:20px; color: #5795ff;}
-#myproject_menu a.btm {text-indent:-9999px; float:left; background-image:url('../images/myresearch_leftnav_btm.gif'); background-repeat:no-repeat; width:228px; height:24px; padding-top:24px; display:block; }
+.myproject_leftnav_menufield_top {float:left; background-image:url('/images/myresearch_leftnav_bytag_top.png'); height:24px; width:164px; margin-top:30px;}
+.myproject_leftnav_menufield {float:left; background-image:url('/images/myproject_leftnav_both_bg.gif'); height:24px; width:194px;}
+#myproject_menu a {float:left; background-image:url('/images/myproject_leftnav_toplevel_bg.gif'); height:30px; width:168px; padding-right:30px; margin-right:30px; line-height: 2.1em; text-indent:15px; font-weight: bold; color:#162540;}
+#myproject_menu ul, #myproject_menu2, #myproject_menu1, #myproject_menu3,#myproject_menu4 {font-weight:bold; float:left; background-image:url('/images/myproject_leftnav_both_bg.gif'); height:auto; width:168px; padding-right:30px; margin-right:30px;  text-indent:20px; color: #5795ff;}
+#myproject_menu a.btm {text-indent:-9999px; float:left; background-image:url('/images/myresearch_leftnav_btm.gif'); background-repeat:no-repeat; width:228px; height:24px; padding-top:24px; display:block; }
 .project_admin_leftcol {width:540px; min-height:80%;height:auto;float:left; margin-left:20px; margin-top:10px;}
 .project_admin_leftcol h3 {font-size:22px;border-bottom:groove; margin-bottom:5px;}
 .project_admin_rightcol {height: 100%; position: relative; float:right; margin: 10px 20px 0 20px; width:540px;}
@@ -452,28 +452,28 @@ div.submenuSpacer { height:2px; background:#fff;}
 .project_admin_teaser h3 {font-size:22px;border-bottom:groove; margin-bottom:5px;}
 .project_admin_activity {margin-top:10px; width:540px; margin-right:20px;}
 .project_admin_activity h3 {margin-left: 0; font-size:22px;border-bottom:groove; margin-bottom:5px; color:#555; background-color:#fff;}
-.project_admin_stats {margin-top:10px; width:400px; margin-right:20px; background-image:url('../images/project_admin_stats_bg.png'); height:200px;}
+.project_admin_stats {margin-top:10px; width:400px; margin-right:20px; background-image:url('/images/project_admin_stats_bg.png'); height:200px;}
 .project_admin_stats li.hurdle_badge {display:block; padding-top:8px; margin-left: 10px; font-size:14px; font-weight:bold; width: 100px; float:left;} 
 .project_admin_stats li.hurdle_badge img {margin-top:2px; margin-left: 11px;} 
 .project_admin_stats li.time {height:20px; margin-top:8px; margin-left: 10px; font-size:14px; font-weight:bold; width:205px; float:left;} 
 .project_admin_stats li.hurdle_start {height:20px;  margin-top: 3px; margin-left: 10px; font-size:14px; font-weight:bold; width:205px; float:left;} 
 .project_admin_stats li.remaining {display:block; float:left; line-height: 1.1em; margin-top:19px; margin-left: 10px; font-size:14px; font-weight:bold; width:205px; height:50px; } 
 .answer {font-weight:normal; margin-right:10px; width: 100px; float:right;}
-.days_remain {padding-top: 14px;padding-left: 5px; height: 45px; font-size:35px; width: 75px; float:right; margin-top:-29px; color:#006505; background-image:url('../images/project_admin_remaining_bg.png'); background-repeat:no-repeat; }
+.days_remain {padding-top: 14px;padding-left: 5px; height: 45px; font-size:35px; width: 75px; float:right; margin-top:-29px; color:#006505; background-image:url('/images/project_admin_remaining_bg.png'); background-repeat:no-repeat; }
 .project_admin_thinmenu_subnav {height: 40px; margin-top:-20px;}
 .project_admin_thinmenu_subnav ul {display:block;}
-#project_admin_subnav li.public a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('../images/thinnav_project_participant_submenu_public.png'); margin-top:6px; }
-#project_admin_subnav li.participant a {text-indent:-9999px; float:right; width: 150px; height:25px; background-image: url('../images/thinnav_project_public_submenu_participant.png'); margin-top:6px; }
-#project_admin_subnav li.invite a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('../images/thinnav_project_public_submenu_invite.png'); margin-top:6px; }
-#project_admin_subnav li.team a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('../images/thinnav_project_participant_submenu_team.png'); margin-top:6px; }
-#project_admin_subnav li.hurdle a {text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('../images/h1_pin_32.png'); margin-left: 20px; margin-top:0px; }
-#project_admin #project_admin_subnav li.hurdle a, #project_admin #project_admin_subnav li.hurdle a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('../images/h1_pin_32_active.png'); margin-left: 20px; margin-top:0px;}
-#project_admin_subnav li.plan_badge a {text-indent:-9999px; float:left; width: 34px; height:36px; background-image: url('../images/plan_badge_32.png'); margin-left: 20px; margin-top:0px; }
-#project_admin_plan #project_admin_subnav li.plan_badge a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('../images/plan_badge_32_active.png'); margin-left: 20px; margin-top:0px;}
-#project_admin_subnav li.mentor_badge a {text-indent:-9999px; float:left; width: 34px; height:36px; background-image: url('../images/mentor_badge_32.png'); margin-left: 20px; margin-top:0px; }
-#project_admin_mentor #project_admin_subnav li.mentor_badge a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('../images/mentor_badge_32_active.png'); margin-left: 20px; margin-top:0px;}
-#project_admin_subnav li.team_badge a {text-indent:-9999px; float:left; width: 34px; height:36px; background-image: url('../images/team_badge_32.png'); margin-left: 20px; margin-top:0px; }
-#project_admin_team #project_admin_subnav li.team_badge a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('../images/team_badge_32_active.png'); margin-left: 20px; margin-top:0px;}
+#project_admin_subnav li.public a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('/images/thinnav_project_participant_submenu_public.png'); margin-top:6px; }
+#project_admin_subnav li.participant a {text-indent:-9999px; float:right; width: 150px; height:25px; background-image: url('/images/thinnav_project_public_submenu_participant.png'); margin-top:6px; }
+#project_admin_subnav li.invite a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('/images/thinnav_project_public_submenu_invite.png'); margin-top:6px; }
+#project_admin_subnav li.team a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('/images/thinnav_project_participant_submenu_team.png'); margin-top:6px; }
+#project_admin_subnav li.hurdle a {text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('/images/h1_pin_32.png'); margin-left: 20px; margin-top:0px; }
+#project_admin #project_admin_subnav li.hurdle a, #project_admin #project_admin_subnav li.hurdle a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('/images/h1_pin_32_active.png'); margin-left: 20px; margin-top:0px;}
+#project_admin_subnav li.plan_badge a {text-indent:-9999px; float:left; width: 34px; height:36px; background-image: url('/images/plan_badge_32.png'); margin-left: 20px; margin-top:0px; }
+#project_admin_plan #project_admin_subnav li.plan_badge a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('/images/plan_badge_32_active.png'); margin-left: 20px; margin-top:0px;}
+#project_admin_subnav li.mentor_badge a {text-indent:-9999px; float:left; width: 34px; height:36px; background-image: url('/images/mentor_badge_32.png'); margin-left: 20px; margin-top:0px; }
+#project_admin_mentor #project_admin_subnav li.mentor_badge a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('/images/mentor_badge_32_active.png'); margin-left: 20px; margin-top:0px;}
+#project_admin_subnav li.team_badge a {text-indent:-9999px; float:left; width: 34px; height:36px; background-image: url('/images/team_badge_32.png'); margin-left: 20px; margin-top:0px; }
+#project_admin_team #project_admin_subnav li.team_badge a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('/images/team_badge_32_active.png'); margin-left: 20px; margin-top:0px;}
 #project_admin_subnav li a:hover {background-position: left -25px; }
 #project_admin_subnav li.hurdle a:hover {background-position: left -34px; }
 #project_admin_subnav li.plan_badge a:hover, #project_admin_subnav li.team_badge a:hover, #project_admin_subnav li.mentor_badge a:hover {background-position: left -36px; }
@@ -507,28 +507,28 @@ body#project_setup #fancybox-wrap {margin-left:288px; margin-top:-50px;}
 .hub_thinmenu_subnav {width:1140px; height: 40px; margin-top:-20px;}
 .hub_thinmenu_subnav ul {display:block;}
 #hub_subnav li {font-family: Arial, Helvetica, sans-serif; font-size:14px;}
-#hub_subnav li.start a {text-indent:-9999px; float:left; width: 140px; height:25px; background-image: url('../images/thinnav_project_public_submenu_start.png'); margin-top:13px; }
+#hub_subnav li.start a {text-indent:-9999px; float:left; width: 140px; height:25px; background-image: url('/images/thinnav_project_public_submenu_start.png'); margin-top:13px; }
 #hub_subnav li.start a.myproject_link {font-family: Arial, Helvetica, sans-serif; font-size:13.2px; font-weight: bold; color: #162540; text-indent:20px; float:left; width: auto; height:25px; background-image:none; margin-top:13px; }
 #hub_subnav li.tn_inbox a {width:90px;padding-bottom:3px;font-family: Arial, Helvetica, sans-serif; font-size:13.8px; font-weight: bold; color: #162540; text-indent:20px; float:left;  height:25px; background-image:none; margin-top:11px; }
-#hub_subnav li.faq a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('../images/thinnav_project_public_submenu_faq.png'); margin-top:13px; }
+#hub_subnav li.faq a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('/images/thinnav_project_public_submenu_faq.png'); margin-top:13px; }
 #hub_subnav li.create_research {overflow: visible; float:right; width: 160px; height:25px; margin-top:4px; margin-right:5px; }
 #hub_subnav li a:hover {background-position: left -25px; }
 
 
-#hub_nav li.main a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/hub_nav_main.png'); margin-top:6px; }
-#hub_nav li.inbox a {text-indent:-9999px; float:left; width: 131px; height:25px; background-image: url('../images/hub_nav_inbox.png'); margin-top:6px; }
+#hub_nav li.main a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/hub_nav_main.png'); margin-top:6px; }
+#hub_nav li.inbox a {text-indent:-9999px; float:left; width: 131px; height:25px; background-image: url('/images/hub_nav_inbox.png'); margin-top:6px; }
 #hub_nav li a:hover {background-position: left -24px;  }
 
 .hub_leftcol {width:600px; float:left; margin-left:20px;margin-top:20px;}
 .hub_leftcol h3 {color:#555;}
 .hub_hubfeed {margin-top:15px;}
 .hub_hubfeed h3 {font-size:22px;border-bottom:groove; margin-bottom:5px;}
-.hub_badgebox {height: 341px; width: 341px; margin-left:570px; margin-top:10px; background-image:url('../images/project_public_badgebox_bg.png');}
+.hub_badgebox {height: 341px; width: 341px; margin-left:570px; margin-top:10px; background-image:url('/images/project_public_badgebox_bg.png');}
 .hub_rightcol {position: relative; float:right; margin-top:10px; margin-left: 20px;}
 .hub_rightcol h3 {color:#555;}
-.hub_profile {display:block; height: 170px; width: 460px; margin-top:10px; background-image:url('../images/project_participant_stats_bg.png');}
-.hub_profile_overall {line-height:1.5em; float:left; color:#fff;height: 75px; width: 96px; margin-left:5px; padding-top:31px;padding-left:37px; background-image:url('../images/overall_bg.png'); background-repeat: no-repeat; margin-right:-37px; margin-bottom:-25px;}
-.hub_profile_credits {line-height:1.5em; float:left; color:#fff;height: 75px; width: 96px; margin-left:5px; padding-top:31px;padding-left:37px; background-image:url('../images/credits_bg.png'); background-repeat: no-repeat; margin-right:-37px;margin-bottom:-25px;}
+.hub_profile {display:block; height: 170px; width: 460px; margin-top:10px; background-image:url('/images/project_participant_stats_bg.png');}
+.hub_profile_overall {line-height:1.5em; float:left; color:#fff;height: 75px; width: 96px; margin-left:5px; padding-top:31px;padding-left:37px; background-image:url('/images/overall_bg.png'); background-repeat: no-repeat; margin-right:-37px; margin-bottom:-25px;}
+.hub_profile_credits {line-height:1.5em; float:left; color:#fff;height: 75px; width: 96px; margin-left:5px; padding-top:31px;padding-left:37px; background-image:url('/images/credits_bg.png'); background-repeat: no-repeat; margin-right:-37px;margin-bottom:-25px;}
 .hub_profile_watchpart { font-size: 12px; color:#162540; text-align:right; float:left; display:block; padding-left:5px; height: 65px; margin-top:20px; margin-left:5px; }
 .hub_profile_watchpart a {color:#162540; font-size:14px;}
 .hub_profile_badges {clear:both; display:block;  border-top:dotted 1px #162540;height: 60px; font-size:12px; padding-left:5px; }
@@ -577,7 +577,7 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 .message_sender {float:left; margin-left:10px; font-weight:bold;}
 .message_sender_tagline {float:left; margin-left:10px; color:#555;}
 .message_display_actions li {float:left; width:200px; display:block; height:33px;}
-.message_close a {height:30px; width:31px; float:right; text-indent:-999px; background-image:url('../images/fancy_close.png'); background-repeat:no-repeat;}
+.message_close a {height:30px; width:31px; float:right; text-indent:-999px; background-image:url('/images/fancy_close.png'); background-repeat:no-repeat;}
 
 
 /*Project Gallery*/
@@ -587,20 +587,20 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 .projects_thinmenu_subnav {height: 40px; margin-top:-20px;}
 .projects_thinmenu_subnav ul {display:block;}
 #projects_subnav li {font-family: Arial, Helvetica, sans-serif; font-size:14px;}
-#projects_subnav li.start a {text-indent:-9999px; float:left; width: 140px; height:25px; background-image: url('../images/thinnav_project_public_submenu_start.png'); margin-top:13px; }
+#projects_subnav li.start a {text-indent:-9999px; float:left; width: 140px; height:25px; background-image: url('/images/thinnav_project_public_submenu_start.png'); margin-top:13px; }
 #projects_subnav li.start a.myproject_link {font-family: Arial, Helvetica, sans-serif; font-size:13.2px; font-weight: bold; color: #162540; text-indent:20px; float:left; width: auto; height:25px; background-image:none; margin-top:13px; }
-#projects_subnav li.faq a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('../images/thinnav_project_public_submenu_faq.png'); margin-top:13px; }
+#projects_subnav li.faq a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('/images/thinnav_project_public_submenu_faq.png'); margin-top:13px; }
 #projects_subnav li a:hover {background-position: left -25px; }
 .projects_main_head {background:#d5e4ff; border-bottom:solid 1px #163540;}
 .projects_main_head ul{display:block; float:right; width:800px; margin-top:-30px;}
 
 #projects_nav li.sortby { margin-left: 80px; font-weight: bold; float:left; height:25px; margin-top:6px; margin-right:3px; }
-#projects_nav li.hurdle1 a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/projects_nav_hurdle1.png'); margin-top:6px; }
-#projects_nav li.hurdle2 a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/projects_nav_hurdle2.png'); margin-top:6px; }
-#projects_nav li.mostrecent a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('../images/projects_nav_mostrecent.png'); margin-top:6px; }
-#projects_nav li.endingfirst a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('../images/projects_nav_endingfirst.png'); margin-top:6px; }
-#projects_nav li.mostwatched a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('../images/projects_nav_mostwatchers.png'); margin-top:6px; }
-#projects_nav li.mostparticipation a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('../images/projects_nav_mostparticipants.png'); margin-top:6px; }
+#projects_nav li.hurdle1 a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/projects_nav_hurdle1.png'); margin-top:6px; }
+#projects_nav li.hurdle2 a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/projects_nav_hurdle2.png'); margin-top:6px; }
+#projects_nav li.mostrecent a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('/images/projects_nav_mostrecent.png'); margin-top:6px; }
+#projects_nav li.endingfirst a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('/images/projects_nav_endingfirst.png'); margin-top:6px; }
+#projects_nav li.mostwatched a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('/images/projects_nav_mostwatchers.png'); margin-top:6px; }
+#projects_nav li.mostparticipation a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('/images/projects_nav_mostparticipants.png'); margin-top:6px; }
 #projects_nav li a:hover {background-position: left -24px; }
 
 .projects_leftcol {width:600px; float:left; margin-left:20px; color:#162540;}
@@ -614,9 +614,9 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 .projects_update h3 {font-size:18px;border-bottom:groove; margin-bottom:5px;}
 .projects_forum {margin-top:15px;}
 .projects_forum h3 {font-size:18px;border-bottom:groove; margin-bottom:5px;}
-.projects_badgebox {height: 341px; width: 341px; margin-left:570px; margin-top:10px; background-image:url('../images/project_public_badgebox_bg.png');}
+.projects_badgebox {height: 341px; width: 341px; margin-left:570px; margin-top:10px; background-image:url('/images/project_public_badgebox_bg.png');}
 .projects_rightcol {position: relative; float:right; margin-top:10px; margin-left: 20px;}
-.projects_stats {height: 131px; width: 460px; margin-top:10px; background-image:url('../images/project_participant_stats_bg.png');}
+.projects_stats {height: 131px; width: 460px; margin-top:10px; background-image:url('/images/project_participant_stats_bg.png');}
 .projects_activity {margin-top:10px; width:460px; margin-right:20px;}
 .projects_activity h3 {font-size:18px;border-bottom:groove; margin-bottom:5px;}
 .gallery_picture {float:left;margin:5px;width:200px;}
@@ -637,17 +637,17 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 .project_public_main h4{display:block; font-size: 18px; font-style: italic; color:#555; margin-left:20px; padding-bottom: 10px;}
 .project_public_thinmenu_subnav {height: 40px; margin-top:-20px;}
 .project_public_thinmenu_subnav ul {display:block;}
-#project_subnav li.join a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('../images/thinnav_project_public_submenu_join.png'); margin-top:6px; }
-#project_subnav li.watch a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('../images/thinnav_project_public_submenu_watch.png'); margin-top:6px; }
-#project_subnav li.start a {text-indent:-9999px; float:left; width: 140px; height:25px; background-image: url('../images/thinnav_project_public_submenu_start.png'); margin-top:6px; }
+#project_subnav li.join a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('/images/thinnav_project_public_submenu_join.png'); margin-top:6px; }
+#project_subnav li.watch a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('/images/thinnav_project_public_submenu_watch.png'); margin-top:6px; }
+#project_subnav li.start a {text-indent:-9999px; float:left; width: 140px; height:25px; background-image: url('/images/thinnav_project_public_submenu_start.png'); margin-top:6px; }
 #project_subnav li.start a.myproject_link {font-family: Arial, Helvetica, sans-serif; font-size:13.2px; font-weight: bold; color: #162540; text-indent:20px; float:left; width: 200px; height:25px; background-image:none; margin-top:6px; }
-#project_subnav li.faq a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('../images/thinnav_project_public_submenu_faq.png'); margin-top:6px; }
+#project_subnav li.faq a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('/images/thinnav_project_public_submenu_faq.png'); margin-top:6px; }
 .project_public_main_head {background:#d5e4ff; border-bottom:solid 1px #163540;}
 .project_public_main_head ul{display:block; float:right; width:320px; margin-top:-30px;}
 .project_public_leftcol {width:560px; float:left;}
 .project_public_description {margin-top:15px; margin-left:20px;}
 .project_public_description h3 {font-size:22px;border-bottom:groove; margin-bottom:5px;}
-.project_public_badgebox {height: 341px; width: 341px; margin-left:570px; margin-top:10px; background-image:url('../images/project_public_badgebox_bg.png');}
+.project_public_badgebox {height: 341px; width: 341px; margin-left:570px; margin-top:10px; background-image:url('/images/project_public_badgebox_bg.png');}
 .project_public_teamleader {margin-top:10px; margin-left: 570px;}
 .project_public_teamleader h3 {font-size:18px;border-bottom:groove; margin-bottom:5px;}
 .project_public_activity {margin-top:10px; width: 570px;}
@@ -660,34 +660,34 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 .project_participant_main h4{display:block; font-size: 18px; font-style: italic; color:#555; margin-left:20px; padding-bottom: 10px;}
 .project_participant_thinmenu_subnav {height: 40px; margin-top:-20px;}
 .project_participant_thinmenu_subnav ul {display:block;}
-#project_participant_subnav li.public a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('../images/thinnav_project_participant_submenu_public.png'); margin-top:6px; }
-#project_participant_subnav li.participant a {text-indent:-9999px; float:right; width: 150px; height:25px; background-image: url('../images/thinnav_project_public_submenu_participant.png'); margin-top:6px; }
-#project_public_subnav li.invite a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('../images/thinnav_project_public_submenu_invite.png'); margin-top:6px; }
-#project_participant_subnav li.team a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('../images/thinnav_project_participant_submenu_team.png'); margin-top:6px; }
-#project_participant_subnav li.hurdle a {text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('../images/h1_pin_32.png'); margin-left: 20px; margin-top:0px; }
-#project_participant #project_participant_subnav li.hurdle a, #project_admin #project_participant_subnav li.hurdle a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('../images/h1_pin_32_active.png'); margin-left: 20px; margin-top:0px;}
-#project_participant_subnav li.plan_badge a {text-indent:-9999px; float:left; width: 34px; height:36px; background-image: url('../images/plan_badge_32.png'); margin-left: 20px; margin-top:0px; }
-#project_participant_plan #project_participant_subnav li.plan_badge a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('../images/plan_badge_32_active.png'); margin-left: 20px; margin-top:0px;}
-#project_participant_subnav li.mentor_badge a {text-indent:-9999px; float:left; width: 34px; height:36px; background-image: url('../images/mentor_badge_32.png'); margin-left: 20px; margin-top:0px; }
-#project_participant_mentor #project_participant_subnav li.mentor_badge a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('../images/mentor_badge_32_active.png'); margin-left: 20px; margin-top:0px;}
-#project_participant_subnav li.team_badge a {text-indent:-9999px; float:left; width: 34px; height:36px; background-image: url('../images/team_badge_32.png'); margin-left: 20px; margin-top:0px; }
-#project_participant_team #project_participant_subnav li.team_badge a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('../images/team_badge_32_active.png'); margin-left: 20px; margin-top:0px;}
+#project_participant_subnav li.public a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('/images/thinnav_project_participant_submenu_public.png'); margin-top:6px; }
+#project_participant_subnav li.participant a {text-indent:-9999px; float:right; width: 150px; height:25px; background-image: url('/images/thinnav_project_public_submenu_participant.png'); margin-top:6px; }
+#project_public_subnav li.invite a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('/images/thinnav_project_public_submenu_invite.png'); margin-top:6px; }
+#project_participant_subnav li.team a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('/images/thinnav_project_participant_submenu_team.png'); margin-top:6px; }
+#project_participant_subnav li.hurdle a {text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('/images/h1_pin_32.png'); margin-left: 20px; margin-top:0px; }
+#project_participant #project_participant_subnav li.hurdle a, #project_admin #project_participant_subnav li.hurdle a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('/images/h1_pin_32_active.png'); margin-left: 20px; margin-top:0px;}
+#project_participant_subnav li.plan_badge a {text-indent:-9999px; float:left; width: 34px; height:36px; background-image: url('/images/plan_badge_32.png'); margin-left: 20px; margin-top:0px; }
+#project_participant_plan #project_participant_subnav li.plan_badge a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('/images/plan_badge_32_active.png'); margin-left: 20px; margin-top:0px;}
+#project_participant_subnav li.mentor_badge a {text-indent:-9999px; float:left; width: 34px; height:36px; background-image: url('/images/mentor_badge_32.png'); margin-left: 20px; margin-top:0px; }
+#project_participant_mentor #project_participant_subnav li.mentor_badge a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('/images/mentor_badge_32_active.png'); margin-left: 20px; margin-top:0px;}
+#project_participant_subnav li.team_badge a {text-indent:-9999px; float:left; width: 34px; height:36px; background-image: url('/images/team_badge_32.png'); margin-left: 20px; margin-top:0px; }
+#project_participant_team #project_participant_subnav li.team_badge a{ text-indent:-9999px; float:left; width: 34px; height:34px; background-image: url('/images/team_badge_32_active.png'); margin-left: 20px; margin-top:0px;}
 #project_participant_subnav li a:hover {background-position: left -25px; }
 #project_participant_subnav li.hurdle a:hover {background-position: left -34px; }
 #project_participant_subnav li.plan_badge a:hover, #project_participant_subnav li.team_badge a:hover, #project_participant_subnav li.mentor_badge a:hover {background-position: left -36px; }
 .project_participant_main_head {background:#d5e4ff; border-bottom:solid 1px #163540;}
 .project_participant_main_head ul{display:block; float:right; width:580px; margin-top:-30px;}
 
-#project_participant_nav li.main a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/project_participant_nav_main.png'); margin-top:6px; }
-#project_participant_nav li.workspace a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/project_workspace.png'); margin-top:6px; }
-#project_participant_nav li.admin a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/project_admin.png'); margin-top:6px; }
-#project_participant_nav li.events a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('../images/project_participant_nav_events.png'); margin-top:6px; }
-#project_participant_nav li.resources a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('../images/project_participant_nav_resources.png'); margin-top:6px; }
-#project_participant_team_nav li.participants a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/projects_nav_mostparticipants.png'); margin-top:6px; }
-#project_participant_team_nav li.team_members a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/projects_nav_team_members.png'); margin-top:6px; }
-#project_participant_plan_nav li.main a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/project_participant_nav_main.png'); margin-top:6px; }
-#project_participant_plan_nav li.plan a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/project_participant_plan_nav_plan.png'); margin-top:6px; }
-#project_participant_plan_nav li.keys a {text-indent:-9999px; float:left; width: 121px; height:25px; background-image: url('../images/project_participant_plan_nav_keys.png'); margin-top:6px; margin-left:5px;}
+#project_participant_nav li.main a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/project_participant_nav_main.png'); margin-top:6px; }
+#project_participant_nav li.workspace a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/project_workspace.png'); margin-top:6px; }
+#project_participant_nav li.admin a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/project_admin.png'); margin-top:6px; }
+#project_participant_nav li.events a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('/images/project_participant_nav_events.png'); margin-top:6px; }
+#project_participant_nav li.resources a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('/images/project_participant_nav_resources.png'); margin-top:6px; }
+#project_participant_team_nav li.participants a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/projects_nav_mostparticipants.png'); margin-top:6px; }
+#project_participant_team_nav li.team_members a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/projects_nav_team_members.png'); margin-top:6px; }
+#project_participant_plan_nav li.main a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/project_participant_nav_main.png'); margin-top:6px; }
+#project_participant_plan_nav li.plan a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/project_participant_plan_nav_plan.png'); margin-top:6px; }
+#project_participant_plan_nav li.keys a {text-indent:-9999px; float:left; width: 121px; height:25px; background-image: url('/images/project_participant_plan_nav_keys.png'); margin-top:6px; margin-left:5px;}
 #project_participant_nav li a:hover, #project_participant_mentor_nav li a:hover, #project_participant_plan_nav li a:hover, #project_participant_team_nav li a:hover  {background-position: left -24px; }
 
 .project_participant_leftcol {padding-bottom:30px; width:680px; min-height:80%;height:auto;float:left; margin-left:20px; margin-top:10px;}
@@ -718,9 +718,9 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 .plan_answer_date {float:right; font-size:14px; color:#888; margin-top:10px;}
 .project_participant_details {margin-top:15px;}
 .project_participant_details h3 {margin-left: 0; font-size:22px;border-bottom:groove; margin-bottom:5px; color:#555; background-color:#fff;}
-.project_participant_badgebox {height: 341px; width: 341px; margin-left:570px; margin-top:10px; background-image:url('../images/project_public_badgebox_bg.png');}
+.project_participant_badgebox {height: 341px; width: 341px; margin-left:570px; margin-top:10px; background-image:url('/images/project_public_badgebox_bg.png');}
 .project_participant_rightcol {position: relative; float:right; margin: 10px 20px 0 20px; width:400px}
-.project_participant_stats {height: 131px; width: 460px; margin-top:10px; background-image:url('../images/project_participant_stats_bg.png');}
+.project_participant_stats {height: 131px; width: 460px; margin-top:10px; background-image:url('/images/project_participant_stats_bg.png');}
 .project_participant_activity {margin-top:10px; width:400px; margin-right:20px;}
 .project_participant_activity h3 {margin-left: 0; font-size:22px;border-bottom:groove; margin-bottom:5px; color:#555; background-color:#fff;}
 .project_participant_plan {margin-top:10px;}
@@ -737,32 +737,32 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 .myresearch_leftnav {float:left; background:#162540; width:198px; margin-right:30px; padding-top:24px; height: 440px; }
 .myresearch_leftnav h2 {text-indent: 5px; color:#fff; margin-bottom: 28px; margin-top:-10px;}
 .myresearch_search_bar {float:right; margin-top:-68px;}
-.myresearch_search_bar input.box {border-style:none;	color: #162540;font-size: .8em;width: 500px;	height: 28px; padding: 2px 5px 0;background: #fff url('../images/search_bar.png') no-repeat; margin-right: 5px;}
+.myresearch_search_bar input.box {border-style:none;	color: #162540;font-size: .8em;width: 500px;	height: 28px; padding: 2px 5px 0;background: #fff url('/images/search_bar.png') no-repeat; margin-right: 5px;}
 
-.myresearch_leftnav_btm {float:left; background-image:url('../images/myresearch_leftnav_btm.gif'); background-repeat:no-repeat; width:228px; height:24px; padding-top:24px; }
-.myresearch_searchbar {float:left; background-image:url('../images/myresearch_leftnav_bytype_bkg.png'); height:46px; width:880px;margin-top:10px;}
+.myresearch_leftnav_btm {float:left; background-image:url('/images/myresearch_leftnav_btm.gif'); background-repeat:no-repeat; width:228px; height:24px; padding-top:24px; }
+.myresearch_searchbar {float:left; background-image:url('/images/myresearch_leftnav_bytype_bkg.png'); height:46px; width:880px;margin-top:10px;}
 .myresearch_leftnav_searchbar {height:75px; width:164px;margin-top:10px;}
-.myresearch_leftnav_bytag_top {float:left; background-image:url('../images/myresearch_leftnav_bytag_top.png'); height:24px; width:164px;margin-top:-24px; padding-top:24px;}
+.myresearch_leftnav_bytag_top {float:left; background-image:url('/images/myresearch_leftnav_bytag_top.png'); height:24px; width:164px;margin-top:-24px; padding-top:24px;}
 .myresearch_leftnav_bytag {float:left; background:#fff; width:161px; margin-top:-10px; margin-right:30px; padding-left:3px; height: 370px; }
-.myresearch_leftnav_bytag_btm {float:left; background-image:url('../images/myresearch_leftnav_bytag_btm.png'); height:24px; width:164px;}
+.myresearch_leftnav_bytag_btm {float:left; background-image:url('/images/myresearch_leftnav_bytag_btm.png'); height:24px; width:164px;}
 .myresearch_main_submenu {margin-left:228px; width: 880px; height: 24px;}
 .myresearch_main_submenu h1 {font-family:arial, non-serif; font-size: 20px; color:#162540; display: block;}
-#myresearch_submenu li.recent {text-indent:-9999px; float:left; width: 72px; height:25px; margin-left:100px; background-image: url('../images/myresearch_submenu_recent.png'); margin-top:-1px; }
-#myresearch_submenu li.title  {float:left; width: 130px; height:24px; margin-left: 3px; background-image: url('../images/myresearch_submenu_title.gif');}
+#myresearch_submenu li.recent {text-indent:-9999px; float:left; width: 72px; height:25px; margin-left:100px; background-image: url('/images/myresearch_submenu_recent.png'); margin-top:-1px; }
+#myresearch_submenu li.title  {float:left; width: 130px; height:24px; margin-left: 3px; background-image: url('/images/myresearch_submenu_title.gif');}
 .myresearch_main {}
 .myresearch_main h2{display:block; font-size: 30px; font-style: normal; color:#162540; padding-top: 10px; margin-left:20px;}
 .myresearch_main h3{display:block; font-size: 20px; font-style: normal; color:#5795ff; margin-left:20px; padding-bottom: 10px;}
 .myresearch_thinmenu_subnav {height: 40px;}
 .myresearch_thinmenu_subnav ul {display:block;}
 #myresearch_subnav li.create_research {overflow: visible; float:right; width: 160px; height:25px; margin-top:3px; margin-right:20px; }
-#myresearch_subnav li.start a {text-indent:-9999px; float:left; width: 140px; height:25px; background-image: url('../images/thinnav_myresearch_submenu_start.png'); margin-top:6px; }
-#myresearch_subnav li.faq a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('../images/thinnav_myresearch_submenu_faq.png'); margin-top:6px; }
+#myresearch_subnav li.start a {text-indent:-9999px; float:left; width: 140px; height:25px; background-image: url('/images/thinnav_myresearch_submenu_start.png'); margin-top:6px; }
+#myresearch_subnav li.faq a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('/images/thinnav_myresearch_submenu_faq.png'); margin-top:6px; }
 #myresearch_subnav li a:hover {background-position: left -25px; }
 .myresearch_main_head {background:#d5e4ff; border-bottom:solid 1px #163540;}
 .myresearch_main_head ul{display:block; float:right; width:610px; margin-top:-30px;}
 #myresearch_nav li.sortby {font-size:14px; padding-right: 10px; font-weight: bold; float:left; height:25px; margin-top:6px; margin-right:3px; }
-#myresearch_nav li.mostrecent a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/projects_nav_mostrecent.png'); margin-top:6px; }
-#myresearch_nav li.suggested a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('../images/myresearch_nav_suggested.png'); margin-top:6px; }
+#myresearch_nav li.mostrecent a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/projects_nav_mostrecent.png'); margin-top:6px; }
+#myresearch_nav li.suggested a {text-indent:-9999px; float:left; width: 101px; height:25px;  background-image: url('/images/myresearch_nav_suggested.png'); margin-top:6px; }
 #myresearch_nav li a:hover {background-position: left -24px; }
 
 /*myProject*/
@@ -785,19 +785,19 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 /*myAccount*/
 .account_thinmenu_subnav {height: 40px; margin-top:-20px;}
 .account_thinmenu_subnav ul {display:block;}
-#account_subnav li.start a {text-indent:-9999px; float:left; width: 140px; height:25px; background-image: url('../images/thinnav_project_public_submenu_start.png'); margin-top:13px; }
+#account_subnav li.start a {text-indent:-9999px; float:left; width: 140px; height:25px; background-image: url('/images/thinnav_project_public_submenu_start.png'); margin-top:13px; }
 #account_subnav li.start a.myproject_link {font-family: Arial, Helvetica, sans-serif; font-size:13.2px; font-weight: bold; color: #162540; text-indent:20px; float:left; width: 200px; height:25px; background-image:none; margin-top:13px; }
-#account_subnav li.faq a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('../images/thinnav_project_public_submenu_faq.png'); margin-top:13px; }
+#account_subnav li.faq a {text-indent:-9999px; float:right; width: 140px; height:25px; background-image: url('/images/thinnav_project_public_submenu_faq.png'); margin-top:13px; }
 #account_subnav li.create_research {overflow: visible; float:right; width: 160px; height:25px; margin-top:4px; margin-right:5px; }
 #account_subnav li a:hover {background-position: left -25px; }
 .account_main h2{display:block; font-size: 30px; font-style: normal; color:#162540; padding-top: 10px; margin-left:20px;}
 .account_main h3{display:block; font-size: 20px; font-style: normal; color:#5795ff; margin-left:20px; padding-bottom: 10px;}
 .account_main_head {background:#d5e4ff; border-bottom:solid 1px #163540;}
 .account_main_head ul{display:block; float:right; width:460px; margin-top:-30px;}
-#account_nav li.profile a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/account_nav_profile.png'); margin-top:6px; }
-#account_nav li.experience a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/account_nav_experience.png'); margin-top:6px; }
-#account_nav li.details a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/account_nav_details.png'); margin-top:6px; }
-#account_nav li.preferences a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('../images/account_nav_preferences.png'); margin-top:6px; }
+#account_nav li.profile a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/account_nav_profile.png'); margin-top:6px; }
+#account_nav li.experience a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/account_nav_experience.png'); margin-top:6px; }
+#account_nav li.details a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/account_nav_details.png'); margin-top:6px; }
+#account_nav li.preferences a {text-indent:-9999px; float:left; width: 101px; height:25px; background-image: url('/images/account_nav_preferences.png'); margin-top:6px; }
 #account_nav li a:hover {background-position: left -24px; }
 .account_history {font-size:12px; font-weight:bold; width: 420px; margin-right:30px; height:inherit}
 .account_history h3 {font-weight:normal; font-size:18px;border-bottom:groove; margin-bottom:5px;}
@@ -806,20 +806,20 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 .account_edit_leftcol {float:left; margin:10px 0px 20px 20px; width:653px; height:auto;  }
 
 
-.myaccount_leftnav_top {float:left; background-image:url('../images/myresearch_leftnav_top.png'); background-repeat:no-repeat; width:228px; height:24px; }
+.myaccount_leftnav_top {float:left; background-image:url('/images/myresearch_leftnav_top.png'); background-repeat:no-repeat; width:228px; height:24px; }
 .myaccount_leftnav {float:left; background:#162540; width:198px; height:24px; margin-right:30px; margin-top:24px; height: 440px; }
 .myaccount_leftnav h2 {text-indent: 5px; color:#fff; margin-bottom: 3px;}
-.myaccount_leftnav_btm {float:left; background-image:url('../images/myresearch_leftnav_btm.gif'); background-repeat:no-repeat; width:228px; height:24px; padding-top:24px; }
-.myaccount_leftnav_menufield_top {float:left; background-image:url('../images/myresearch_leftnav_bytag_top.png'); height:24px; width:164px; margin-top:30px;}
+.myaccount_leftnav_btm {float:left; background-image:url('/images/myresearch_leftnav_btm.gif'); background-repeat:no-repeat; width:228px; height:24px; padding-top:24px; }
+.myaccount_leftnav_menufield_top {float:left; background-image:url('/images/myresearch_leftnav_bytag_top.png'); height:24px; width:164px; margin-top:30px;}
 .myaccount_leftnav_menufield {float:left; background:#fff; width:164px; height:24px; margin-right:30px; margin-top:24px; height: 300px; }
-.myaccount_leftnav_menufield_btm {float:left; background-image:url('../images/myresearch_leftnav_bytag_btm.png'); height:24px; width:164px;}
+.myaccount_leftnav_menufield_btm {float:left; background-image:url('/images/myresearch_leftnav_bytag_btm.png'); height:24px; width:164px;}
 .myaccount_main {}
 .myaccount_profile {float:left; background:#162540; padding:20px 0 0px 0; width:673px; height:auto;  }
 .myaccount_profile h2 {font-size:16px; font-style:italic; }
 .myaccount_profile_cont {float:left; background:#162540; padding:0px 0 40px 0; width:673px; height:auto;  }
 .myaccount_profile h1 {font-family:arial, non-serif; font-size: 22px; color:#162540; display: block; margin-top: 20px; text-indent: 30px;}
 .myaccount_profile_picture {-moz-border-radius:7px 7px 7px 7px;float:left; width: 210px; height: 210px; background:#fff; margin:0px 5px 20px 20px; clear:all;padding-left:5px;padding-top:5px;}
-.myaccount_ataglance {float:right; background-image:url('../images/myaccount_ataglance_bkg.gif'); background-repeat:no-repeat; width:404px; height:271px; margin-right:20px; }
+.myaccount_ataglance {float:right; background-image:url('/images/myaccount_ataglance_bkg.gif'); background-repeat:no-repeat; width:404px; height:271px; margin-right:20px; }
 .myaccount_badges {-moz-border-radius:7px 7px 7px 7px;font-size:14px; float:left; display:block; background:#fff; margin: 10px 0 20px 20px; background-repeat:no-repeat; width:630px; height:90px; }
 .myaccount_badges h2 {text-indent:10px;}
 .myaccount_badges p {float:left; margin-left:5px; margin-top:5px; width:40px;}
@@ -889,8 +889,8 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 .page-title h2{color:#5795FF;font-size: 16px; padding:0px 0 20px 0; width:550px; line-height: 1.3em;}
 .home_subtitle h2 {display:block; width:550px; color:#162540;line-height:1.4em; margin-top:20px;}
 .home_learn_more {width:530px; float:right; margin-top:-25px;}
-.page-title .placeholder{background: url('../images/image_landingpage-trim.png') no-repeat center 10px; border:0;height:319px;}
-.page-title .placeholder li { list-style:circle; font-size:12px; list-style-image:url('../images/list-style.png'); margin-left:30px; line-height:12px; margin-bottom:4px; }
+.page-title .placeholder{background: url('/images/image_landingpage-trim.png') no-repeat center 10px; border:0;height:319px;}
+.page-title .placeholder li { list-style:circle; font-size:12px; list-style-image:url('/images/list-style.png'); margin-left:30px; line-height:12px; margin-bottom:4px; }
 .page-title .placeholder table {margin-top:25px;}
 .page-title .placeholder td { font-size:12px; }
 .page-title .placeholder h3 { font-size:16px; color:#162540; } 
@@ -919,12 +919,12 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 }
 
 .HomePage .content-container{padding:0}
-.BusinessTemplate .content-container{background: #FFF url('../images/background_smallbiz.png') repeat-x 50% 0%; padding:0 0 30px 0;}
+.BusinessTemplate .content-container{background: #FFF url('/images/background_smallbiz.png') repeat-x 50% 0%; padding:0 0 30px 0;}
 .NewBizTemplateMedium .content-container,
 .NewBizTemplate .content-container,
 .HomePage .content-container,
 .BlogEntry .content-container,
-.BusinessTemplateMedium .content-container{background: #FFFFFF url(../images/body_bg.png) repeat-x scroll 0 0}
+.BusinessTemplateMedium .content-container{background: #FFFFFF url(/images/body_bg.png) repeat-x scroll 0 0}
 
 
 .content-section{margin: 0px auto;width: 970px; font-size: 12px;}
@@ -943,24 +943,24 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 /*Project View*/
 .project-container { }
 .project_title {display: block; width: 1020px; padding-left: 5px; line-height: 1.2em; font-size: 36px; color: #5895FF;margin-top:0px;}
-.project_navcol_top {background: url('../images/project_navcol_top.png') no-repeat; height:25px; margin-top: 10px; margin-bottom:-10px;}
+.project_navcol_top {background: url('/images/project_navcol_top.png') no-repeat; height:25px; margin-top: 10px; margin-bottom:-10px;}
 .project_navcol {width:350px; background-color:#261C05; margin-left:0; }
 .project_navcol h3 {color:#E5D9B1; font-size:18px; margin-left:10px; margin-bottom:-8px;}
-.project_navcol_btm {background: url('../images/project_navcol_btm.png') no-repeat; background-color:#fff; min-height:25px; margin-bottom:40px; margin-left:30px;}
+.project_navcol_btm {background: url('/images/project_navcol_btm.png') no-repeat; background-color:#fff; min-height:25px; margin-bottom:40px; margin-left:30px;}
 .project_navcol_container {width:320px; background-color:#fff; float:left;margin-top:30px;}
-.project_navcol_container_top {background: url('../images/navcol_container_top.png') no-repeat; height:21px; margin-top:-21px;}
+.project_navcol_container_top {background: url('/images/navcol_container_top.png') no-repeat; height:21px; margin-top:-21px;}
 
 .project_badges {margin-left:5px;}
-.project_request_btm {background: url('../images/navcol_container_btm.png') no-repeat; height:21px; margin-top:350px; margin-bottom:-21px;}
+.project_request_btm {background: url('/images/navcol_container_btm.png') no-repeat; height:21px; margin-top:350px; margin-bottom:-21px;}
 
-.project_navcol_container_btm {background: url('../images/navcol_container_btm.png') no-repeat; height:21px; margin-bottom:-21px; margin-bottom:-21px;}
+.project_navcol_container_btm {background: url('/images/navcol_container_btm.png') no-repeat; height:21px; margin-bottom:-21px; margin-bottom:-21px;}
 
 
 .project_event_container {width:320px; background-color:#fff; float:left;margin-top:31px; height:300px;}
 
 
-.project_event_top {background: url('../images/navcol_container_top.png') no-repeat; height:25px; margin-top: -14px;}
-.project_event_btm {background: url('../images/navcol_container_btm.png') no-repeat; height:21px; margin-top:330px; margin-bottom:0px;}
+.project_event_top {background: url('/images/navcol_container_top.png') no-repeat; height:25px; margin-top: -14px;}
+.project_event_btm {background: url('/images/navcol_container_btm.png') no-repeat; height:21px; margin-top:330px; margin-bottom:0px;}
 
 
 .project_workcol {margin-left:30px; width: 800px; height: auto; }
@@ -1014,7 +1014,7 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 /*Home*/
 .company-boxes{clear:both; margin:40px 0 0px 0 }
 .company-boxes:after {content: ""; clear:both; display:block;}
-.company-boxes li{background:url('../images/box_bg_hover.png') no-repeat top left; cursor:pointer; height:66px; float:left; width:385px; padding:10px 20px 0 50px; color:#fff; font-size:12px;}
+.company-boxes li{background:url('/images/box_bg_hover.png') no-repeat top left; cursor:pointer; height:66px; float:left; width:385px; padding:10px 20px 0 50px; color:#fff; font-size:12px;}
 .company-boxes li h2{font-size: 16px; font-weight: bold;}
 .company-boxes li.last{padding-right:0;width:395px; float:right;}
 .company-boxes li a {text-decoration:none;color:#fff;}
@@ -1023,8 +1023,8 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 .projects-box h2 { border-bottom: solid 1px #162540; font-style: normal; color:#5795ff; font-weight: bold; margin:20px 0 20px 34px; font-size:24px;  }
 .projects-box h3 { color:#162540; font-size:18px; line-height:1.1em; margin-top: 12px; margin-bottom: 3px; }
 .projects-box span {display:block; float:left; width: 178px; font-size: 12px; color:#666; font-weight:bold; line-height:1.2em; margin-left: 272px;}
-.projects-box .cornertopleft { height:8px; width:8px; background: url('../images/features-corners.png') no-repeat; position:absolute; top:-1px; left:-1px;}
-.projects-box .cornertopright { height:8px; width:8px; background: url('../images/features-corners.png') no-repeat -8px 0; position:absolute; top:-1px; right:-1px;}
+.projects-box .cornertopleft { height:8px; width:8px; background: url('/images/features-corners.png') no-repeat; position:absolute; top:-1px; left:-1px;}
+.projects-box .cornertopright { height:8px; width:8px; background: url('/images/features-corners.png') no-repeat -8px 0; position:absolute; top:-1px; right:-1px;}
 .projects-box .cornerbtmright { height:8px; width:8px; background: url('images/features-corners.png') no-repeat; position:absolute; bottom:-1px; right:-1px;}
 .projects-box li {min-height: 320px; border:none;}
 
@@ -1050,7 +1050,7 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 
 
 /*Outside Footer*/
-.footer-section{background: #5795ff url('../images/footer_bg.png') repeat-x top center; margin:0px auto; padding:20px 0px 10px 0; clear:both; width:970px;}
+.footer-section{background: #5795ff url('/images/footer_bg.png') repeat-x top center; margin:0px auto; padding:20px 0px 10px 0; clear:both; width:970px;}
 .footer-content{margin: 0px auto ;padding-left: 40px; width:inherit;}
 .footer-box{width:200px; float:left; padding:0 40px 0 0;}
 .footer-box h3{color:#fff;font-size:18px;padding:0 0 1px 0; border-bottom:solid 1px #fff; font-weight: bold; }
@@ -1062,7 +1062,7 @@ a.join  {color:#006505; float:left; margin-left:0px;}
 
 /*Inside Footer*/
 .inside_footer_container{line-height:40px; padding: 0px; background-color:#fff; color:#978f75;}
-.inside_footer-section{background: url('../images/inside_footer_bg.png');height:70px; margin:0px auto; z-index:5; padding:0px 0px 30px 0px; clear:both; width:1140px;}
+.inside_footer-section{background: url('/images/inside_footer_bg.png');height:70px; margin:0px auto; z-index:5; padding:0px 0px 30px 0px; clear:both; width:1140px;}
 .inside_footer-content{margin: 0px auto ;padding-left: 40px;width: 1140px;}
 .inside_footer_bg_btm {margin: 0px auto ;min-height: 21px; min-width:1140px; background-color:#978f75;}
 .inside_footer-box{width:190px; float:left; padding:0 40px 0 0;}
