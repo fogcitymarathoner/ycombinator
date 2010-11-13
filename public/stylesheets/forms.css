@@ -1,0 +1,42 @@
+fieldset{border:none; margin-left: 125px; margin-bottom:30px; padding:0;}
+fieldset h2{text-indent:-9999px;}
+label{
+	clear:both;
+	line-height: normal;
+	margin:5px 0 0 3px;
+	width:130px;
+	display:block;
+}
+.clearAll{
+	clear:both;
+}
+#form{margin: 0px; padding:0;}
+#form-login fieldset{background-color:#CBDDF3; width:372px; margin:0 auto; padding:20px 30px 30px 90px;}
+#form-login #login h2{background-image:url('/images/title_login.png'); height:63px; margin:0px -50px 20px -90px; width:372px;}
+#form-login #login .buttons{margin-top:20px;}
+#form-invite fieldset{background-color:#CBDDF3; width:372px; margin:0 auto; padding:20px 30px 30px 90px;}
+#form-lnvite #invite .buttons{margin-top:20px;}
+#form-sign-up {}
+#form-sign-up fieldset{background-color:#978f75; width:630px; margin:0px auto; padding:30px 20px 0px 90px;}
+#form-sign-up #register h2{background-image:url('/images/title_register_now.png');  height:63px; margin:0px -50px 20px -90px; width:690px;}
+#form-sign-up #register {display:block; float:right; width:690px;}
+#form-sign-up #register .firstname {display:block; width: 140px; float:left;}
+#form-sign-up #register .lastname {display:block; width: 140px; float:right;}
+#form-sign-up #profile {background:url('/images/bg_fieldset-wide.png') repeat-y 0 0; margin-top:0px; margin-bottom:0px; padding:0px 27px 0px 90px;}
+#form-sign-up #profile .btm{background:url('/images/bg_fieldset-wide-arrow-btm.png') no-repeat left bottom; height:74px; margin:0px -27px 0px -90px; width:690px;}
+#form-sign-up #profile h2{background-image:url('/images/title_profile-basics.png'); height:63px; margin:0px 0 9px -60px; width:364px;}
+#form-sign-up #create h2{background-image:url('/images/title_complete.png'); height:63px; margin:0px 0 9px -60px; width:372px;}
+#form-sign-up #create label{color:#636b75; display:block; float:none; font-weight:normal; line-height:18px; text-align:left; margin:0 0 18px 0; width:auto;}
+#form-sign-up #create .buttons{height:30px;}
+.form-sign-up_name_first {display:block; width: 140px; float:left;}
+.form-sign-up_name {display:block; width: 140px; float:right;}
+.form-sign-up_button {height:30px; margin-bottom:30px; margin-top:30px;}
+.form-create_button {height:30px; margin-bottom:30px; margin-top:10px;}
+.form_login_button {height:30px;}
+.form_checkbox {display:block, width: 20px; float:left; margin-right: 5px; margin-top: 3px; }
+.form_checkbox_label {float:left; margin-bottom: 10px;}
+.form_comment {color: #a0a0a0; font-size:.75em; font-weight: bold; margin: -4px 0 -15px 75px; padding-left: 23px;}
+.form-instructions {margin-bottom: 10px;}
+.form_pass_recover {color: #636b75; font-size:.75em; font-weight: bold; margin-top: 10px;}
+.form_agree_terms {color: #333; font-size:.75em; font-weight: bold; margin-top: 10px;}
+

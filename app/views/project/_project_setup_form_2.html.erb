@@ -1,0 +1,29 @@
+<script type=text/javascript>
+	
+function toggle() {
+    
+	document.getElementById('form_hidden').style.display = 'block';
+	$("#fancybox-inner").css({'height':'500px'});
+} 
+</script>
+
+
+<div class="project_setup_form">
+	<h2 style="color:#fff">Step #2 of X: Set-Up Project Participation Details</h2>
+		<div class="myproject_createproject_form">
+			Breadcrumbs Here....
+ 			<p><strong style="color:#fff">Project Participation View:</strong> This is the Project Participation View.  This is the primary "workspace" for your project collaboration.  Think of it as the shared "dashboard" for your project.</p>
+			<p>The "Project Update" section is where you post your team leader updates.</p>
+			<p>Since there hasn't been any activity on the project, it looks a little barren here - let's enter a welcome post to spruce it up a bit.</p><p>Click on "Add an Entry" under the "Latest Project Update" heading and enter a quick welcome post. After you hit the "Save" link - return here to go to the next step.<div style="font-weight:bold; float:right; margin-top:-1.1em; margin-right:50px;"><%= link_to 'Next >', '/project_setup?id='+@Project.id.to_s+'&wizard='+@wizard.succ! %></p></div>
+			
+	
+
+
+ 		
+		</div>
+	
+
+</div>
+<script type = text/javascript>$(".tool_tipped_codename").tooltip({position:"center left", offset: [-2, -80],	effect: "fade",	opacity: 0.7})</script>
+<script type = text/javascript>$(".tool_tipped_teaser").tooltip({position:"center left", offset: [-2, -20],	effect: "fade",	opacity: 0.7})</script>
+</div>

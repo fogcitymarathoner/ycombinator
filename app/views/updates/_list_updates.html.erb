@@ -1,0 +1,13 @@
+<% if @updates.empty?%>
+Please Enter Your First Project Update
+<%else%>
+<% @updates.each do |update| %>
+	<div class="project_update">
+		<h3><%= update.title%></h3>
+		<div class="project_update_time"><%= update.date%></div>
+		<p><%= update.body%></p>
+	
+</div>
+<% end %>
+
+<% end %>

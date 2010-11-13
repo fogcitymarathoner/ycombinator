@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @update.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @update.body %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%=h @update.project_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_update_path(@update) %> |
+<%= link_to 'Back', updates_path %>

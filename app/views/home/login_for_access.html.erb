@@ -1,0 +1,31 @@
+<html>
+
+
+  <%=render (:partial => "headincludes") %>
+
+
+  <body class="homepage">
+
+
+
+    <div class="sitecontainer">
+
+      <%=render (:partial => "thinmenu_home_access") %>
+
+      <%=render (:partial => "homecenter") %>
+
+      <%=render (:partial => "bottomfooter") %>
+
+
+
+    </div>
+
+    <script>
+      jQuery(document).ready(function() {
+
+        jQuery("#login_for_access_modal").fancybox().trigger('click');
+      });
+    </script>
+  </body>
+
+</html>

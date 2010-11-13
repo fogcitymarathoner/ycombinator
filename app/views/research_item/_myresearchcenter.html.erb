@@ -1,0 +1,64 @@
+<div class="myresearch-container">
+<div class="myresearch_thinmenu_subnav">	
+<ul id="myresearch_subnav">
+	<li class="create_research"><img src="/images/create_research_button.png" onclick="javascript:location.href='/createresearch';"></a></li>
+	<li class="start"><a href>blah blah</a></li>
+	<li class="faq"><a href>blah blah</a></li>
+</ul>
+</div>
+<div class="myresearch_main">
+	<div class="myresearch_main_head">
+		<h2>Research Center</h2>
+		<h3><%= display_name %></h3>
+	<div class="myresearch_search_bar"><form name="myform" >
+      <input type='text' class='box' style="color: #888;" onfocus="this.value=''; this.onfocus=null;" value="Search Research by Keyword" name='q' id='q' size="80"  onKeyPress="return submitenter(this,event);"/>
+       <a href="javascript: submitsearchform()"><img src="images/search_btn.png" alt="Search" style="margin-right:30px; margin-left:10px; margin-bottom:-5px;"></a>
+       </form></div>
+		<ul id="myresearch_nav">
+			<li class="sortby">Sort By:</li>
+			<li class="mostrecent"><a href>blah blah</a>
+			</li>	
+			<li class="suggested"><a href>blah blah</a>
+				
+			</li>
+		</ul>
+	</div>
+	</div>			
+		<div class="myresearch_leftnav_top">
+			<div class="myresearch_leftnav">
+			
+				<div class="myresearch_leftnav_bytype">
+											
+				</div>
+
+				<h2>Recent Tags</h2>
+				
+				<div class="myresearch_leftnav_bytag_top">
+
+					<div id="lefttagnav" class="myresearch_leftnav_bytag">
+					
+					<%= render_cell :library, :recent %>
+    		  
+					</div>
+				<div class="myresearch_leftnav_bytag_btm"></div>		
+				</div>
+			</div>
+			
+			<div class="myresearch_leftnav_btm"></div>	
+			</div>
+			
+
+			
+			<div style="display:none" id="tagquerytext"></div>
+      
+			
+			<div class="myresearch_main_submenu" style="height:auto;">
+
+		  <div id="searchlistview" style="height:auto;min-height:560px;">
+		  
+		  <%= render_cell :library, :list %>
+		  </div>
+		</div>
+		
+
+		

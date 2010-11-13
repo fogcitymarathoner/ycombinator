@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title><%= title %></title>
+
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" http-equiv="keywords" content="micro vc, venture capital, vc, micro venture capital, start-up, seed funding, angel, angel investment, angel funding" />
+
+<meta http-equiv="Content-Language" content="en-US"/>
+
+<link rel="SHORTCUT ICON" href="images/favicon.ico" />
+<script type="text/javascript" src="/javascripts/slidedeck.jquery.lite.pack.js"></script>
+
+<link rel="stylesheet" href="/stylesheets/slidedeck.skin.css" type="text/css" media="screen"/>
+
+<script language="JavaScript" type=text/javascript>
+	function initMenus() {
+        jQuery.noConflict();
+	jQuery('ul.menu ul').hide();
+	jQuery.each(jQuery('ul.menu'), function(){
+		jQuery('#' + this.id + '.expandfirst ul:first').show();
+	});
+	jQuery('ul.menu li a').click(
+		function() {
+			var checkElement = jQuery(this).next();
+			var parent = this.parentNode.parentNode.id;
+
+			if(jQuery('#' + parent).hasClass('noaccordion')) {
+				jQuery(this).next().slideToggle('normal');
+				return false;
+			}
+			if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+				if(jQuery('#' + parent).hasClass('collapsible')) {
+					jQuery('#' + parent + ' ul:visible').slideUp('normal');
+				}
+				return false;
+			}
+			if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+				jQuery('#' + parent + ' ul:visible').slideUp('normal');
+				checkElement.slideDown('normal');
+				return false;
+			}
+		}
+	);
+}
+jQuery(document).ready(function() {initMenus();});
+	</script>
+<script language="JavaScript" type="text/javascript">
+  
+	   ; function toggle(id) {
+	   ;    var state = document.getElementById(id).style.display;
+	   ;       if (state == 'block') {
+       ;          document.getElementById(id).style.display = 'none';
+	            } else {
+	   ;         document.getElementById(id).style.display = 'block';
+	      }
+	        }
+</script>
+</head>

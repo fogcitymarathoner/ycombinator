@@ -1,0 +1,30 @@
+<div class="message_display">
+			<%= render(:partial => "/hub/inbox_nav") %>
+			<h1>New message</h1>
+
+<% form_for(@message) do |f| %>
+  <%= f.error_messages %>
+
+  <%if params[:id].nil? %>
+  <div class="message_to"><%= f.label "To:" %><%= f.text_field :recipient_id %></div>
+  <%else%>
+      <%= f.hidden_field :recipient_id, :value=> params[:id] %>
+	  To: <%= Profile.find(id = params[:id]).display_name %> 
+  <%end%>
+  <p>
+   <div class="message_sub"> <%= f.label "Subject:" %>   <%= f.text_field :title %></div>
+  </p>
+  <p>
+   <div class="message_bod"> <%= f.label :body %><%= f.text_area :body, :cols=>67, :rows=>6 %></div>
+  </p>
+  
+  <p>
+    <%= f.hidden_field :sender_id, :value=> current_user.id %>
+ </p>
+  
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', '/inbox_list' %>
+</div>

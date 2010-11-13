@@ -1,0 +1,41 @@
+	<div class="myaccount_profile">
+			<div class="myaccount_profile_picture">
+				<%= image_tag @profile.avatar.url(:medium) %> <span style="font-size: 12px; float:right; "><% if @profile.id = @current_profile.id %>
+							<%= link_to ("[edit]",:action => "edit_avatar", :id => @profile.id ) %>
+							<%else%>
+							<%end%></span>
+			</div>
+					<div class="myaccount_ataglance" style="color:#000000;"></div>
+					<div class="myaccount_username">  
+						<%= display_name %>
+						<span style="font-size: 12px;"><% if @profile.id = @current_profile.id %>
+							<%= link_to ("[edit]",:action => "edit", :id => @profile.id ) %>
+							<%else%>
+							<%end%></span>
+					</div>
+					<div class="myaccount_location">  
+						<%= @profile.city %>, 
+						<%= @profile.state %>
+						<span style="font-size: 12px;"><% if @profile.id = @current_profile.id %>
+							<%= link_to ("[edit]",:action => "edit", :id => @profile.id ) %>
+							<%else%>
+							<%end%></span>
+					</div>
+					<div class="myaccount_badges">
+					<h2>Badges</h2>
+					<%= image_tag(@profile.team_leader_badge) %></div>
+					<div class="myaccount_headline"><h2>Tile/Headline<span style="font-size: 12px; font-style:normal;"><% if @profile.id = @current_profile.id %>
+							<%= link_to ("[edit]",:action => "edit", :id => @profile.id ) %>
+							<%else%>
+							<%end%></span></h2>
+						<%= @profile.headline %></div>
+					<div class="myaccount_summary"><h2>Summary<span style="font-size: 12px; font-style:normal;"><% if @profile.id = @current_profile.id %>
+							<%= link_to ("[edit]",:action => "edit", :id => @profile.id ) %>
+							<%else%>
+							<%end%></span></h2>
+							<%= @profile.summary %></div>
+						
+
+					<div class="myaccount_interests"><h2>Interest Tags</h2></div>
+					<div class="myaccount_skills"><h2>Skill Tags</h2></div>
+	</div>

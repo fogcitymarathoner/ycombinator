@@ -1,0 +1,45 @@
+<div class="message_display">
+			<%= render(:partial => "/hub/inbox_nav") %>
+			<div class="message_display_actions">
+				<ul>
+					<li>
+						reply .  delete . forward
+					</li>
+					<div class="message_close">
+						<a href="/inbox_list" title="Close">Close</a>
+					</div>
+				</ul>
+			</div>
+			<div class="message_head">
+				<% @message.message_read %>
+				<div class="message_display_title">
+					<%=h @message.title %>
+				</div>
+				<div class="message_display_date">
+					<%= @message.recieved %>
+				</div>
+				<div class="message_profile_img">
+					<%= image_tag @profile.avatar.url(:thumb) %> 
+				</div>
+				<div class="message_sender">
+					<a id="profile_modal" title="View <%= @message.sender.display_name %>'s Profile" href="/public_profile?id=<%= @message.sender.id %>">
+					<%= @message.sender.display_name %></a>
+				
+				<script type="text/javascript">
+					$("#profile_modal").fancybox({
+					'scrolling'		: 'no',
+					'titleShow'		: false,
+					'onClosed'		: function() {
+					}
+				});
+				</script>
+				</div>
+				<div class="message_sender_tagline">
+					Sender's Tag Line Goes Here
+				</div>
+				
+  			</div>
+			<div class="message_body">
+				 <%=h @message.body %>
+			</div>
+		</div>

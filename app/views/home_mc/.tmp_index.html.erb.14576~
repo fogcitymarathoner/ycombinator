@@ -1,0 +1,5 @@
+<% title 'Unobtrusive Login' %>
+
+<p>FamiliesCAN Resource Database</p>
+
+<%= link_to 'Login', new_user_session_path, :id => 'login-link' %>

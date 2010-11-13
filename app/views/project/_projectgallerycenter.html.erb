@@ -1,0 +1,33 @@
+<div class="projects-container">
+<div class="projects_thinmenu_subnav">
+<ul id="projects_subnav">
+	<li class="start"><%= noproject %></li>
+	<li class="faq"><a href>blah blah</a></li>
+</ul>
+</div>
+<div class="projects_main">
+	<div class="projects_main_head">
+		<h2>Project Gallery</h2>
+		<h3 style="margin-top:3px"><img src="images/search_bar_gallery.png" alt="search bar"></h3>
+		<ul id="projects_nav"><% if false%>
+			<li class="sortby">Sort by:</li>
+			<li class="hurdle1"><a href>blah blah</a></li>
+			<li class="hurdle2"><a href>Nav Buttons Here: Project Blog, Participant View (routes to apply/signup), Team View (hidden), My Project (hidden, Patrons (in H2)</a>
+			</li>	
+			<li class="mostrecent"><a href>blah blah</a></li>
+			<li class="endingfirst"><a href>blah blah blah</a></li>
+			<li class="mostparticipation"><a href>blah blah blah</a></li>
+			<li class="mostwatched"><a href>blah blah blah</a></li>
+		<% end%></ul>
+	</div>
+	</div>
+<div class="inside_project_gallery">
+	<% if @projects.nil? %>
+	<h2>No Current Projects</h2>
+	<% else %>
+	<% @projects.each do |project| %>
+	<div class="<%= cycle('gallery_object_container_odd','gallery_object_container_even')%>">
+	<%= render :partial => 'gallery_object', :locals => {:project => project} %></div><% end %>
+	<% end %>
+	
+</div>

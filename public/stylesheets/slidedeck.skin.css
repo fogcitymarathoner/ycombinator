@@ -1,0 +1,85 @@
+/*
+Skin Name: SlideDeck Website Skin
+Skin URI: http://www.slidedeck.com/
+Description: The skin used at slidedeck.com
+Version: 1.1
+Author: digital-telepathy
+Author URI: http://www.dtelepathy.com/
+Tags: flexible, white, black, multi-color
+*/
+
+#slidedeck_frame {
+	width: 970px;
+	height: 514px;
+	padding: 10px 0px;
+}
+#slidedeck_frame dl {
+	width: 970px;
+	height: 500px;
+	margin: 0;
+	border-top: 2px solid #ccc;
+}			
+.slidedeck dd {
+	margin-top: 5px;
+	font-size: 15px;
+	height: 294px;
+	padding: 20px 15px 10px 15px;
+	border-right: 5px solid #d7d7d7;
+	background: url('/images/slides.png') bottom left #d7d7d7 repeat-x;
+}
+.slidedeck dd p {
+	margin-top: 10px;
+	}
+
+.slidedeck dd h4 {
+	font-size: 18;
+	color: #5795ff;
+	margin-top: 5px;
+	line-height: 1.2em;
+	}
+	
+.slidedeck dd li {
+	font-size: 12;
+	text-indent: -14px;
+	margin: 10px 30px 0px 20px;
+	
+	}
+
+.slidedeck_signup {
+	text-align:right;
+}
+
+
+.slidedeck dt {
+	cursor: pointer;
+	height: 43px;
+	line-height: 38px;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform:uppercase;
+	letter-spacing: 1px;
+	background: url('/images/spines.png') top left #d7d7d7;
+	color: #505050;
+}
+.slidedeck dt:hover {
+	color: #000;
+	background-position: center left;
+}
+.slidedeck dt.active, .slidedeck dt.active:hover {
+	cursor: default;
+	color: #fff;
+	background-position: bottom left;
+}
+.slidedeck dt .index {
+	font-size: 24px;
+	font-weight: normal;
+	color: #505050;
+}
+.slidedeck dt:hover .index { color: #000000; }
+.slidedeck dt.active .index { color: #ffffff; }
+.slidedeck .activeCorner {
+	margin-left: -6px;
+	background-image: url('/images/corner.png');
+	width: 12px;
+	height: 25px;
+}

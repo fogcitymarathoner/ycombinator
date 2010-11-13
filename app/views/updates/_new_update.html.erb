@@ -1,0 +1,17 @@
+<% form_for :update, :url => {:controller => :updates, :action => :create, :projid => @Project.id.to_s} do |f| %>
+  <%= f.error_messages %>
+
+ <p>
+   <div class="message_sub"> <%= f.label "Subject:" %>   <%= f.text_field :title %></div>
+  </p>
+  <p>
+   <div class="message_bod"> <%= f.label :body %><%= f.text_area :body, :cols=>75, :rows=>6 %></div>
+  </p>
+  
+  <p>
+    <%= f.hidden_field :project_id, :value=> @Project.id %>
+ </p>
+  
+    <%= f.submit 'New'  %>
+  </p>
+<% end %>

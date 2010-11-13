@@ -1,0 +1,15 @@
+<body id="project">
+	<%= render(:partial => "/layouts/insidemenu") %>
+	<div class="project_participant-container">
+		<%=render(:partial => "project_subnav") %>
+		<div class="project_participant_main">
+			<%=render(:partial => "project_head") %>
+			<% if @Project.is_team_leader(@current_profile)==true %> <%= render(:partial => "project_update") %>
+			<% elsif @Project.is_participant(@current_profile)==true%> <%= render(:partial => "project_update") %>
+			<% else %> <%= render(:partial => "project_about") %>
+			<% end %>
+			<%=render(:partial => "project_rightcol") %>
+			<%=render(:partial => "layouts/insidefooter") %>
+	</div>
+</body>
+</html>

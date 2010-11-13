@@ -1,0 +1,95 @@
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (5.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateResearchLibraries (20100407074332)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "research_libraries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100407074332')[0m
+Migrating to CreateResearchItems (20100407074914)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "research_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "url" varchar(255), "research_item_id" integer, "created_at" datetime, "rssurl" varchar(255), "created_by" integer, "project_id" integer, "dialogue_association" bigint) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100407074914')[0m
+Migrating to CreateLinks (20100407074924)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar(255) NOT NULL, "title" varchar(255), "research_item_id" integer, "created_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100407074924')[0m
+Migrating to CreateLinkages (20100407074932)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "linkages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100407074932')[0m
+Migrating to CreateUsers (20100407204544)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "login" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255), "login_count" integer DEFAULT 0, "last_request_at" datetime, "last_login_at" datetime, "current_login_at" datetime, "last_login_ip" varchar(255), "current_login_ip" varchar(255)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100407204544')[0m
+Migrating to CreateTags (20100409185818)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tagtext" varchar(255) NOT NULL, "research_item_id" integer, "created_at" datetime, "created_by" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100409185818')[0m
+Migrating to CreateProfiles (20100414162632)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "firstname" varchar(255) NOT NULL, "lastname" varchar(255) NOT NULL, "middleinitial" varchar(1), "email" varchar(255) NOT NULL, "city" varchar(255), "state" varchar(255), "zipcode" integer(5), "timezone" varchar(255), "user_id" integer NOT NULL, "headline" varchar(255), "summary" varchar(3000), "created_at" datetime, "avatar_file_name" varchar(255), "avatar_content_type" varchar(255), "avatar_file_size" integer, "avatar_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100414162632')[0m
+Migrating to CreateProjects (20100414201923)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "projectname" varchar(255) NOT NULL, "is_code_name" boolean DEFAULT 't', "logo_file_name" varchar(255), "logo_content_type" varchar(255), "logo_file_size" integer, "logo_updated_at" datetime, "project_location" varchar(255) NOT NULL, "current_hurdle" integer DEFAULT 1, "project_teaser" varchar(330) DEFAULT 'This is where you enter the teaser for your project that is displayed in the public project gallery.' NOT NULL, "project_about" varchar(7200) DEFAULT 'This is where you enter the full description of your project that is seen by community members that are not participating in your project. As such, please make sure that your description does not include information that you would consider sensitive in a public or semi-public forum.', "about_embed" text, "project_description" varchar(255) DEFAULT 'This is where you enter the detailed description of your project and goals for use by the participants of your project.', "desc_embed" text, "is_plan_complete" boolean DEFAULT 'f', "is_team_complete" boolean DEFAULT 'f', "is_mentor_complete" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100414201923')[0m
+Migrating to CreateTagAssociations (20100505021500)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "tag_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "tag1" integer, "tag2" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100505021500')[0m
+Migrating to CreateResearchTagAssociations (20100505042803)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "research_tag_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "research_id" integer, "tag_id" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100505042803')[0m
+Migrating to CreateDialogues (20100518015424)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "dialogues" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "dialogue_type" varchar(255), "body" text, "title" text, "project_id" integer, "is_project_update" boolean DEFAULT 'f', "author" varchar(255), "is_reply" boolean DEFAULT 'f', "show" boolean DEFAULT 't', "dialogue_id" integer, "parent_id" integer, "research_association" bigint, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100518015424')[0m
+Migrating to CreateParticipants (20100525002035)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "participants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "user_id" integer, "profile_id" integer, "role" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "index_participants_on_project_id_and_user_id" ON "participants" ("project_id", "user_id")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_participants_on_user_id" ON "participants" ("user_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100525002035')[0m
+Migrating to CreateInvitations (20100612201120)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "invitations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) NOT NULL, "project_id" integer NOT NULL, "token" varchar(255), "accepted_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100612201120')[0m
+Migrating to CreateAnnouncements (20100625224826)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "announcements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "entry" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100625224826')[0m
+Migrating to CreateMessages (20100630203020)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "recipient_id" integer, "sender_id" integer, "created_at" datetime, "deleted_user" boolean, "deleted_reciever" boolean, "archived" boolean, "read_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100630203020')[0m
+Migrating to CreateUpdates (20100721230431)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "updates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "project_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100721230431')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("announcements")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("dialogues")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("invitations")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("linkages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("links")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("messages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("participants")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_participants_on_user_id')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_participants_on_project_id_and_user_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("profiles")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("projects")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("research_items")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("research_libraries")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("research_tag_associations")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tag_associations")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tags")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("updates")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_last_request_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_persistence_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m

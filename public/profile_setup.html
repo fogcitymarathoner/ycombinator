@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>3Strides: Set Up Your Profile</title>
+		  <link rel="shortcut icon" href="http://127.0.0.1:3000/images/favicon.ico" mce_href="http://127.0.0.1:3000/images/favicon.ico"/>
+		  <link rel="stylesheet" href="stylesheets/core.css" type="text/css" />
+		  <link rel="stylesheet" href="stylesheets/forms.css" type="text/css" />
+		
+	</head>
+	<body id="profile_setup">
+	<div id="site_container_outside">
+		<div id="head_container_outside"> 
+			<div id="logo">
+       			<a href="/"><img src="http://127.0.0.1:3000/images/3strides_logo_139w.png"/></a>
+     		</div>
+			<div id="nav_outside">
+				<ul id="topnav">
+				<li class="whatis"><a href="whatis.html">What Is</a></li>
+				<li class="blog"><a href="blog.html">Blog</a></li>
+				<li class="registration"><a href="registration.html">Sign Up</a></li>
+				<li class="login"><a href="login.html">Login</a></li>
+			</ul>
+			</div>
+		</div>
+		<div id="content_bkg_outside_top">
+		</div>
+		<div id="content_bkg_outside">
+			<div id="content_container_outside_top">
+			</div>
+			<div id="content_container_outside">
+			<input type="image" src="http://127.0.0.1:3000/images/title_register_now.png">
+			<p/>
+				<div class="copy">
+					
+					<form action="signUp.aspx" method="post" id="form-sign-up" name="signUp">
+						<style>
+								.form_comment {color: #a0a0a0; font-size:12px; font-weight: bold; margin: -16px 0 -15px 75px; padding-left: 23px;}
+						</style>
+						<fieldset id="register">
+
+							<div class="top"></div>
+							<h2>Establish an Account</h2>
+							
+							
+							
+							<p>Please use a valid email address, you&rsquo;ll need to verify it to complete set-up.</p>
+							<div class="text">
+								<label for="FirstName">First Name</label>
+								<input class="required" type="text" name="FirstName" id="FirstName" value=""/>
+							</div>	
+							<div class="clearAll" />
+							<div class="text">
+								<label for="MiddleInit">Middle Initial</label>
+								<input class="" type="text" size="1" name="MiddleInit" id="MiddleInit" value=""/>
+							</div>
+							<div class="clearAll" />
+							<div class="text">
+								<label for="LastName">Last Name</label>
+								<input class="required" type="text" name="LastName" id="LastName" value="" />
+							</div>	
+							<div class="clearAll" />
+							
+							<div class="text">
+								<label for="ea">Email Address</label>
+								<input class="required" type="text" name="ea" id="ea" value="" onblur="javascript:if(document.signUp.ea.value != '') pageTracker._trackPageview('/internal/form/signup/email');"/>
+							</div>
+							
+							<div class="text form_comment">
+						<p>Your Email will Be Your Login</p></div>
+                            <div class="pass_field">
+                            	
+                                <div class="form_left resetStrength" style="position: absolute; left: 344px;"> 
+                                    <div id="mypassword_text" class="resetText"></div>
+                                    <div id="mypassword_bar" class="resetBar"></div> 
+                                </div>
+                                <div class="text">
+                                	<div class="clearAll" />
+                                    <label for="password">Password</label>
+                                    <input class="required form_left" type="password" name="password" id="password" value="" onblur="javascript:if(document.signUp.password.value != '') pageTracker._trackPageview('/internal/form/signup/password');" onkeyup="runPassword(this.value, 'mypassword');"/>
+                                </div>
+								  <div class="text">
+								  	<div class="clearAll" />
+                                    <label for="password_reenter">Confirm Password</label>
+                                    <input class="required form_left" type="password_confirm" name="password_confirm" id="password_confirm" value="" onblur="javascript:if(document.signUp.password.value != '') pageTracker._trackPageview('/internal/form/signup/password');" onkeyup="runPassword(this.value, 'mypassword');"/>
+                                </div>
+
+                            </div>
+                            <div class="form_clear"></div>
+														
+							<input type="hidden" name="Country" value="United States of America" />
+							<input type="hidden" name="CountryAutodetected" value="true" />
+
+							<script>
+								document.getElementById("FirstName").focus();
+							</script>
+							<div class="btm"></div>
+						</fieldset>
+						<fieldset id="profile">
+							<div class="top"></div>
+							<h2>Add Some Profile Basics</h2>
+
+							<p>Some basic info to get your profile started.  Don&rsquo;t worry, you can edit this info later.</p>
+							
+							<div class="text">
+								<label for="City">City</label>
+								<input class="required" type="text" name="City" id="City" value="" onblur="javascript:if(document.signUp.username.value != '') pageTracker._trackPageview('/internal/form/signup/city');"/>
+							</div>
+							<div class="clearAll" />				
+							<div class="text">
+								<label for="TimeZone">Timezone</label>
+								<select name="TimeZone" id="timezone" style="width:350px;" class="required;"><option value="">Please Select a Time Zone</option><option value="(GMT) Casablanca">(GMT) Casablanca</option><option value="(GMT) Coordinated Universal Time">(GMT) Coordinated Universal Time</option><option value="(GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London">(GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option><option value="(GMT) Monrovia, Reykjavik">(GMT) Monrovia, Reykjavik</option><option value="(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option><option value="(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option><option value="(GMT+01:00) Brussels, Copenhagen, Madrid, Paris">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option><option value="(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option><option value="(GMT+01:00) West Central Africa">(GMT+01:00) West Central Africa</option><option value="(GMT+02:00) Amman">(GMT+02:00) Amman</option><option value="(GMT+02:00) Athens, Bucharest, Istanbul">(GMT+02:00) Athens, Bucharest, Istanbul</option><option value="(GMT+02:00) Beirut">(GMT+02:00) Beirut</option><option value="(GMT+02:00) Cairo">(GMT+02:00) Cairo</option><option value="(GMT+02:00) Harare, Pretoria">(GMT+02:00) Harare, Pretoria</option><option value="(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option><option value="(GMT+02:00) Jerusalem">(GMT+02:00) Jerusalem</option><option value="(GMT+02:00) Minsk">(GMT+02:00) Minsk</option><option value="(GMT+02:00) Windhoek">(GMT+02:00) Windhoek</option><option value="(GMT+03:00) Baghdad">(GMT+03:00) Baghdad</option><option value="(GMT+03:00) Kuwait, Riyadh">(GMT+03:00) Kuwait, Riyadh</option><option value="(GMT+03:00) Moscow, St. Petersburg, Volgograd">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option><option value="(GMT+03:00) Nairobi">(GMT+03:00) Nairobi</option><option value="(GMT+03:30) Tehran">(GMT+03:30) Tehran</option><option value="(GMT+04:00) Abu Dhabi, Muscat">(GMT+04:00) Abu Dhabi, Muscat</option><option value="(GMT+04:00) Baku">(GMT+04:00) Baku</option><option value="(GMT+04:00) Caucasus Standard Time">(GMT+04:00) Caucasus Standard Time</option><option value="(GMT+04:00) Port Louis">(GMT+04:00) Port Louis</option><option value="(GMT+04:00) Tbilisi">(GMT+04:00) Tbilisi</option><option value="(GMT+04:00) Yerevan">(GMT+04:00) Yerevan</option><option value="(GMT+04:30) Kabul">(GMT+04:30) Kabul</option><option value="(GMT+05:00) Ekaterinburg">(GMT+05:00) Ekaterinburg</option><option value="(GMT+05:00) Islamabad, Karachi">(GMT+05:00) Islamabad, Karachi</option><option value="(GMT+05:00) Tashkent">(GMT+05:00) Tashkent</option><option value="(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option><option value="(GMT+05:30) Sri Jayawardenepura">(GMT+05:30) Sri Jayawardenepura</option><option value="(GMT+05:45) Kathmandu">(GMT+05:45) Kathmandu</option><option value="(GMT+06:00) Astana">(GMT+06:00) Astana</option><option value="(GMT+06:00) Dhaka">(GMT+06:00) Dhaka</option><option value="(GMT+06:00) Novosibirsk">(GMT+06:00) Novosibirsk</option><option value="(GMT+06:30) Yangon (Rangoon)">(GMT+06:30) Yangon (Rangoon)</option><option value="(GMT+07:00) Bangkok, Hanoi, Jakarta">(GMT+07:00) Bangkok, Hanoi, Jakarta</option><option value="(GMT+07:00) Krasnoyarsk">(GMT+07:00) Krasnoyarsk</option><option value="(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option><option value="(GMT+08:00) Irkutsk">(GMT+08:00) Irkutsk</option><option value="(GMT+08:00) Kuala Lumpur, Singapore">(GMT+08:00) Kuala Lumpur, Singapore</option><option value="(GMT+08:00) Perth">(GMT+08:00) Perth</option><option value="(GMT+08:00) Taipei">(GMT+08:00) Taipei</option><option value="(GMT+08:00) Ulaanbaatar">(GMT+08:00) Ulaanbaatar</option><option value="(GMT+09:00) Osaka, Sapporo, Tokyo">(GMT+09:00) Osaka, Sapporo, Tokyo</option><option value="(GMT+09:00) Seoul">(GMT+09:00) Seoul</option><option value="(GMT+09:00) Yakutsk">(GMT+09:00) Yakutsk</option><option value="(GMT+09:30) Adelaide">(GMT+09:30) Adelaide</option><option value="(GMT+09:30) Darwin">(GMT+09:30) Darwin</option><option value="(GMT+10:00) Brisbane">(GMT+10:00) Brisbane</option><option value="(GMT+10:00) Canberra, Melbourne, Sydney">(GMT+10:00) Canberra, Melbourne, Sydney</option><option value="(GMT+10:00) Guam, Port Moresby">(GMT+10:00) Guam, Port Moresby</option><option value="(GMT+10:00) Hobart">(GMT+10:00) Hobart</option><option value="(GMT+10:00) Vladivostok">(GMT+10:00) Vladivostok</option><option value="(GMT+11:00) Magadan, Solomon Is., New Caledonia">(GMT+11:00) Magadan, Solomon Is., New Caledonia</option><option value="(GMT+12:00) Auckland, Wellington">(GMT+12:00) Auckland, Wellington</option><option value="(GMT+12:00) Coordinated Universal Time+12">(GMT+12:00) Coordinated Universal Time+12</option><option value="(GMT+12:00) Fiji">(GMT+12:00) Fiji</option><option value="(GMT+12:00) Petropavlovsk-Kamchatsky">(GMT+12:00) Petropavlovsk-Kamchatsky</option><option value="(GMT+13:00) Nuku'alofa">(GMT+13:00) Nuku'alofa</option><option value="(GMT-01:00) Azores">(GMT-01:00) Azores</option><option value="(GMT-01:00) Cape Verde Is.">(GMT-01:00) Cape Verde Is.</option><option value="(GMT-02:00) Coordinated Universal Time-02">(GMT-02:00) Coordinated Universal Time-02</option><option value="(GMT-02:00) Mid-Atlantic">(GMT-02:00) Mid-Atlantic</option><option value="(GMT-03:00) Brasilia">(GMT-03:00) Brasilia</option><option value="(GMT-03:00) Buenos Aires">(GMT-03:00) Buenos Aires</option><option value="(GMT-03:00) Cayenne, Fortaleza">(GMT-03:00) Cayenne, Fortaleza</option><option value="(GMT-03:00) Greenland">(GMT-03:00) Greenland</option><option value="(GMT-03:00) Montevideo">(GMT-03:00) Montevideo</option><option value="(GMT-03:30) Newfoundland">(GMT-03:30) Newfoundland</option><option value="(GMT-04:00) Asuncion">(GMT-04:00) Asuncion</option><option value="(GMT-04:00) Atlantic Time (Canada)">(GMT-04:00) Atlantic Time (Canada)</option><option value="(GMT-04:00) Cuiaba">(GMT-04:00) Cuiaba</option><option value="(GMT-04:00) Georgetown, La Paz, Manaus, San Juan">(GMT-04:00) Georgetown, La Paz, Manaus, San Juan</option><option value="(GMT-04:00) Santiago">(GMT-04:00) Santiago</option><option value="(GMT-04:30) Caracas">(GMT-04:30) Caracas</option><option value="(GMT-05:00) Bogota, Lima, Quito">(GMT-05:00) Bogota, Lima, Quito</option><option value="(GMT-05:00) Eastern Time (US & Canada)">(GMT-05:00) Eastern Time (US & Canada)</option><option value="(GMT-06:00) Central America">(GMT-06:00) Central America</option><option value="(GMT-06:00) Central Time (US & Canada)">(GMT-06:00) Central Time (US & Canada)</option><option value="(GMT-06:00) Guadalajara, Mexico City, Monterrey - New">(GMT-06:00) Guadalajara, Mexico City, Monterrey - New</option><option value="(GMT-06:00) Guadalajara, Mexico City, Monterrey - Old">(GMT-06:00) Guadalajara, Mexico City, Monterrey - Old</option><option value="(GMT-06:00) Saskatchewan">(GMT-06:00) Saskatchewan</option><option value="(GMT-07:00) Arizona">(GMT-07:00) Arizona</option><option value="(GMT-07:00) Chihuahua, La Paz, Mazatlan - New">(GMT-07:00) Chihuahua, La Paz, Mazatlan - New</option><option value="(GMT-07:00) Chihuahua, La Paz, Mazatlan - Old">(GMT-07:00) Chihuahua, La Paz, Mazatlan - Old</option><option value="(GMT-07:00) Mountain Time (US & Canada)">(GMT-07:00) Mountain Time (US & Canada)</option><option value="(GMT-08:00) Baja California">(GMT-08:00) Baja California</option><option value="(GMT-08:00) Pacific Time (US & Canada)">(GMT-08:00) Pacific Time (US & Canada)</option><option value="(GMT-09:00) Alaska">(GMT-09:00) Alaska</option><option value="(GMT-10:00) Hawaii">(GMT-10:00) Hawaii</option><option value="(GMT-11:00) Coordinated Universal Time-11">(GMT-11:00) Coordinated Universal Time-11</option><option value="(GMT-11:00) Samoa">(GMT-11:00) Samoa</option><option value="(GMT-12:00) International Date Line West">(GMT-12:00) International Date Line West</option></select>
+							</div>
+							<div class="clearAll" />
+							<div class="text">
+								<label for="ZipCode">Zip Code</label>
+								<input class="required" type="text" name="ZipCode" id="ZipCode" value="" />
+							</div>
+							<div class="text form_comment">
+							<p>Your Zip Code will not be displayed.  It is used to set your region.</p>
+							</div>
+                                                        	
+							<div class="btm"></div>
+						</fieldset>
+						
+						<fieldset id="create">
+							<div class="top"></div>
+							<h2>Complete Set-Up</h2>
+							<p>By clicking the button below, you agree to 3Stride&rsquo;s <a href="http://exchange.pointbonita.com/terms/" id="terms">Terms of Use</a> and <a href="http://exchange.pointbonita.com/privacy/" id="privacy">Privacy Policy</a>.</p>
+
+							<div class="buttons">
+								<input type="image" src="http://127.0.0.1:3000/images/btn_create-my-account.png" name="submit" id="submit" value="submit" class="image"  onclick="javascript:pageTracker._trackPageview('/internal/form/signup/submit');"/> 
+							</div>
+							<div class="btm"></div>
+						</fieldset>
+
+						<input type="hidden" name="refererURL" value="" />
+						<input type="hidden" name="dateOfFirstVisit" value="" />
+						<input type="hidden" name="landingPage" value="" />
+						<input type="hidden" name="signupVar" value="" />
+						
+					</form>
+				</div>
+				</div>
+		<div id="content_container_outside_bottom">
+		</div>
+		</div>
+		<div id="content_bkg_outside_bottom">
+		</div>
+		<div id="footer_outside_top">
+		</div>
+		<div id="footer_outside">
+		</div>
+		<div id="footer_outside_bottom">
+			<div id="copyright_text">
+				copyright &copy;2010, 3Strides, LLC. All rights reserved. 
+			</div>
+		</div>
+		</div>
+	</body>
+</html>

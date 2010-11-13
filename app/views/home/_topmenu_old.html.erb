@@ -1,0 +1,90 @@
+<div class="topmenu">
+		<ul class="topsectionmenu">
+			<ul id="topnav">
+			<li class="about"><a href="about.html">About 3Strides</a></li>
+			<li class="blog"><a href="blog.html">Blog</a></li>
+			<li class="signup"><a id="signup_modal" title="Signup" href="/register">Login</a></li>
+			<li class="login"><a id="login_modal" title="Login" href="/login">Login</a></li>
+			<li class="twitter"><a href="http://twitter.com/3strides"></a></li>
+			<li class="fb"><a href="http://www.facebook.com/"></a></li>
+		</ul>
+		</ul>
+		<ul class="logomenu">
+		<ul id="navlogo">
+			<li class="logo"><a href="/">3Strides</a></li>
+		</ul>
+		</ul>
+	<ul class="topmenu">
+		<ul id="nav">
+					<li class="about"><a href="about.html">What Is 3Strides</a></li>
+					<li class="entrepreneurs"><a href="entrepreneurs.html">For Entrepreneurs</a></li>
+					<li class="investors"><a href="for_investors.html">For Investors</a></li>
+					<li class="projects"><a href="projects_public.html">Projects</a></li>
+					<li class="blog"><a href="blog.html">Blog</a></li>
+		</ul>
+		</ul>
+		</div>		
+<div class="menubannercontent">
+		
+	</div>
+<script type="text/javascript">
+$("#login_modal").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'onClosed'		: function() {
+	    $("#login_error").hide();
+	}
+});</script>
+<script type="text/javascript">$("#login_modal").bind("submit", function() {
+
+	if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
+	    $("#login_error").show();
+	    $.fancybox.resize();
+	    return false;
+	}
+
+	$.fancybox.showActivity();
+
+	$.ajax({
+		type		: "POST",
+		cache	: false,
+		url		: "/data/login.php",
+		data		: $(this).serializeArray(),
+		success: function(data) {
+			$.fancybox(data);
+		}
+	});
+
+	return false;
+});</script>
+
+<script type="text/javascript">
+$("#signup_modal").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'onClosed'		: function() {
+	    $("#login_error").hide();
+	}
+});</script>
+<script type="text/javascript">$("#signup_modal").bind("submit", function() {
+
+	if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
+	    $("#login_error").show();
+	    $.fancybox.resize();
+	    return false;
+	}
+
+	$.fancybox.showActivity();
+
+	$.ajax({
+		type		: "POST",
+		cache	: false,
+		url		: "/data/login.php",
+		data		: $(this).serializeArray(),
+		success: function(data) {
+			$.fancybox(data);
+		}
+	});
+
+	return false;
+});</script>

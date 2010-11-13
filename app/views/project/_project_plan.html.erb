@@ -1,0 +1,160 @@
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/wmd.css" />
+<script type="text/javascript" src="/javascripts/wmd/showdown.js"></script>
+<script type="text/javascript" src="/javascripts/wmd/wmd.js"></script>
+<script type="text/javascript">
+
+function addResearch(data) {
+
+
+if(document.mainform.research_checkbox.checked == true) {
+
+
+  document.getElementById('research_div').innerHTML=data;
+
+  initTags();
+
+  addResearchTitle();
+
+
+
+
+}
+else {
+
+   document.getElementById('research_div').innerHTML='';
+}
+
+
+
+}
+
+function addResearchTitle() {
+
+  document.mainform.title_checkbox.checked = true;
+
+  title_div.innerHTML='<b>Title:</b><br/>   <input id="link_title"  type="text" style="width:500px"/><br/><br/>';
+   title_div.style.visibility = "block"; //to show it
+
+
+}
+
+function addTitle() {
+
+
+
+
+
+  if(document.mainform.title_checkbox.checked == true) {
+
+  title_div.innerHTML='<b>Title:</b><br/>   <input id="link_title" type="text" style="width:500px"/><br/><br/>';
+  title_div.style.visibility = "block"; //to show it
+
+
+
+  }
+else {
+
+  title_div.innerHTML='';
+
+
+
+
+}
+
+}
+
+function addFile() {
+
+
+
+
+    if(document.mainform.file_checkbox.checked == true) {
+
+    document.getElementById('file_div').innerHTML='<b>Attach file:</b><br/>   <input type="file" style="width:500px"/>';
+
+  } else {
+
+    document.getElementById('file_div').innerHTML='';
+
+  }
+
+
+
+
+
+
+}
+
+function addPollOptions() {
+
+    if(document.mainform.poll_checkbox.checked == true) {
+
+
+
+
+    poll_div.style.display = "block"; //to show it
+
+
+
+    }
+  else {
+
+    poll_div.style.display = "none"; //to show it
+
+
+  }
+
+
+
+}
+
+</script>
+<style type="text/css">
+
+
+input.groovybutton
+{
+   font-size:20px;
+   font-weight:bold;
+   color: #5895FF;
+   text-decoration:underline;
+   width:200px;
+   height:40px;
+   border-top-style:solid;
+   border-top-color:#330000;
+   border-top-width:1px;
+   border-bottom-style:inset;
+   border-bottom-color:#330000;
+   border-bottom-width:4px;
+   border-left-style:solid;
+   border-left-color:#330000;
+   border-left-width:1px;
+   border-right-style:inset;
+   border-right-color:#330000;
+   border-right-width:4px;
+
+
+   margin-left:900px;
+}
+
+.generate_button{
+   margin-left:900px;
+}
+
+</style>
+
+<div class="project_participant_leftcol">
+<div class="project_participant_plan">
+<%=render(:partial => "plan_questions_participants") %>
+
+
+</div>
+</div>
+<div class="project_participant_rightcol">
+<div class="project_participant_keys"></div>
+</div>
+
+  	
+
+

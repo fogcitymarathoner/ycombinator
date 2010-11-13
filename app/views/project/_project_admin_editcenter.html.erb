@@ -1,0 +1,248 @@
+<script type="text/javascript" src="/javascripts/tinyeditor.js"></script>
+<link rel="stylesheet" href="/stylesheets/tinyeditorstyle.css" />
+ <script type="text/javascript">
+
+
+  
+  
+ 
+
+function saveProjUpdate() {
+  
+
+ editor.post();
+  
+
+  var text = document.project_discussion_form.projinput;
+  var textvalue = text.value;
+ 
+  document.project_discussion_form.submit();
+  
+}
+
+function saveProjTeaser() {
+  
+
+ editor.post();
+  
+
+  var text = document.project_teaser_form.projtease;
+  var textvalue = text.value;
+ 
+  document.project_teaser_form.submit();
+  
+}
+function saveProjAbout() {
+  
+
+ editor.post();
+  
+
+  var text = document.project_about_form.projabout_input;
+  var textvalue = text.value;
+ 
+  document.project_about_form.submit();
+  
+}
+function showProjEditor() {
+  
+  document.getElementById('projupdate').style.display='none';
+  
+  document.getElementById('projupdateinput').style.display='block';
+  
+  new TINY.editor.edit('editor',{
+          id:'projinput',
+          width:535,
+          height:175,
+          cssclass:'te',
+          controlclass:'tecontrol',
+          rowclass:'teheader',
+          dividerclass:'tedivider',
+          controls:['bold','italic','underline','strikethrough','|','subscript','superscript','|',
+                            'orderedlist','unorderedlist','|','outdent','indent','|','leftalign',
+                            'centeralign','rightalign','blockjustify','|','unformat','|','undo','redo','n',
+                            'font','size','style','|','image','hr','link','unlink',],
+          footer:true,
+          fonts:['Verdana','Arial','Georgia','Trebuchet MS'],
+          xhtml:true,
+          cssfile:'/stylesheets/tinyeditorstyle.css',
+          bodyid:'editor',
+          footerclass:'tefooter',
+          toggle:{text:'source',activetext:'wysiwyg',cssclass:'toggle'},
+          resize:{cssclass:'resize'}
+  });
+  
+  
+  
+}
+function showProjEditor_about() {
+  
+  document.getElementById('projabout').style.display='none';
+  
+  document.getElementById('projaboutinput').style.display='block';
+  
+  new TINY.editor.edit('editor',{
+          id:'projabout_input',
+          width:535,
+          height:175,
+          cssclass:'te',
+          controlclass:'tecontrol',
+          rowclass:'teheader',
+          dividerclass:'tedivider',
+          controls:['bold','italic','underline','strikethrough','|','subscript','superscript','|',
+                            'orderedlist','unorderedlist','|','outdent','indent','|','leftalign',
+                            'centeralign','rightalign','blockjustify','|','unformat','|','undo','redo','n',
+                            'font','size','style','|','image','hr','link','unlink',],
+          footer:true,
+          fonts:['Verdana','Arial','Georgia','Trebuchet MS'],
+          xhtml:true,
+          cssfile:'/stylesheets/tinyeditorstyle.css',
+          bodyid:'editor',
+          footerclass:'tefooter',
+          toggle:{text:'source',activetext:'wysiwyg',cssclass:'toggle'},
+          resize:{cssclass:'resize'}
+  });
+  
+  
+  
+}
+function showProjEditor_tease() {
+  
+  document.getElementById('proj_update_tease').style.display='none';
+  
+  document.getElementById('projteaseinput').style.display='block';
+  
+  new TINY.editor.edit('editor',{
+          id:'projtease',
+          width:535,
+          height:175,
+          cssclass:'te',
+          controlclass:'tecontrol',
+          rowclass:'teheader',
+          dividerclass:'tedivider',
+          controls:['bold','italic','underline','strikethrough','|','subscript','superscript','|',
+                            'orderedlist','unorderedlist','|','outdent','indent','|','leftalign',
+                            'centeralign','rightalign','blockjustify','|','unformat','|','undo','redo','n',
+                            'font','size','style','|','image','hr','link','unlink',],
+          footer:true,
+          fonts:['Verdana','Arial','Georgia','Trebuchet MS'],
+          xhtml:true,
+          cssfile:'/stylesheets/tinyeditorstyle.css',
+          bodyid:'editor',
+          footerclass:'tefooter',
+          toggle:{text:'source',activetext:'wysiwyg',cssclass:'toggle'},
+          resize:{cssclass:'resize'}
+  });
+  
+  
+  
+}
+</script>
+
+<div class="project_admin-container">
+<div class="project_public_thinmenu_subnav">
+<ul id="project_public_subnav">
+	<ul id="project_participant_subnav">
+	<li class="hurdle"><a href="" title="Summary Section">blah blah</a></li>
+	<li class="plan_badge"><a href="" title="Plan Section">blah blah</a></li>
+	<li class="team_badge"><a href="" title="Team Section">blah blah</a></li>
+	<li class="mentor_badge"><a href="" title="Mentor Section">blah blah</a></li>
+	<li class="public"><a href="/project_public_inside?id=<%= @Project.id.to_s %>">blah blah</a></li>
+	<li class="participant"><a href="/project_participant?id=<%= @Project.id.to_s %>">blah blah</a></li>
+	<li class="invite"><a id="invite_modal" href="/invitations/new?id=<%= @Project.id.to_s %>">blah blah</a></li></ul>
+</ul>
+</div>
+<div class="project_public_main">
+	<div class="project_public_main_head">
+		<div class="project_title">
+
+        <% if @Project.logo? %>
+
+          <%= image_tag @Project.logo.url(:thumb) %>
+
+          <% else %>
+		      <h2>Admin: <%= @Project.projectname %>	</h2>	
+
+          <% end %>          
+	
+      </div>
+		<h3>Team Leader: <%= @Project.team_leader.display_name %></h3>
+		<h4>Location: <%= @Project.project_location %></h4>
+		<ul id="project_participant_nav">
+		</ul>
+	</div>
+</div>
+<div class="project_admin_leftcol">
+	<div class="project_admin_update">
+		<h3>Edit: Project Update</h3>
+		<% form_for (:project, :url => '/project/edit?projid='+@Project.id.to_s, :html => {:name => 'project_discussion_form'}) do |f| %>  
+		<div id="projupdateinput" style="display:none">
+			<textarea id="projinput" name="projinput" style="width:400px; height:200px"><%= @dia.body %></textarea>
+			<a href="#" onclick="saveProjUpdate();" style="color:#006505;">[Save]</a>&nbsp<a href="/project_admin?id=<%= @Project.id.to_s %>" style="color:#9D0000;">[Cancel]</a>
+		</div>
+		<div id="projupdate" class="project_admin_update_txt">
+			<div class="project_admin_update_txt">
+			<%= @dia.body %>
+			</div>
+			<a href="#" onclick="javascript:showProjEditor();">[Edit]</a>
+		</div>
+		<% end %>
+	</div>
+	<div class="project_admin_teaser">
+		<h3>Edit: Project Teaser</h3>
+		<% form_for (:update_tease, :url => '/project/update_tease?projid='+@Project.id.to_s, :html => {:name => 'project_teaser_form'}) do |f| %>  
+		<div id="projteaseinput" style="display:none">
+			<textarea id="projtease" name="projtease" style="width:400px; height:200px"><%= @Project.project_teaser %></textarea>
+			<a href="#" onclick="saveProjTeaser();" style="color:#006505;">[Save]</a>&nbsp<a href="/project_admin?id=<%= @Project.id.to_s %>" style="color:#9D0000;">[Cancel]</a>
+		</div>
+		<div id="proj_update_tease" class="project_admin_update_txt">
+			<div class="project_admin_update_txt">
+			<%= @Project.project_teaser %>
+			</div>
+			<a href="#" onclick="javascript:showProjEditor_tease();">[Edit]</a>
+		</div>
+		<% end %>
+	</div>
+	<div class="project_admin_about">
+		<h3>Edit: About This Project</h3>
+		<% form_for (:update_about, :url => '/project/update_about?projid='+@Project.id.to_s, :html => {:name => 'project_about_form'}) do |f| %>  
+		<div id="projaboutinput" style="display:none">
+			<textarea id="projabout_input" name="projabout_input" style="width:400px; height:200px"><%= @Project.project_about %></textarea>
+			<a href="#" onclick="saveProjAbout();" style="color:#006505;">[Save]</a>&nbsp<a href="/project_admin?id=<%= @Project.id.to_s %>" style="color:#9D0000;">[Cancel]</a>
+		</div>
+		<div id="projabout" class="project_admin_update_txt">
+			<div class="project_admin_update_txt">
+			<%= @Project.project_about %>
+			</div>
+			<a href="#" onclick="javascript:showProjEditor_about();">[Edit]</a>
+		</div>
+		<% end %>
+	</div>
+	<div class="project_admin_description">
+		<h3>Edit: Project Detailed Description</h3>
+	</div>
+</div>	
+<div class="project_admin_rightcol">
+	<div class="project_participant_stats">At a Glance Stats and Badges Go Here</div>
+	<div class="project_admin_activity"><h3>Activity Stream</h3>Activity Stream Here</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$("#invite_modal").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'OnCleanup'		: function() {
+	    $('invite').observe("submit", function() {
+			event.stop();
+			this.request();
+		})
+	}
+});</script>
+
+
+
+
+
+
+

@@ -1,0 +1,2 @@
+class ResearchLibraryController < ApplicationController
+end

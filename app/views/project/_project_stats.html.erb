@@ -1,0 +1,22 @@
+	<ul class="project_admin_stats">
+		<li class="hurdle_badge">
+		<% if @Project.current_hurdle == 3 %>
+			<%= image_tag('/images/H2_Pin_64.png')%>
+		<% elsif @Project.current_hurdle == 2 %>
+			<%= image_tag('/images/H2_Pin_64.png')%>
+		<% elsif @Project.current_hurdle == 1 %>
+			<%= image_tag('/images/H1_Pin_64.png')%>
+		<% end %>
+		<br/>Current Hurdle
+		</li>
+		<li class="time">
+			Created On:&nbsp;&nbsp;<div class="answer"><%= @Project.start_date %></div>
+		</li>
+				<li class="hurdle_start">
+			Hurdle Start:&nbsp;&nbsp;<div class="answer"><%= @Project.start_date %></div>
+		</li>
+		<li class="remaining">
+			Days Remaining<br/> to Complete Hurdle:&nbsp;&nbsp;<div class="days_remain"><%= @Project.remaining %></div>
+		</li>
+		
+	</ul>

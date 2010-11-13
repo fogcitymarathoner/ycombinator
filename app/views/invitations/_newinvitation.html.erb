@@ -1,0 +1,26 @@
+
+<div id="form-invite">	
+	<fieldset id="invite">
+	<div class="text">
+	Enter the email of the person to invite to your project.
+	</div>
+	<h2>New Invitation</h2>
+  <% form_for @invitation, :url => invitations_path do |f| %>
+    <%= f.error_messages %>
+    <div class="clearAll"></div> 
+    <div class="text">
+		  <label for="email">Email</label>
+		  <%= f.text_field :email %>
+	  </div>
+    <div class="clearAll"></div>
+    
+    <%= f.hidden_field :project_id %>
+        
+    &nbsp; &nbsp;
+    <div class="form_login_button">
+      <%= image_submit_tag("/images/btn_invite_myaccount.png") %>
+    </div>
+  <% end %>
+ </fieldset>
+</div>
+

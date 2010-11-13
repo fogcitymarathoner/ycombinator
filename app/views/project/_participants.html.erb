@@ -1,0 +1,20 @@
+	<div class="participant_display">
+		<%= image_tag @Project.team_leader.avatar.url(:thumb) %>
+		<div class="participant_display_name">
+			<%= @Project.team_leader.name_with %>
+		</div>
+		<div class="participant_display_location">
+			<%= @Project.team_leader.city %>, <%= @Project.team_leader.state %> 
+		</div>
+	</div>
+	<% @Project.participating.each do |p| %>
+	<div class="participant_display">
+		<%= image_tag p.avatar.url(:thumb) %>
+		<div class="participant_display_name">
+			<%= p.name_with %>
+		</div>
+		<div class="participant_display_location">
+			<%= p.city %>, <%= p.state %> 
+		</div>
+	</div>
+	<%end%>

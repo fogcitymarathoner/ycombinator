@@ -1,0 +1,3 @@
+		<% for dialogue in @plan_questions do -%>
+        <%= render :partial => 'dialogue/dialogue_plan_item_admin', :locals => {:dialogue => dialogue} %>
+      	<% end -%>

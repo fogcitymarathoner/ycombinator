@@ -1,0 +1,11 @@
+<% if @messages %>
+	<% @messages.each do |message| %>
+  	<tr>
+    	<td class="sender"><%=h message.sender.display_name_short %></td>
+		<td class="title"><%=h message.title %></td>
+  		<td class="r_time"><%=h message.recieved %></td>
+    </tr>
+  	<%end%>
+<%else%>
+  No Messages
+<% end %>

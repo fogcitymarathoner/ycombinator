@@ -1,0 +1,17 @@
+xxx
+<% form_for(@user_session, :url => { :controller => "user_session_mc", :action => "validate_login" }) do |form| %>
+  <%= form.error_messages %>
+  <%= user_session_mc_path %>
+  
+  <p>
+    <%= form.label :login %>
+    <%= form.text_field :login %>
+  </p>
+  
+  <p>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </p>
+
+  <%= form.submit 'Login' %>
+<% end %>

@@ -1,0 +1,16 @@
+<body id="hubpage_read">
+	<%= render(:partial => "/layouts/insidemenu") %>
+		<div class="hub-container">	
+			<%= render(:partial => "messages_thin_nav") %>
+			<%= render(:partial => "/hub/hub_head") %>
+		<div class="hub_inboxcol">
+			<%= render(:partial => "/hub/inbox_view") %>
+		</div>
+		<div class="hub_centercol_container">
+			<div class="hub_centercol">
+				<%= render(:partial => "message_display") %>
+			</div>
+		</div>
+	</div>
+	<%= render(:partial => "/layouts/insidefooter") %>
+</body>

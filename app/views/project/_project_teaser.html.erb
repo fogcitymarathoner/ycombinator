@@ -1,0 +1,78 @@
+<script type="text/javascript" src="/javascripts/tinyeditor.js"></script>
+<link rel="stylesheet" href="/stylesheets/tinyeditorstyle.css" />
+<script type="text/javascript">
+
+
+function saveProjTeaser() {
+  
+
+ editor.post();
+  
+
+  var text = document.project_teaser_form.projtease;
+  var textvalue = text.value;
+ 
+  document.project_teaser_form.submit();
+  
+}
+	
+function showProjEditor_tease() {
+  
+  document.getElementById('proj_update_tease').style.display='none';
+  
+  document.getElementById('projteaseinput').style.display='block';
+  
+  new TINY.editor.edit('editor',{
+          id:'projtease',
+          width:535,
+          height:175,
+          cssclass:'te',
+          controlclass:'tecontrol',
+          rowclass:'teheader',
+          dividerclass:'tedivider',
+          controls:['bold','italic','underline','strikethrough','|','subscript','superscript','|',
+                            'orderedlist','unorderedlist','|','outdent','indent','|','leftalign',
+                            'centeralign','rightalign','blockjustify','|','unformat','|','undo','redo','n',
+                            'font','size','style','|','image','hr','link','unlink',],
+          footer:true,
+          fonts:['Verdana','Arial','Georgia','Trebuchet MS'],
+          xhtml:true,
+          cssfile:'/stylesheets/tinyeditorstyle.css',
+          bodyid:'editor',
+          footerclass:'tefooter',
+          toggle:{text:'source',activetext:'wysiwyg',cssclass:'toggle'},
+          resize:{cssclass:'resize'}
+  });
+  
+  
+  
+}
+</script>
+			<div class="project_participant_leftcol">
+				<div class="project_participant_update">
+					<%= render(:partial => "teaser_nav") %>
+					<% form_for (:update_tease, :url => '/project/update_tease?projid='+@Project.id.to_s, :html => {:name => 'project_teaser_form'}) do |f| %>  
+						<div id="projteaseinput" style="display:none">
+							<textarea id="projtease" name="projtease" style="width:400px; height:200px"><%= @Project.project_teaser %></textarea>
+							<a href="#" onclick="saveProjTeaser();" style="color:#006505;">[Save]</a>&nbsp<a href="/project_admin?id=<%= @Project.id.to_s %>" style="color:#9D0000;">[Cancel]</a>
+						</div>
+						<div id="proj_update_tease" class="project_admin_update_txt">
+							<div class="project_admin_update_txt">
+							<%= @Project.project_teaser %>
+							</div>
+							<a href="#" onclick="javascript:showProjEditor_tease();">[Edit]</a>
+						</div>
+						<% end %>
+					 <% form_for (:project, :url => '/project/update_logo?projid='+@Project.id.to_s, :html => { :multipart => true }) do |f| %>  
+						<p>
+      					<label for="logo">Upload A Logo:</label>
+      					<%= f.file_field :logo %>
+						</p>
+    <p>
+      <%= submit_tag 'Create' %>
+    </p>
+  <% end %>
+
+				</div>
+			</div>
+	

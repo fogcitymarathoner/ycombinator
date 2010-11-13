@@ -1,0 +1,70 @@
+<div id="form-sign-up">	
+		<fieldset id="register">
+		<h2>Sign Up</h2>
+		<% form_for @user, :url => { :action => :create } do |form| %>
+					
+
+					<%= error_messages_for :user %>
+
+
+				
+						<div class="form-instructions">
+						<p>Please use a valid email address, you&rsquo;ll need to verify it to complete set-up.</p>
+						</div>
+						<div class="text">
+							<label for="firstname">First Name</label>
+		
+
+								<% fields_for :profile do |profile| %>
+							
+									<%= profile.text_field :firstname %>
+							<label for="middleinit">Middle Initial</label>
+									<%= profile.text_field :middleinitial, {:size => 1}%>
+							<label for="lastname">Last Name</label>
+								<%= profile.text_field :lastname %>
+								
+						</div>
+						<div class="text">
+							<label for="ea">Email Address</label>
+							<%= profile.text_field  :email %>
+						</div>
+						
+						<% if @participant -%>
+						<div class="text">
+							<label for="reason">Reason to join</label>
+							<%= profile.text_field  :joining_reason %>
+						</div>
+						<% end %>
+						
+						<% end %>
+						
+						<% if @participant -%>
+						  <% fields_for :participant do |participant| %>
+						    <%= participant.hidden_field :project_id%>
+						  <% end -%>
+	          <% end -%>
+						
+						<div class="form_agree_terms">
+					<p>Your Email will Be Your Login</p></div>
+
+                            <div class="text">
+                            	<div class="clearAll" />
+                                <label for="password">Password</label>
+                               	<%= form.password_field :password %>
+                               	
+                               	<label for="password">Confirm Password</label>
+                               		<%= form.password_field :password_confirmation %>
+							
+                            </div>
+							  	<div class="clearAll" />
+
+                    <div class="form_agree_terms">
+					            <p>By clicking the button below, you agree to 3Stride&rsquo;s <a href="/terms.html" id="terms" target="_blank">Terms of Use</a> and <a href="/privacy/" id="privacy" target="blank">Privacy Policy</a>.</p>
+                    </div>
+						<div class="form-sign-up_button">
+							<%= image_submit_tag("/images/btn_create-my-account.png") %>
+								</div>
+
+						<% end %>
+                </fieldset>
+	</div>

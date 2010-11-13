@@ -1,0 +1,46 @@
+
+<div id="tabs">
+    <ul>
+        <li><a href="#announcements"><span class="tabs">Announcements</span></a></li>
+        <li><a href="#messages"><span class="tabs">Messages</span>
+				<% unless @unread_messages.empty? %>
+				<span class="message_count count"><%= @unread_messages.count %>
+				<%end%>
+				</span>
+			</a>
+		</li>
+        <li><a href="#invitations"><span class="tabs">Invitations</span><span class="count ">2</span></a></li>
+    	<a class="goto_inbox" href="/inbox_list">>>Go To Inbox</a>
+	</ul>
+	<div id="announcements" class="content">
+     		<li class="inbox_item hub_3s_update">
+   				<% if @announcements.empty? %>
+				<h4>Announcements</h4>
+					<p>This is where the Announcements from 3Strides go</p>
+				<% else %>
+					<% @announcements.each do |entry| %>
+						<h4><%= entry.title %></h4>
+						<h5><%= entry.created_at.strftime('%B %d, %Y') %></h5>
+						<p><%= entry.entry %></p>
+					<%end%>
+				<%end%>
+				<div class="clearAll"></div>
+			</li>
+   		</div>  
+		<div id="messages" class="content">
+			<div class="messages_head">
+				<%= link_to '[create message]',new_message_path %>
+			</div>
+				<% unless @messages.empty? %>
+   				<%= render(:partial => "/messages/list_messages") %>
+				<%else%>
+				<p>You Currently Have No Messages</p>
+				<%end%>
+   		</div>
+    	<div id="invitations" class="content">
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    </div>
+
+</div>

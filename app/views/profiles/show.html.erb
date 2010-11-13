@@ -1,0 +1,58 @@
+<p>
+  <b>Firstname:</b>
+  <%=h @profile.firstname %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%=h @profile.lastname %>
+</p>
+
+<p>
+  <b>Middleinitial:</b>
+  <%=h @profile.middleinitial %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @profile.email %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @profile.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @profile.state %>
+</p>
+
+<p>
+  <b>Zipcode:</b>
+  <%=h @profile.zipcode %>
+</p>
+
+<p>
+  <b>Timezone:</b>
+  <%=h @profile.timezone %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @profile.user_id %>
+</p>
+
+<p>
+  <b>Has golden ticket:</b>
+  <%=h @profile.has_golden_ticket %>
+</p>
+
+<p>
+  <b>Joining reason:</b>
+  <%=h @profile.joining_reason %>
+</p>
+
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

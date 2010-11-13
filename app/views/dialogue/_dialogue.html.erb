@@ -1,0 +1,11 @@
+<div id="dialogue_<%= dialogue.id %>" class="dialogdiv" onmouseover="reactOnClick(event, <%= dialogue.research_association -%>, <%= dialogue.id -%>)">
+  <h1><%= dialogue.title %></h1>
+
+<%= dialogue.body %>  <br/><br/>                  <%= dialogue.author %><br/><br/><div id="hrefreply_<%= dialogue.id -%>">
+  <a href="javascript:addReplyDiv(<%= dialogue.id -%>);">Reply</a><br/><br/>
+  </div>
+</div>
+<div id="reply_<%= dialogue.id -%>" ></div>
+-------------------------------------------------
+<br />
+<div style="margin-left:50px"><%= render :partial => 'dialogue/dialogue', :collection => dialogue.children %></div>

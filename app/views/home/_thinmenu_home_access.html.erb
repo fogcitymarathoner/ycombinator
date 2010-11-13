@@ -1,0 +1,58 @@
+<div class="thinmenu_container">
+<div class="thinmenu_home">
+			<ul id="navlogo_thin">
+			<li class="home_logo"><a href="/">3Strides</a></li>
+		</ul>
+		<ul id="thinnav">
+
+			<li class="login"><%= link_to 'Login', new_user_session_path, :id => 'login_modal' %></li>
+			<li class="signup"><a id="signup_modal" title="Signup" href="/signup">Sign Up</a></li>
+		</ul>
+
+		</div>
+		</div>
+
+<script type="text/javascript">
+  jQuery.noConflict();
+jQuery("#login_modal").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'OnCleanup'		: function() {
+
+	    jQuery('new_user_session').observe("submit", function() {
+
+		})
+	}
+});</script>
+
+<script type="text/javascript">
+jQuery("#signup_modal").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'onClosed'		: function() {
+	    jQuery("#login_error").hide();
+	}
+});</script>
+
+<% if session[:invitation_user] -%>
+<a id="signup_modal" href="/signup"></a>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery("#signup_modal").fancybox().trigger('click');
+    });
+</script>
+<% end -%>
+
+<a href="/login_for_access" style="display:none;" id="login_for_access_modal">Login For Access</a>
+<script type="text/javascript">
+  jQuery.noConflict();
+jQuery("#login_for_access_modal").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'OnCleanup'		: function() {
+
+	    jQuery('new_user_session').observe("submit", function() {
+
+		})
+	}
+});</script>

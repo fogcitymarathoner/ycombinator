@@ -1,0 +1,117 @@
+div.scrollerTopRow {
+    display: inline;
+	position: relative;
+	z-index: 100;
+}
+
+div.scrollerTopLeftCorner {
+    float: left;
+    background: url('images/topLeftCorner.png');
+    width: 59px;
+    height: 34px;
+	z-index: 100;
+}
+    
+div.scrollerTopMiddle {
+    float: left;
+    background: url('images/newTopMiddle.jpg');
+    width: 705px;
+    height: 34px;
+	z-index: 100;
+}
+
+.scrollerTopMiddle img {
+	padding: 0;
+	cursor: pointer;
+}
+
+div.scrollerTopRightCorner {
+    float: left;
+    background: url('images/topRightCorner.png');
+    width: 36px;
+    height: 34px;
+    cursor: pointer;
+	z-index: 100;
+}
+
+div.scrollerBotLeftCorner {
+    float: left;
+    background: url('images/botLeftCorner.png');
+    width: 28px;
+    height: 25px;
+	z-index: 100;
+}
+
+div.scrollerBotMiddle {
+    float: left; 
+    background: url('images/newBotMiddle.jpg');
+    width: 739px;
+    height: 25px; 
+	z-index: 100;
+}
+
+.scrollerBotMiddle img {
+	padding: 0;
+	cursor: pointer;
+}
+
+div.scrollerBotRightCorner {
+    float: left;
+    background: url('images/botRightCorner.png');
+    width: 33px;
+    height: 25px;
+	z-index: 100;
+}
+
+.scrollContainer {
+    position: relative;
+	overflow: visible;
+    float: left;
+	width: 800px;
+    height: 441px;
+}
+
+.scrollerContentHolder {
+	background: url('images/contentBg.gif');
+	background-repeat: repeat-y;
+	height: 383px;
+	float: left;
+	position: relative;
+	display: inline;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+.scrollerContent {
+    clear: both;
+	overflow: hidden;
+	position: relative;
+    background: url('images/contentBg.gif');
+    background-repeat: repeat-y;
+    background-color: #FFF;
+	top: 0px;
+}
+
+div.baseComment {
+    width: 790px;
+    padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+    font-family: sans-serif;
+    border-bottom: solid 1px;
+    font-size: 15px;
+}
+
+.commentHolder {
+	margin: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.viewReplies {
+	margin-left: 10px;
+}

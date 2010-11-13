@@ -1,0 +1,6 @@
+<% form_for @dialogue, :url => {:action => :save_reply_admin, :controller => :dialogue} do |f| -%>
+  <%= f.text_area :body, :cols => 60, :rows => 5 %> <!-- TODO: Style in CSS, not here! -->
+  <%= f.hidden_field :id %>
+  <%= f.submit "Save" %>
+<% end -%>
+

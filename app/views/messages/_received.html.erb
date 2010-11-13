@@ -1,0 +1,14 @@
+<div id="announcements" class="content">
+     		<% if @announcements %>
+   			<% @announcements.each do |entry| %>
+			<li class="inbox_item">
+				<h4><%= entry.title %></h4>
+				<h5><%= entry.created_at.strftime('%B %d, %Y') %></h5>
+				<p><%= entry.entry %></p>
+				<div class="clearAll"></div>
+			</li>
+			<% end %>
+			<%else%>
+  				This is where the Announcements from 3Strides go
+			<%end%>
+   		</div>  

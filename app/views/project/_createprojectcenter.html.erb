@@ -1,0 +1,45 @@
+<div class="hub-container">
+	<%=render(:partial => "messages/messages_thin_nav") %>
+		<div class="project_public_main">
+	<div class="project_public_main_head">
+		<div class="project_title">
+        <h2>Admin: Create New Project	</h2>	
+		<h3><%= @current_profile.display_name %></h3>
+		<ul id="project_participant_nav">
+		</ul>
+	</div>
+</div>
+				<div class="myproject_noproject">
+					<h1><span style="color:#fff">xxxx</span>Your Golden Ticket Has Been Accepted!</h1>
+				
+
+
+
+<div class="myproject_createproject">
+	<h2 class="noproject">Congratulations!    Now Let's Get Started!</h2>
+		<div class="myproject_createproject_form">
+ 			<% form_for (:project, :url => '/project/create', :html => { :multipart => true }) do |f| %>  
+ 			<p>Fill in the basics about your project.  Don't worry - anything you enter here you can change later as your project develops...</p>
+ 			<div class="myproject_createproject_label"><p><div class="tool_tipped_codename">Project Code Name:</div><div class="tooltip"><div class="tooltip_container">Until a final name is chosen and URLs are secured, projects use code names.  
+				</p>Once a team has chosen a permanent name for the company the team can switch their name in the myProject administration panel. <p/> </div></div>
+				<div class="tool_tipped_post">&nbsp;&nbsp;<%= f.text_field :projectname %></div><div class="clear_left"></div>
+ 				<p><div class="tool_tipped_teaser">Location:</div> 
+			<div class="tooltip"><div class="tooltip_container">Where is your project located?</div></div>
+			<div class="tool_tipped_post"> &nbsp &nbsp<%= f.text_field :project_location %></div><div class="clear_left"></div>
+			<p><div class="tool_tipped_teaser">Teaser:</div> 
+			<div class="tooltip"><div class="tooltip_container">The "Teaser" is a brief description of the project.</p><p>  Initially, this description is only available to your trusted project participants and people you have invited to become participants.</p><p>Do not divulge more in the Teaser than you would in a casual meeting. </p></div></div>
+			<div class="tool_tipped_post"><div style="display:block; float:left;">&nbsp &nbsp</div><%= f.text_area :project_teaser, :cols=>30, :rows=>6 %></p></div><div class="clear_left"></div></div>
+			<p><strong>Okay!</strong>&nbsp;&nbsp;Now let's create the project on the system... </p>
+			</div>
+			<div class="form-create_button">
+				<%= image_submit_tag("/images/btn_create_project.png") %>
+			<% end -%>
+		</div>
+
+	</div>
+</div>
+
+
+<script type = text/javascript>$(".tool_tipped_codename").tooltip({position:"center left", offset: [-2, -80],	effect: "fade",	opacity: 0.9})</script>
+<script type = text/javascript>$(".tool_tipped_teaser").tooltip({position:"center left", offset: [-2, -20],	effect: "fade",	opacity: 0.9})</script>
+</div>

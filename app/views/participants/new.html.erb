@@ -1,0 +1,27 @@
+<h1>New participant</h1>
+
+<% form_for(@participant) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :profile_id %><br />
+    <%= f.text_field :profile_id %>
+  </p>
+  <p>
+    <%= f.label :project_id %><br />
+    <%= f.text_field :project_id %>
+  </p>
+    <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+    <p>
+    <%= f.label :role %><br />
+    <%= f.text_area :role %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', participants_path %>

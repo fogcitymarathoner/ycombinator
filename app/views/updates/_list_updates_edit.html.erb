@@ -1,0 +1,75 @@
+<script type="text/javascript" src="/javascripts/tinyeditor.js"></script>
+<link rel="stylesheet" href="/stylesheets/tinyeditorstyle.css" />
+<script type="text/javascript">
+
+function saveNewUpdate() {
+  
+
+ editor.post();
+  
+
+  var text = document.project_update_new.updatenew;
+  var textvalue = text.value;
+ 
+  document.project_update_new.submit();
+  
+}
+	
+function showProjEditor(){
+
+	document.getElementById('updatenew').style.display = 'none';
+	
+	document.getElementById('projupdateinput').style.display = 'block';
+	
+	new TINY.editor.edit('editor', {
+		id: 'updatenew',
+		width: 535,
+		height: 175,
+		cssclass: 'te',
+		controlclass: 'tecontrol',
+		rowclass: 'teheader',
+		dividerclass: 'tedivider',
+		controls: ['bold', 'italic', 'underline', 'strikethrough', '|', 'subscript', 'superscript', '|', 'orderedlist', 'unorderedlist', '|', 'outdent', 'indent', '|', 'leftalign', 'centeralign', 'rightalign', 'blockjustify', '|', 'unformat', '|', 'undo', 'redo', 'n', 'font', 'size', 'style', '|', 'image', 'hr', 'link', 'unlink', ],
+		footer: true,
+		fonts: ['Verdana', 'Arial', 'Georgia', 'Trebuchet MS'],
+		xhtml: true,
+		cssfile: '/stylesheets/tinyeditorstyle.css',
+		bodyid: 'editor',
+		footerclass: 'tefooter',
+		toggle: {
+			text: 'source',
+			activetext: 'wysiwyg',
+			cssclass: 'toggle'
+		},
+		resize: {
+			cssclass: 'resize'
+		}
+	});
+} 
+
+
+</script>
+
+<% @updates.each do |update| %>
+	<div class="project_update">
+		<h3><%= update.title%></h3>
+		<div class="project_update_time"><%= update.date%></div>
+		<p><%= update.body%></p>
+	
+ <div class="update_edit"> <tr>
+    <td><%= link_to '[edit]', edit_update_path(update) %></td>
+    <td><%= link_to '[delete]', update, :projid => @Project.id.to_s, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr></div>
+  <% end %>
+  </div>
+  Add New Update Entry:
+<%= render(:partial => "/updates/new_update") %>
+
+
+
+
+
+
+
+		
+	

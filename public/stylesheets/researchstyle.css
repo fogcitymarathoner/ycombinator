@@ -1,0 +1,61 @@
+
+#first {padding-bottom:20px; width:880px; border-bottom:2px dotted #bbb;}
+
+.summary h3 {
+font-size:100%;
+}
+
+.research_summary h3 a {
+font-size:140%;
+}
+
+
+#research_date {
+font-size:80%;
+margin-bottom:3px;
+}
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+
+
+font-size:100%;
+
+}
+
+
+.tags {
+float:left;
+line-height:18px;
+}
+
+
+.individual-tag  {
+background-color:#D5E4ff;
+border:1px solid #999;
+color:#162540;
+font-size:75%;
+font-family:inherit;
+height: 20px;
+line-height:2.2;
+margin:2px 6px 2px 6px;
+padding:3px 5px 3px 4px;
+text-decoration:none;
+white-space:nowrap;
+}
+
+
+a {
+color:#5795ff;
+cursor:pointer;
+text-decoration:none;
+}
+
+#research_summary.individual-tag a {
+font-size: 60%;}
+
+.research_summary {
+margin-top: 5px;
+padding-bottom: 5px;
+ border-bottom:dotted 2px #bbb;
+}

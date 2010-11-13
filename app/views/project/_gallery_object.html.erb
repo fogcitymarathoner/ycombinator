@@ -1,0 +1,26 @@
+
+<div class="gallery_picture">
+	<a href="project_public_inside?id=<%=project.id.to_s%>"><%= image_tag project.logo.url(:medium) %></a>
+	</div>
+<div class="gallery_leftcol">
+	<div class="gallery_project_name"><a href="project_public_inside?id=<%=project.id.to_s%>"><%= project.projectname%></a><div class="i_watch"><% if project.is_watching(@current_profile) %>  I'm Watching This <% else %>&nbsp<% end %></div></div>
+	<div class="project_location"><%= project.project_location %></div>	
+	<div class="project_sector"><span style="font-weight:bold;">Sector:</span> [ADD SECTOR HERE]<br/>
+	<div class="display_name"><span style="font-weight:bold;">Team Leader: </span><%= project.team_leader.name_with %></div></div>
+	<div class="clearfix"></div>
+	<div class="teaser"><%= project.project_teaser %> <a href="project_public_inside?id=<%=project.id.to_s%>">learn more &gt;&gt;</a></div>
+	<div class="gallery_project_tags"><span style="font-weight:bold;">Tags: </span>[ADD TAGS HERE]</div></div>
+
+<div class="gallery_rightcol"><div class="hurdle"><span style="font-weight:bold;">Hurdle:</span> <%= image_tag(project.current_hurdle_badge, :size => "40x40") %></div>
+<div class="days_remaining">Days Remaining: <span><%= project.remaining %></span></div>
+<div class="clearfix"></div>
+<div class="progress"><span style="font-weight:bold;">Progress:</span>
+<img src='<%= project.plan_status_img %>'/>
+<img src='<%= project.team_status_img %>'/>
+<img src='<%= project.mentor_status_img %>'/></div>
+<div class="clearfix"></div>
+<div class="details"><span style="font-weight:bold;">Details:</span>
+<div class="watch_part">Participants: <%= project.participant_count %></div>
+<div class="watch_part">Watchers: <%= project.watcher_count %></div></div>
+</div>
+<div class="clearfix"></div>

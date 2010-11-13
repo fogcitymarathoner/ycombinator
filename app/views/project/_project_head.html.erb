@@ -1,0 +1,17 @@
+			<div class="project_participant_main_head">
+				<div class="project_title">
+					<% if @Project.logo? %>
+						<%= image_tag @Project.logo.url(:thumb) %>
+					<% else %>
+		      			<h2><%= @Project.projectname %>	</h2>	
+          			<% end %>          
+				</div>
+				<h3>Team Leader: <%= @Project.team_leader.display_name %></h3>
+				<h4>Location: <%= @Project.project_location %></h4>
+				<ul id="project_participant_nav">
+					<% if @Project.is_team_leader(@current_profile)==true %><%= render(:partial => "participant_head_nav") %>
+			 		<% elsif @Project.is_participant(@current_profile)==true %><%= render(:partial => "participant_head_nav") %>
+			 		<%else%>
+					<% end %>
+				</ul>
+			</div>

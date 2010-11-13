@@ -1,0 +1,38 @@
+<body id="project_admin_plan">
+	<%= render(:partial => "/layouts/insidemenu") %>
+	<div class="project_admin-container">
+		<%=render(:partial => "admin_view_subnav") %>
+		<div class="project_admin_main">
+			<div class="project_admin_main_head">
+				<div class="project_title">
+        			<% if @Project.logo? %>
+			        <%= image_tag @Project.logo.url(:thumb) %>
+         		<% else %>
+		      		<h2>Admin: <%= @Project.projectname %>	</h2>
+          		<% end %>
+	    	</div>
+			<h3>Team Leader: <%= @Project.team_leader.display_name %></h3>
+			<h4>Location: <%= @Project.project_location %></h4>
+		</div>
+		</div>
+		<div class="project_admin_leftcol">
+			<%=render(:partial => "plan_nav") %>
+			<%=render(:partial => "plan_questions_admin") %>
+		</div>	
+		<div class="project_admin_rightcol">
+			<div class="project_admin_plan_keys">
+				<h3>Scoring and Impact</h3>Scoring and Impact Data Will Go Here
+			</div>
+		</div>
+	
+
+	
+   <%=render(:partial => "layouts/insidefooter") %>
+</div>
+
+
+
+	</body>
+
+	</html>
+

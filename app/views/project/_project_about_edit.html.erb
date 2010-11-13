@@ -1,0 +1,87 @@
+<script type="text/javascript" src="/javascripts/tinyeditor.js"></script>
+<link rel="stylesheet" href="/stylesheets/tinyeditorstyle.css" />
+<script type="text/javascript">
+
+function saveProjAbout() {
+  
+
+ editor.post();
+  
+
+  var text = document.project_about_form.projabout_input;
+  var textvalue = text.value;
+ 
+  document.project_about_form.submit();
+  
+}
+	
+function showProjEditor_about() {
+  
+  document.getElementById('projabout').style.display='none';
+  
+  document.getElementById('projaboutinput').style.display='block';
+  
+  new TINY.editor.edit('editor',{
+          id:'projabout_input',
+          width:535,
+          height:175,
+          cssclass:'te',
+          controlclass:'tecontrol',
+          rowclass:'teheader',
+          dividerclass:'tedivider',
+          controls:['bold','italic','underline','strikethrough','|','subscript','superscript','|',
+                            'orderedlist','unorderedlist','|','outdent','indent','|','leftalign',
+                            'centeralign','rightalign','blockjustify','|','unformat','|','undo','redo','n',
+                            'font','size','style','|','image','hr','link','unlink',],
+          footer:true,
+          fonts:['Verdana','Arial','Georgia','Trebuchet MS'],
+          xhtml:true,
+          cssfile:'/stylesheets/tinyeditorstyle.css',
+          bodyid:'editor',
+          footerclass:'tefooter',
+          toggle:{text:'source',activetext:'wysiwyg',cssclass:'toggle'},
+          resize:{cssclass:'resize'}
+  });
+  
+  
+  
+}
+
+
+</script>
+		<% form_for (:update_about, :url => '/project/update_about?projid='+@Project.id.to_s, :html => {:name => 'project_about_form'}) do |f| %>  
+		<div id="projaboutinput" style="display:none">
+			<textarea id="projabout_input" name="projabout_input" style="width:400px; height:200px"><%= @Project.project_about %></textarea>
+			<a href="#" onclick="saveProjAbout();" style="color:#006505;">[Save]</a>&nbsp<a href="/project_admin?id=<%= @Project.id.to_s %>" style="color:#9D0000;">[Cancel]</a>
+		</div>
+		<div id="projabout" class="project_admin_update_txt">
+			<div class="project_admin_update_txt">
+			<div class="embed"><%= @Project.about_embed %></div>
+			<div class="col_head">About This Project</div>
+			<%= @Project.project_about %>
+			</div>
+			<a href="#" onclick="javascript:showProjEditor_about();">[Edit]</a>
+		</div>
+		<% end %>
+	<style>
+p { 
+font-weight:bold;
+font-size:16px; display:none;}
+</style>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<button>Embed</button> <div style="font-weight:bold; font-size:12px">Paste HTML to embed a Prezi, Slideshare or Other Video/Presentation.  Size embedded object to (w)540px x (h)450px.</div>
+<% form_for :about_embed, :url => {:controller => "project", :action => :project_about_embed, :projid => @Project.id.to_s} do |f| %>
+
+	  <p>
+  <%= f.text_area :about_embed, :cols=>80, :rows=>6 %>
+
+  
+  <%= f.submit 'Add'  %>
+<% end %>
+</p>
+<script>
+$("button").click(function () {
+$("p").toggle("slow");
+});    
+</script>
+	

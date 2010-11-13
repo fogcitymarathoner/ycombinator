@@ -1,0 +1,10 @@
+				<div class="project_participant_leftcol">
+					<div class="project_participant_update">
+						<%= render(:partial => "update_nav") %>
+						<% if @Project.is_team_leader(@current_profile)==true %>
+						<%= render(:partial => "/updates/list_updates_edit") %>
+						<%else%>
+						<%= render(:partial => "/updates/list_updates") %>
+						<%end%>
+					</div>
+				</div>

@@ -1,0 +1,51 @@
+<a id="tip5" title="Login" href="#login_form">Try now</a>	
+<div style="display:none">
+
+	<form id="login_form" method="post" action="">
+	    	<p id="login_error">Please, enter data</p>
+		<p>
+			<label for="login_name">Login: </label>
+			<input type="text" id="login_name" name="login_name" size="30" />
+		</p>
+		<p>
+			<label for="login_pass">Password: </label>
+			<input type="password" id="login_pass" name="login_pass" size="30" />
+		</p>
+		<p>
+			<input type="submit" value="Login" />
+		</p>
+		<p>
+		    <em>Leave empty so see resizing</em>
+		</p>
+	</form>
+</div>
+<script type="text/javascript">
+$("#tip5").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'onClosed'		: function() {
+	    $("#login_error").hide();
+	}
+});</script>
+<script type="text/javascript">$("#login_form").bind("submit", function() {
+
+	if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
+	    $("#login_error").show();
+	    $.fancybox.resize();
+	    return false;
+	}
+
+	$.fancybox.showActivity();
+
+	$.ajax({
+		type		: "POST",
+		cache	: false,
+		url		: "/data/login.php",
+		data		: $(this).serializeArray(),
+		success: function(data) {
+			$.fancybox(data);
+		}
+	});
+
+	return false;
+});</script>

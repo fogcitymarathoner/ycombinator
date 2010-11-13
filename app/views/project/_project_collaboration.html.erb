@@ -1,0 +1,758 @@
+<script type="text/javascript" src="/javascripts/tinyeditor.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+
+  String.prototype.trim = function() {
+    return this.replace(/^\s+|\s+$/g,"");
+  }
+
+
+  function endsWith(string, str)
+  {
+
+    var lastIndex = string.lastIndexOf(str);
+
+    return (lastIndex != -1) && (lastIndex + str.length == string.length);
+
+  }
+
+
+  function addReplyDiv(id) {
+  
+  
+    var newdiv = '<textarea onclick="searchForURL(false);" onkeyup="searchForURL(true)" id="replyinput" style="width:500px;height:50px"></textarea> <br/> <a href="#" "onclick="validateAndSubmit('+id+');"">Save</a>';
+  
+    document.getElementById('hrefreply_'+id).innerHTML = '';
+  
+    document.getElementById('reply_'+id).innerHTML=newdiv;
+    layout();
+  
+  }
+
+  function showRelatedResearch(evt,associated_id, elem_id) {
+    var srcEl = evt.srcElement || evt.target;
+    jQuery.noConflict();
+    evt.cancelBubble = true;
+    if (evt.stopPropagation) evt.stopPropagation();
+   
+    if (srcEl.className != 'dialogdiv'){
+      return;
+    }
+
+    if(jQuery('#replyid').length>0) {
+      return;
+    }
+    jQuery('.dialogdiv').css('background-color', 'transparent');
+    var idStr = 'dialogue_' + elem_id;
+
+    jQuery('#'+idStr).css('background-color', 'rgb(240,240,240)');
+
+    jQuery.ajax({ url: "/relatedresearch?associated_id="+associated_id, context: document.body, success: function(data) {
+
+
+        var existing = document.getElementById('relatedresearch').innerHTML;
+     
+        //     alert(data);
+        var cutData = data.substring(data.indexOf('<div'));
+        //    alert(cutData);
+        jQuery('#relatedresearch').html(cutData);
+      }
+    });
+  
+
+  
+  
+  }
+
+  function dynamicLoad(url)
+  {
+  
+    var script = document.createElement('script');
+    script.setAttribute('src',url);
+    script.setAttribute('type','text/javascript');
+    var loaded = false;
+    var loadFunction = function()
+    {
+      if (loaded) return;
+      loaded=true;
+      // your code goes here
+  
+    };
+    script.onload = loadFunction;
+    script.onreadystatechange = loadFunction;
+  
+  
+  
+    document.getElementsByTagName("head")[0].appendChild(script);
+   
+
+   
+  }
+
+
+
+  function uniqid()
+  {
+
+    var newDate = new Date;
+
+    return newDate.getTime();
+
+  }
+       
+       
+  function runit() {
+         
+
+         
+  }
+
+
+
+  function addToResearch(url) {
+
+    jQuery.ajax({ url: "/title.js?url="+encodeURI(url), context: document.body, success: function(data) {
+
+        var title = data;
+    
+        var existing = document.getElementById('relatedresearch').innerHTML;
+    
+        var uniqueid = uniqid();
+
+        if (existing.lastIndexOf(url)==-1) {
+        
+					
+          var newdiv = '<div id="'+uniqueid+'_tags"><textarea '+'id="tags_tagtext'+uniqueid+'" name="tags[tagtext]"></textarea><input type="checkbox" checked="true"/>Publish To Research</div>';
+          document.getElementById('relatedresearch').innerHTML = existing+'<% form_for :research_item, :html => {:name => "newresearch_'+uniqueid+'", :id => "newresearch_'+uniqueid+'" }, :url => "/research_item/saveitem" do |form| %>' +'<div id="'+uniqueid+'_title">'+title+'</div>'+'<div id="'+uniqueid+'_url">'+url+'</div>'+newdiv+'<br/><br/><% end %>';
+          
+          
+          constructTagInput(uniqueid);
+          
+          
+        }
+      
+        return data;
+
+      }
+    });
+  
+  
+  
+  }
+
+  function showEditor() {
+  
+  
+    document.getElementById('dialogue_list').style.display="none";
+    document.getElementById('mainform').style.display="block";
+  
+ 
+
+  
+  }
+
+
+
+  function updateTitle() {
+  
+
+    var text = document.mainform.title_text.value;
+    document.getElementById('subjectdiv').innerHTML = text;
+
+  
+  
+  }
+
+  function searchForURL(space) {
+
+
+    var value =  document.mainform.wmdinput.value;
+
+    if (value=='' && document.getElementById('replyinput')) {
+
+      value = document.getElementById('replyinput').value;
+  
+    }
+
+    var pattern = '';
+  
+    if (space==true) {
+      pattern = /((https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])(\s|\.\s|\,\s|\n|\r|\n\r)/ig;
+   
+    }
+    else {
+
+      pattern = /((https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+   
+    }
+
+
+   
+    var matches = value.match(pattern);
+
+    if (matches!=null) {
+
+      for (var i = 0, len = matches.length; i < len; i++) {
+
+        var firstmatch = matches[i];
+    
+        match = firstmatch.trim();
+    
+        var toadd = match;
+    
+        if (match.lastIndexOf(',')!=-1||match.lastIndexOf('.')!=-1) {
+    
+          if (endsWith(match,',')) {
+            toadd = match.substring(0,match.length-1);
+          }
+          if (endsWith(match, '.')) {
+            toadd = match.substring(0,match.length-1);
+          }
+    
+        }
+    
+        addToResearch(toadd);
+
+
+      }
+
+    }
+
+
+
+
+  }
+
+
+
+  function addFile() {
+  
+
+    if(document.mainform.file_checkbox.checked == true) {
+
+      document.getElementById('file_div').innerHTML='<b>Attach file:</b><br/>   <input type="file" style="width:500px"/>';
+  
+    } else {
+    
+      document.getElementById('file_div').innerHTML='';
+    
+    }
+  
+  
+  
+
+  
+  
+  }
+
+
+
+  function addPollOptions() {
+    poll_div.style.display = "block"; //to show it
+  
+  
+    if(document.mainform.poll_checkbox.checked == true) {
+          
+          
+          
+
+           
+          
+          
+    }
+    else {
+    
+      poll_div.style.display = "none"; //to show it
+
+    
+    }
+    layout();
+  
+  
+  }
+
+  function publishResearchItems() {
+    jQuery.noConflict();
+    var association = uniqid();
+    rAssociation = association;
+
+    var researchforms = document.getElementById("relatedresearch").getElementsByTagName("form");
+
+
+    for (var i=0;i<researchforms.length;i++)  {
+
+      var form = researchforms[i];
+
+      var contentdivs = form.getElementsByTagName("div");
+      var title = ''
+      var url = ''
+      var tags = ''
+
+      for (var j=0;j<contentdivs.length;j++)  {
+
+        var onediv = contentdivs[j];
+
+        for( var k = 0; k < onediv.attributes.length; k++ ) {
+          var attribs = onediv.attributes[k].nodeName.toLowerCase();
+          if ( attribs=='id') {
+
+            var oneattrib = onediv.attributes[k];
+
+            var attribnodevalue = oneattrib.nodeValue;
+
+
+            if (endsWith(attribnodevalue,'title')) {
+
+
+              title = onediv.innerHTML;
+            }
+            else if (endsWith(attribnodevalue,'url')) {
+
+              url = onediv.innerHTML;
+            }
+            else if (endsWith(attribnodevalue,'tags')) {
+              var textarea = onediv.getElementsByTagName('textarea')[0];
+              tags = textarea.value;
+              var inputdiv = onediv.getElementsByTagName('input')[0];
+            }
+
+
+          }
+        }
+
+
+      }
+
+      var formid = ''
+      for( var x = 0; x < form.attributes.length; x++ ) {
+
+        if ( form.attributes[x].nodeName.toLowerCase()=='id') {
+          formid = form.attributes[x].nodeValue;
+        }
+        if ( form.attributes[x].nodeName.toLowerCase()=='action') {
+
+
+
+          var actionvalue = '/research_item/saveitem?url='+url+'&tagtext='+tags+'&title='+title+'&dialogue_association='+association;
+
+
+          form.attributes[x].nodeValue = actionvalue;
+
+
+
+
+
+        }
+      }
+
+
+
+      var submitid = '#'+formid;
+
+      var dataString = jQuery(submitid).serialize();
+
+
+      jQuery.ajax({
+        type: "POST",
+        url: "/research_item/saveitem?url="+url+"&tagtext="+tags+"&title="+title+"&dialogue_association="+association,
+        cache: false
+      });
+      if(i==researchforms.length-1) {
+        publishFlag = true;
+      }
+    }
+    if(researchforms.length==0) {
+      publishFlag = true;
+    }
+
+  }
+
+  var publishFlag = false;
+  var currentReplyId = null;
+  var rAssociation = null;
+
+  function validateAndSubmit(replyid) {
+    if(replyid) {
+      currentReplyId = replyId;
+    }
+    publishResearchItems();
+    setTimeout(publishDialogue, 500);
+  }
+
+
+  function publishDialogue() {
+    if(publishFlag==false) {
+      setTimeout(publishDialogue, 500);
+      return;
+    }
+  
+    jQuery.noConflict();
+    var association = rAssociation;
+    var replyid = currentReplyId;
+
+    publishFlag = false;
+    currentReplyId = null;
+    rAssociation = null;
+  
+    if (replyid==null) {
+  
+      var value = document.getElementById('wmd-preview').innerHTML;
+  
+      document.mainform.dialogue_body.value = value;
+
+
+      value = document.getElementById('subjectdiv').innerHTML;
+
+      document.mainform.dialogue_title.value = value;
+  
+      document.mainform.research_association.value = association;
+  
+      value = document.getElementById('authordiv').innerHTML;
+  
+      document.mainform.dialogue_author.value = value;
+  
+      value = document.mainform.title_text.value;
+
+      document.mainform.dialogue_title.value = value;
+  
+      document.mainform.is_reply.value = 'false'
+
+      /*
+  document.mainform.url.value = url;
+  document.mainform.research_title.value = title;
+  document.mainform.dialogue_association.value = association;
+  document.mainform.tagtext.value = tags;
+       */
+      document.mainform.submit();
+  
+    } else {
+  
+
+      var value = document.getElementById('replyinput').value;
+
+   
+      document.mainform.dialogue_body.value = value;
+  
+      value = document.getElementById('authordiv').innerHTML;  
+      
+      document.mainform.dialogue_author.value = value;
+      document.mainform.research_association.value = association;
+      
+      document.mainform.is_reply.value = 'true';
+      document.mainform.dialogue_id.value = replyid;
+      /*
+  document.mainform.url.value = url;
+  document.mainform.research_title.value = title;
+  document.mainform.dialogue_association.value = association;
+  document.mainform.tagtext.value = tags;
+       */
+      document.mainform.submit();
+  
+    }
+
+  
+  
+  }
+
+</script>
+
+
+<script type="text/javascript">
+
+
+  
+  
+ 
+
+  function saveProjUpdate() {
+  
+
+    editor.post();
+  
+
+    var text = document.project_discussion_form.projinput;
+    var textvalue = text.value;
+ 
+    document.project_discussion_form.submit();
+  
+  }
+
+
+  function showDiscussEditor() {
+  
+    document.getElementById('discusscreate').style.display='none';
+  
+    document.getElementById('projdiscussioninput').style.display='block';
+  
+  
+  
+  
+  }
+/*
+  function reactOnClick(event, association, dialogue) {
+    if (!event) {
+      window.event.cancelBubble = true;
+    } else {
+      event.stopPropagation();
+    }
+    showRelatedResearch(event,association, dialogue);
+  }
+*/
+
+</script>
+
+
+<div class="project_participant_leftcol">
+
+  <div class="project_participant_update" >
+
+    <a href="#" onclick="javascript:showEditor();">New</a>
+    <br/><br/>
+
+    <div id="dialogue_list">
+      <% @Dialogue.each do |d| %>
+
+
+        <% if d.is_reply.equal?(false) %>
+
+
+
+          <div id="dialogue_<%= d.id -%>" onmouseover="showRelatedResearch(event,<%= d.research_association -%>, <%= d.id -%>);" class="dialogdiv">
+            <% if d.title? %>
+              <%= d.title -%><br/><br/>
+            <% end %>
+
+            <% if d.body? %>
+              <%= d.body -%><br/>
+            <% end %>
+
+            <%= d.author -%><br/>
+
+            <div id="hrefreply_<%= d.id -%>">
+              <a href="javascript:addReplyDiv(<%= d.id -%>);">Reply</a><br/><br/>
+            </div>
+          </div>
+          <div id="reply_<%= d.id -%>"></div>
+          -------------------------------------------------<br/><br/>
+          <div style="margin-left:50px">
+            <%= render :partial => 'dialogue/dialogue', :collection => d.children %>
+            <br/>
+          </div>
+
+        <% end %>
+
+      <%- end %>
+
+
+    </div>
+
+
+
+    <% form_for  (:dialogue,  :url => '/savedialogue?projid='+@Project.id.to_s, :html => {:name => 'mainform', :style => 'display:none;', :id => 'mainform'}) do |f| %>
+
+      <div id="wmd-button-bar" class="wmd-panel"></div>
+
+      <br/>
+
+      <div style="margin-left:15px">
+
+        <div id="attach">
+
+
+          Title: <input id="title_text" name="title_text" type="text" style="width:450px" onkeyup="updateTitle();" />
+        </div><br/>
+      </div>
+      <textarea name="wmdinput" id="wmd-input" class="wmd-panel" onclick="searchForURL(false);" onkeyup="searchForURL(true);"></textarea>
+      <a href="#" onclick="javascript:addPollOptions();">Add Poll</a>
+      <br/>
+
+      <br/>
+
+
+      <div id="title_div">
+
+
+      </div>
+
+
+      <b>
+        <div id="subjectdiv">
+
+
+
+        </div>
+        <br/>
+
+      </b>
+      <div id="wmd-preview" class="wmd-panel"></div>
+      <br/>
+      <div id="authordiv"><b>--<%= display_name %></b></div>
+
+
+
+      <div id="poll_div" style="display:none">
+
+        Poll Type:<br/><br/>
+
+        <input type="radio" name="polltype" onclick="showAverage();" />Numeric average<BR/>
+        <input type="radio" name="polltype" onclick="showMultipleChoice();"/>Multiple choice<BR/><br/>
+
+        <script type="text/javascript">
+           
+          function showAverage() {
+             
+            numeric_average_ranges.style.display="block";
+
+            multiple_choice_ranges.style.display="none";
+             
+          }
+           
+          function showMultipleChoice() {
+             
+             
+            numeric_average_ranges.style.display="none";
+             
+            multiple_choice_ranges.style.display="block";
+             
+             
+          }
+           
+           
+        </script>
+
+
+
+        <div id="numeric_average_ranges" style="display:none">
+
+
+          Question:<br/> <textarea style="width:500px;height:75px"></textarea>
+
+          <br/>
+
+          Minimum<br/>
+          <input type="text"/><br/>
+
+          Maximum<br/>
+          <input type="text">
+
+          </input>
+
+          <br/>
+
+        </div>
+
+        <div id="multiple_choice_ranges" style="display:none">
+
+          Question 1: <input type="text"/><br/>
+          Question 2: <input type="text"/><br/>
+          Question 3: <input type="text"/><br/>
+          Question 4: <input type="text"/><br/>
+          Question 5: <input type="text"/><br/>
+          Question 6: <input type="text"/><br/><br/>
+
+        </div>
+
+
+        Poll Options:<br/><br/>
+
+
+
+
+        <input type="checkbox"/> Show results to respondents before voting<br/>
+
+        <input type="checkbox"/> Show results to respondents after voting<br/>
+
+
+        <input type="checkbox"/> Show individual votes cast to respondents<br/>
+        <br/>
+
+
+      </div>
+
+
+      <div id="file_div"> </div>
+
+
+
+
+      <br/><br/>
+
+
+      <input type="hidden" name="dialogue_body"/>
+      <input type="hidden" name="dialogue_title"/>
+      <input type="hidden" name="dialogue_author"/>
+      <input type="hidden" name="dialogue_id"/>
+      <input type="hidden" name="is_reply"/>
+      <input type="hidden" name="research_association"/>
+
+      <input type="hidden" name="url"/>
+      <input type="hidden" name="research_title"/>
+      <input type="hidden" name="dialogue_association"/>
+      <input type="hidden" name="tagtext"/>
+
+
+      <input type="button" name="Save Activity" onclick="validateAndSubmit();" value="Save"/>
+
+
+
+    </div>
+
+  <%- end %>
+
+
+
+
+
+  <div id="projupdateinput" style="display:none">
+    <textarea id="projinput" name="projinput" style="width:400px; height:200px"></textarea>
+
+
+
+    <a href="#" onclick="saveProjUpdate();">Save</a>
+  </div>
+
+
+
+
+  <!--
+  <div id="projupdate" class="project_participant_update">
+  <div class="project_update">
+
+  </div>
+  <br/>
+
+  </div>
+  -->
+
+</div>
+<div class="project_participant_rightcol">
+  <div class="project_participant_activity">
+
+    <div id="relatedresearch">
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+  function layout() {
+    jQuery.noConflict();
+    var b = jQuery('div.project_participant_update').height()*1.1 + 50;
+    var c = screen.height;
+    if (b < c){
+      b = c;
+    }
+    jQuery('div.inside-container').css('height', b);
+  }
+  jQuery(document).ready(layout());
+</script>
+
+

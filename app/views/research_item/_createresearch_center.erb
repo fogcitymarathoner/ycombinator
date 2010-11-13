@@ -1,0 +1,102 @@
+
+	
+	<style type="text/css">
+	
+	.url {
+	  
+	  width:500px;
+	  
+	}
+	
+	#create_research {
+	
+	  margin:0px;
+	
+	}
+	
+	   
+
+  </style>
+  
+  <div style="display:none" id="tagquerytext"></div>
+
+  
+	<div class="inside-container">				
+  		<div class="myresearch_leftnav_top">
+  			<div class="myresearch_leftnav">
+  				<div class="myresearch_leftnav_bytype">
+  				 <img src="/images/create_research_button.png" style="margin-top:20px" onclick="javascript:location.href='/createresearch';">
+  				</div>
+  				<div class="myresearch_leftnav_searchbar"></div>
+  				<h2>Search by Tag</h2>
+  				<div class="myresearch_leftnav_bytag_top">
+  				<div id="lefttagnav" class="myresearch_leftnav_bytag">
+					
+  										<%= render_cell :library, :recent %>
+  					</div>
+  				<div class="myresearch_leftnav_bytag_btm"></div>		
+  				</div>
+  			</div>
+  			<div class="myresearch_leftnav_btm"></div>	
+  			</div>
+  			<div class="myresearch_main_submenu">
+  			
+  			<div id="searchview" style="display:none">
+  			<br/><br/>
+  			<form name="myform" >
+        <input type='text' name='q' id='q' size="80"  onKeyPress="return submitenter(this,event);"/>
+         <a href="javascript: submitsearchform()">Search</a>
+         </form>
+  		  <div id="searchlistview" >
+
+
+  		  </div>
+  		</div>
+        
+  			
+  			
+  			<div id="createresearchform">
+  			<br/><br/><br/>
+  			
+	<% form_for :research_item, :html => {:name => 'research_form'}, :url => { :action => :create } do |form| %>
+	
+		
+		<div id="notediv">
+		
+		<br/><br/>
+		
+          URL<br/>
+          
+          		<% fields_for @Link do |link| %>
+
+    					  <%= link.text_field :url, :class => 'url', :onblur =>"getUrl()" %><br/><br/>
+
+    					<% end %>
+
+
+					Concepts<br/>
+					<% fields_for :tags do |tag| %>
+
+					<%= tag.text_area("tagtext" )%>
+
+					<% end %>
+		      <br/>
+		      
+		        <% fields_for @Link do |link| %>
+
+      			  Title<br/>
+      		  <%= link.text_field :title, :class => 'url' %><br/><br/>
+
+      		  	<% end %><br/>
+
+      	        <div id="gbutton" class="button" ><%= submit_tag 'Create', :onclick => 'alertForm();', :class=> 'submit' %></a></div>
+
+      			<% end  %>
+      	</div>
+      		
+      			
+      		  	</div>
+
+          </div>
+          
+          </div>

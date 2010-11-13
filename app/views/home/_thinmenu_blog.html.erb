@@ -1,0 +1,73 @@
+<div class="thinmenu_blog">
+			<ul id="navlogo_thin">
+			<li class="logo"><a href="/">3Strides</a></li>
+		</ul>
+		<ul id="thinnav">			
+		</ul>
+	
+		</div>		
+
+<script type="text/javascript">
+$("#login_modal").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'onClosed'		: function() {
+	    $("#login_error").hide();
+	}
+});</script>
+<script type="text/javascript">$("#login_modal").bind("submit", function() {
+
+	if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
+	    $("#login_error").show();
+	    $.fancybox.resize();
+	    return false;
+	}
+
+	$.fancybox.showActivity();
+
+	$.ajax({
+		type		: "POST",
+		cache	: false,
+		url		: "/data/login.php",
+		data		: $(this).serializeArray(),
+		success: function(data) {
+			$.fancybox(data);
+		}
+	});
+
+	return false;
+});</script>
+
+<script type="text/javascript">
+$("#signup_modal").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'onClosed'		: function() {
+	    $("#login_error").hide();
+	}
+});</script>
+<script type="text/javascript">
+
+//$("#signup_modal").bind("submit", function() {
+
+//	if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
+//	    $("#login_error").show();
+//	    $.fancybox.resize();
+//	    return false;
+//	}
+
+	$.fancybox.showActivity();
+
+//	$.ajax({
+//		type		: "POST",
+//		cache	: false,
+//		url		: "/data/login.php",
+//		data		: $(this).serializeArray(),
+//		success: function(data) {
+//			$.fancybox(data);
+//		}
+//	});
+
+return false;
+});
+</script>

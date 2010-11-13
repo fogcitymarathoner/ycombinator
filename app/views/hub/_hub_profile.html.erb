@@ -1,0 +1,23 @@
+			<div class="hub_profile">
+				<div class="hub_profile_overall">
+					56
+				</div>
+				<div class="hub_profile_credits">
+					87
+				</div>
+				<div class="hub_profile_watchpart">
+					<p><a title="<%= @current_profile.display_name %>'s Watched" href="/hubhome_watching">
+Watched Projects: <%= @watched_project_count %></a></p>
+					<p><a title="<%= @current_profile.display_name %>'s Participating" href="/hubhome_participation">
+Participating Projects: <%= @participant_project_count %></a></p>
+
+				
+				</div>
+
+				<div class="hub_profile_badges">
+					<p>Badges:</p>
+					<% @team_leader_badge.each do |u| %>
+						<%= image_tag(u) %>
+					<%end%>
+				</div>
+			</div>

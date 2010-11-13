@@ -1,0 +1,183 @@
+<!--
+	 <script type='text/javascript' src='/javascripts/prototype.js'>
+        </script>
+<script type="text/javascript" src='/javascripts/scrollercontrol.js'>
+        </script>
+        <script type='text/javascript' src='/javascripts/scroller.js'>
+        </script>-->
+        <!--[if IE]>
+            <script language="javascript" type="text/javascript" src="/javascripts/excanvas.js"></script>
+        <![endif]-->
+        
+        
+        
+        <link rel='stylesheet' type='text/css' media='all' href='/stylesheets/scroller.css'/>
+        <link rel='stylesheet' type='text/css' media='all' href='/stylesheets/researchstyle.css'/>
+
+        <%= stylesheet_link_tag "tinyeditorstyle.css" %>
+
+
+ 
+<%= stylesheet_link_tag "forms.css"  %> 
+<%= stylesheet_link_tag "requests.css"  %>
+<%= stylesheet_link_tag "events.css"  %> 
+
+
+
+<%= stylesheet_link_tag "promotion.css"  %> 
+<%= stylesheet_link_tag "jquery.fancybox-1.3.1.css"  %> 
+
+<%= stylesheet_link_tag "token-input-facebook.css"  %> 
+<%= stylesheet_link_tag "token-input.css"  %>
+<%= stylesheet_link_tag "layout.css"  %> 
+<%= stylesheet_link_tag "typography.css"  %>
+
+
+
+
+
+
+<%= javascript_include_tag "application.js"  %>
+  
+        <script type="text/javascript">
+              function addtagstoresearch(id){
+                var arr = document.getElementsByTagName('div');
+                for (a in arr){
+                  if (a.className == 'add_tags_class'){
+                    e.style.display = 'none';
+                  }
+                }
+                
+
+                var t = "div_add_tags_"+ id;
+                var e = document.getElementById(t);
+                e.style.display = 'block';
+                t = "a_tag_" +id;
+                e = document.getElementById(t);
+                e.style.display = 'none';
+                constructTagInput(id);
+              }
+
+              function cancelTag(id){
+                var t = "div_add_tags_"+ id;
+                var e = document.getElementById(t);
+                e.style.display = 'none';
+                $("div.token-input-dropdown-facebook").each().remove();
+              }
+
+              function submittagsearchORRedirect(text){
+               if (text.indexOf('project:') == -1){
+                 submittagsearch(text);
+               }
+               else {
+                 window.location = "/project/find_project_by_name?name="+text;
+               }
+             }
+       </script>
+
+
+      <style type="text/css">
+          #selection img {
+              margin-left: 5px;
+              margin-top: 10px;
+              margin-bottom: 10px;
+              cursor: pointer;
+          }
+
+          #selection p {
+              margin-bottom: 10px;
+              padding: 0;
+              width: 400px;
+              font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+              font-weight: normal;
+          }
+
+          #loader {
+              margin-top: 5px;
+              padding: 0;
+          }
+      </style>
+
+
+
+</head>
+<body>
+
+<div>
+
+    <div id="first">
+    </div>
+
+    <div id="graphDiv" style="display:none;width: 800px;">
+
+    </div>
+
+</div>
+
+<div id="scrollerid" style="display:none"></div>
+
+
+		<% if @ResearchItems.blank? %>
+		<p>You have not saved any research items</p>
+		<% else %>
+
+      
+		<% @ResearchItems.each do |c| %>
+
+			<div class="research_summary">
+			
+			<h3>
+      
+			<%= link_to c.title, c.url -%>
+			
+					</h3>
+			<%if "#{c.rssurl}" != "" %>
+			   <span id="loader<%= "#{c.id}" %>"></span>
+			<img src="/images/rss.jpg" width="16px" onClick="getRSSFeed('<%= c.rssurl %>',<%=c.id %>);"/>
+			<% end %>
+	
+        <div id="research_date"><%= c.created_at.strftime("%m/%d/%Y at %I:%M%p") -%></div>
+
+			              <div id="scrollercontainer<%= "#{c.id}" %>"></div>
+			  <% @tagshash.each_pair do |k,v|  %>
+
+          <%if "#{k}" == "#{c.id}" %>
+            <br clear="all"/>
+            
+      			<% v.each do |t| %>
+      			  
+
+                <a class="individual-tag" onclick="javascript:submittagsearchORRedirect('<%= t.tagtext %>');"><%= t.tagtext %></a>
+                   			
+      			<% end %>
+            			    
+      			  
+      		
+
+        		    
+        <% end %>
+
+
+        <% end %>
+                               <a id="a_tag_<%= c.id -%>" href="#" onclick="addtagstoresearch('<%= c.id %>');">Add tags</a>
+                                <div id="div_add_tags_<%= c.id -%>" style="display: none" class="add_tags_class">
+                                  
+                                  <% form_tag '/research_item/add_tag_to_existing_research' do -%>
+                                  <input type="text" id="tags_tagtext<%= c.id -%>" name="tagtext"></input>
+                                  <input type="hidden" name="researchid" value="<%= c.id -%>">
+                                  </input>
+                                  <%= submit_tag "Add tags"  -%>
+                                  <%= submit_tag " Cancel ", { :name => "tags[Cancel]" } %>
+                                  <% end %>
+                                  
+
+                                </div>
+
+        
+	
+      </div>
+		<% end %>
+		</ul>
+		<% end %>
+		
+

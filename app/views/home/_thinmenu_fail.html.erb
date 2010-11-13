@@ -1,0 +1,83 @@
+<div class="thinmenu_container">
+<div class="thinmenu_home">
+			<ul id="navlogo_thin">
+			<li class="home_logo"><a href="/">3Strides</a></li>
+		</ul>
+		<ul id="thinnav">		
+		 	
+			<li class="login"><%= link_to 'Login', new_user_session_path, :id => 'login_modal' %></li>
+			<li class="signup"><a id="signup_modal" title="Signup" href="/signup">Sign Up</a></li>
+		</ul>
+
+		</div>		
+		</div>
+<%= link_to '', new_user_session_path, :id => 'autostart' %>
+<script type=text/javascript>$(document).ready(function() {
+    $("#autostart").fancybox({'overlayShow':true,frameWidth:
+838,frameHeight:540}).trigger('click');("#login_error").show()
+  });
+  
+  </script>
+<script type="text/javascript">
+$("#login_modal").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'onClosed'		: function() {
+	}
+});</script>
+
+<script type="text/javascript">$("#login_modal").bind("submit", function() {
+
+	if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
+	    $("#login_error").show();
+	  	    return false;
+	}
+
+	$.fancybox.showActivity();
+
+	$.ajax({
+		type		: "POST",
+		cache	: false,
+		url		: "/data/login.php",
+		data		: $(this).serializeArray(),
+		success: function(data) {
+			$.fancybox(data);
+		}
+	});
+
+	return false;
+});</script>
+
+<script type="text/javascript">
+$("#signup_modal").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'onClosed'		: function() {
+	    $("#login_error").hide();
+	}
+});</script>
+<script type="text/javascript">
+
+//$("#signup_modal").bind("submit", function() {
+
+//	if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
+//	    $("#login_error").show();
+//	    $.fancybox.resize();
+//	    return false;
+//	}
+
+	$.fancybox.showActivity();
+
+//	$.ajax({
+//		type		: "POST",
+//		cache	: false,
+//		url		: "/data/login.php",
+//		data		: $(this).serializeArray(),
+//		success: function(data) {
+//			$.fancybox(data);
+//		}
+//	});
+
+//return false;
+//});
+</script>

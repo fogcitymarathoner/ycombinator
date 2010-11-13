@@ -1,0 +1,65 @@
+<%= render(:partial => "/layouts/project_admin_team")%>
+	<%= render(:partial => "/layouts/insidemenu") %>
+	<div class="project_admin-container">
+		<%=render(:partial => "admin_view_subnav") %>
+		<div class="project_admin_main">
+<div class="project_admin_main_head">
+				<div class="project_title">
+        			<% if @Project.logo? %>
+			        <%= image_tag @Project.logo.url(:thumb) %>
+         		<% else %>
+		      		<h2>Admin: <%= @Project.projectname %>	</h2>	
+          		<% end %>          
+	    	</div>
+			<h3>Team Leader: <%= @Project.team_leader.display_name %></h3>
+			<h4>Location: <%= @Project.project_location %></h4>
+		</div>
+		<div class="project_admin_leftcol">
+			<div class="project_admin_team_list">
+			<h3>Current Project Team List</h3>List of Project Team Members Here
+			</div>
+			<div class="project_admin_team_add">
+				<h3>Admin: Manage Team Members</h3>Add Team Member Function Goes Here
+			</div>
+		</div>
+		<div class="project_admin_rightcol">
+			<div class="project_admin_team_participants">
+				<h3>Current List of Participants</h3>
+				<% if @Project.participating.empty? %>
+				<span style ="color:#888;">Currently there are No Particpants for this Project</span>
+				<%else%>
+					<ul class="current_participants">
+						<% @Project.participating.each do |p| %>
+						<li><a class="profile_modal" title="View <%= p.display_name %>'s Profile" href="/public_profile?id=<%= p.id %>">
+<%= p.name_with %></a></li>
+						<%end%><%end%>
+					</ul>
+			</div>
+			<div class="project_admin_team_participants">
+				<h3>Admin: Participant Applicants</h3>Admin for Project Participants Here
+			</div>
+			<div class="project_admin_team_watchers">
+				<h3>Current List of Watchers</h3>
+				<% if @Project.project_watchers.empty? %>
+				<span style ="color:#888;">Currently there are No Watchers for this Project</span>
+				<%else%>
+					<ul class="current_watchers">
+						<% @Project.project_watchers.each do |p| %>
+						<li><a class="profile_modal" title="View <%= p.display_name %>'s Profile" href="/public_profile?id=<%= p.id %>">
+<%= p.name_with %></a></li>
+						<%end%><%end%>
+					</ul>
+			</div>
+		</div>
+	</div>   <%=render(:partial => "layouts/insidefooter") %>
+	</div>
+
+
+
+	
+	
+	
+
+	</body>
+	
+	</html>

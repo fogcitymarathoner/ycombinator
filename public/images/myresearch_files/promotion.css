@@ -1,0 +1,130 @@
+.promotion {
+	background:url(../../gfx/promotion/bg.png);
+	width:800px;
+	position:absolute;
+	top:100px;
+	left:50%;
+	margin-left:-400px;
+	z-index:2500;
+}
+.promotion.hidden {
+	top:-1000px;
+}
+.promotion .prTop, .promotion .prBottom {
+	height:12px;
+	position:absolute;
+	margin:0 12px;
+	width:776px;
+	background:url(../../gfx/promotion/bg.png);
+	left:0px;
+}
+
+.promotion .prTop { top:-12px; }
+.promotion .prBottom { bottom:-12px; }
+
+.promotion .close {
+	background:url(../../gfx/promotion/closebox.png) no-repeat 0 0;
+	height:30px;
+	width:30px;
+	position:absolute;
+	top:-23px;
+	right:-15px;
+	z-index:150;
+	cursor:pointer;
+}
+
+.promotion .close.Text {
+	right:10px;
+	bottom:0px;
+	top:auto;
+	background-image:none;
+	font-size:11px;
+	color:#aaa;
+	height:auto;
+	width:auto;
+	text-decoration:underline;
+}
+
+.promotion .content {
+	padding:0 12px;
+	color:#f4f4f4;
+	font-size:20px;
+}
+
+.promotion .content div.text{
+	padding:0 35px 10px 0;
+}
+
+.promotion .mask {
+	background-image:url(../../gfx/promotion/cornermask.png);
+	height:12px; width:12px;
+	display:block;
+	position:absolute;
+	z-index:100;
+}
+.promotion .mask.topLeft,
+.promotion .mask.topRight {
+	top:-12px; 
+}
+
+.promotion .mask.bottomLeft,
+.promotion .mask.bottomRight {
+	bottom:-12px;
+}
+
+.promotion img.left {
+	float:left;
+	margin:0 15px 15px 0;
+}
+
+.promotion .text h1,
+.promotion .text h2,
+.promotion .text h3 {
+	color:#f4f4f4;
+}
+
+
+
+.miniPromotion {
+	top:-2px;
+	position:relative;
+	margin:0 auto;
+	width:916px;
+}
+
+
+.miniPromotion .miniTab {
+	position:absolute;
+	height:0px;
+	left:0px;
+	background:#7FC241 url(../../gfx/promotion/gradient.png) repeat-x left top;
+	cursor:pointer;
+}
+
+.miniPromotion .miniTab.shown {
+	height:22px;
+}
+
+.miniPromotion .miniTab:hover {
+	background-color:#25AAE1;
+}
+.miniPromotion p {
+	text-decoration:none;
+	color:#fff;
+}
+
+.miniPromotion p {
+	padding:5px;
+}
+.miniPromotion .title {
+	font-size:12px;
+	color:#fff; font-weight:bold;
+}
+
+
+.miniPromotion .promoCode {
+	color:#fff;
+	font-style:italic;
+}
+
+

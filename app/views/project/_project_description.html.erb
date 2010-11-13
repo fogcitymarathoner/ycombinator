@@ -1,0 +1,12 @@
+				<div class="project_participant_leftcol">
+					<div class="project_participant_update">
+						<%= render(:partial => "description_nav") %>
+						<% if @Project.is_team_leader(@current_profile)==true %>
+						<%= render(:partial => "project_description_edit") %>
+						<%else%>
+						<div class="embed"><%= @Project.desc_embed %></div>
+						<div class="col_head">Detailed Project Description and Goals</div>
+						<div class="project_desc"><%= @Project.project_description %></div>
+						<%end%>
+					</div>
+				</div>

@@ -1,0 +1,21 @@
+<div class="inside-container">
+	<%=render(:partial => "participant_view_subnav") %>
+	<div class="project_participant_main">
+		<div class="project_participant_main_head">
+			<div class="project_title">
+
+        	<% if @Project.logo? %>
+
+          	<%= image_tag @Project.logo.url(:thumb) %>
+
+          	<% else %>
+		    	<h2><%= @Project.projectname %>	</h2>	
+
+          	<% end %>          
+	
+      	</div>
+			<h3>Team Leader: <%= @Project.team_leader.display_name %></h3>
+				<h4>Location: <%= @Project.project_location %></h4>
+	</div>
+	</div>
+</div>

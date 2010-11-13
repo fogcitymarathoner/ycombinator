@@ -1,0 +1,12 @@
+
+
+<h1>Delete Project from Watch List</h1>
+
+<% form_for @delete_watched, :html => { :method => :delete } do |f| %>
+  <h2>Are you sure you want to delete this project from your watchlist?</h2>
+  <p>
+    <%= submit_tag "Delete" %>
+    or <%= link_to "cancel", myparticipation_path %>
+  </p>
+<% end %>
+

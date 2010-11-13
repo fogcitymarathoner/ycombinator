@@ -1,0 +1,8 @@
+				<li class="main"><a href="/project_participant?id=<%=@Project.id %>"></li></a>
+				<li class="workspace"><a href="/project_workspace?id=<%=@Project.id %>"></a></li>
+				<% if @Project.is_team_leader(@current_profile)==true %>
+				<li class="admin"><a href="/project_admin?id=<%=@Project.id %>"></a></li>
+				<% end %>
+				
+				<% if false %>		<li class="events"><a href>blah blah</a></li>
+				<li class="resources"><a href>blah blah blah</a></li><% end %>

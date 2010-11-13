@@ -1,0 +1,105 @@
+
+	   <script type='text/javascript' src='/javascripts/prototype.js'>
+        </script>
+        <!--[if IE]>
+            <script language="javascript" type="text/javascript" src="/javascripts/excanvas.js"></script>
+        <![endif]-->
+
+        <script type='text/javascript' src='/javascripts/scroller.js'>
+        </script>
+        
+        <script type="text/javascript" src='/javascripts/scrollercontrol.js'>
+        </script>
+        <link rel='stylesheet' type='text/css' media='all' href='/stylesheets/scroller.css'/>
+        <link rel='stylesheet' type='text/css' media='all' href='/stylesheets/relatedresearch.css'/>
+
+
+      <style type="text/css">
+          #selection img {
+              margin-left: 5px;
+              margin-top: 10px;
+              margin-bottom: 10px;
+              cursor: pointer;
+          }
+
+          #selection p {
+              margin-bottom: 10px;
+              padding: 0;
+              width: 400px;
+              font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+              font-weight: normal;
+          }
+
+          #loader {
+              margin-top: 5px;
+              padding: 0;
+          }
+      </style>
+
+
+
+</head>
+<body>
+
+<div>
+
+    <div id="first">
+    </div>
+
+    <div id="graphDiv" style="display:none;width: 800px;">
+
+    </div>
+
+</div>
+
+<div id="scrollerid" style="display:none"></div>
+
+	    
+		<% @ResearchItems.each do |c| %>
+			
+			
+
+      
+			<%= link_to c.title, c.url -%>
+			
+
+			<%if "#{c.rssurl}" != "" %>
+			  <!-- <span id="loader<%= "#{c.id}" %>"></span> -->
+                           <a id="rsslink" href="/load_modal_rss?url=<%= "#{c.rssurl}" %>&id=<%="#{c.id}"%>"><img src="/images/rss.jpg" width="16px"  /></a>			<% end %>
+	
+        <div><%= c.created_at.strftime("%m/%d/%Y at %I:%M%p") -%></div>
+
+			          <!--    <div id="scrollercontainer<%= "#{c.id}" %>"></div> -->
+			  <% @tagshash.each_pair do |k,v|  %>
+
+          <%if "#{k}" == "#{c.id}" %>
+            <br/>
+      			<% v.each do |t| %>
+      			  
+
+                <a class="individual-tag" onclick="javascript:submittagsearch('<%= t.tagtext %>');"><%= t.tagtext %></a><br/><br/>
+                   			
+      			<% end %>
+            			    
+      			  
+      		
+
+        		    
+        <% end %>
+
+
+        <% end %>
+        
+	
+                <div id="tagquerytext" style="display:none;"></div>
+		
+		<% end %>
+		
+<script type="text/javascript">
+jQuery('#rsslink').fancybox({
+	'scrolling'		: 'yes',
+	'titleShow'		: false,
+	'onClosed'		: function() {
+	    //jQuery("#login_error").hide();
+	}
+});</script>

@@ -1,0 +1,16 @@
+<div class="hub_thinmenu_subnav">
+	<ul id="hub_subnav">
+
+		<li class="start"><%= noproject %></li>
+		<li class="faq"><a id="faq_modal" title="View FAQ" href="/faq_inside">FAQ</a></li>
+			<script type="text/javascript">
+				$("#faq_modal").fancybox({
+				'scrolling'		: 'no',
+				'titleShow'		: false,
+				'onClosed'		: function() {
+					}
+				});
+			</script>	
+		<li class="create_research"><img src="/images/create_research_button.png" onclick="javascript:location.href='/createresearch';" /></li>
+	</ul>
+</div>

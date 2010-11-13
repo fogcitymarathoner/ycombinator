@@ -1,0 +1,31 @@
+<body id="project_public">
+	<%= render(:partial => "/layouts/insidemenu") %>
+	<div class="project_participant-container">
+		<%=render(:partial => "project_subnav") %>
+		<div class="project_public_main">
+			<%=render(:partial => "project_head") %>
+			<div class="project_public_leftcol">
+			<div class="project_public_description">
+				<h3>About This Project</h3>
+					<%= @Project.project_about %>
+				</div>
+			</div>
+			<div class="project_participant_rightcol">
+				<%=render(:partial => "project_stats") %>
+				<div class="project_public_activity"><h3>Activity Stream</h3>Activity Stream Here</div>
+			</div>
+
+		<%=render(:partial => "layouts/insidefooter") %>
+
+			<script type="text/javascript">
+			$("#profile_modal").fancybox({
+			'scrolling'		: 'no',
+			'titleShow'		: false,
+			'onClosed'		: function() {
+			}
+			});</script>
+
+
+
+	</body>
+</html>

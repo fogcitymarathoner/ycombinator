@@ -1,0 +1,175 @@
+
+
+<script type="text/javascript">
+
+
+  
+  
+ 
+
+function saveProjUpdate() {
+  
+
+ editor.post();
+  
+
+  var text = document.project_discussion_form.projinput;
+  var textvalue = text.value;
+ 
+  document.project_discussion_form.submit();
+
+}
+
+function showProjEditor() {
+  
+  document.getElementById('projupdate').style.display='none';
+  
+  document.getElementById('projupdateinput').style.display='block';
+  
+  new TINY.editor.edit('editor',{
+          id:'projinput',
+          width:584,
+          height:175,
+          cssclass:'te',
+          controlclass:'tecontrol',
+          rowclass:'teheader',
+          dividerclass:'tedivider',
+          controls:['bold','italic','underline','strikethrough','|','subscript','superscript','|',
+                            'orderedlist','unorderedlist','|','outdent','indent','|','leftalign',
+                            'centeralign','rightalign','blockjustify','|','unformat','|','undo','redo','n',
+                            'font','size','style','|','image','hr','link','unlink','|','cut','copy','paste','print'],
+          footer:true,
+          fonts:['Verdana','Arial','Georgia','Trebuchet MS'],
+          xhtml:true,
+          cssfile:'/stylesheets/tinyeditorstyle.css',
+          bodyid:'editor',
+          footerclass:'tefooter',
+          toggle:{text:'source',activetext:'wysiwyg',cssclass:'toggle'},
+          resize:{cssclass:'resize'}
+  });
+  
+  
+  
+}
+
+function showDiscussEditor() {
+  
+  document.getElementById('discusscreate').style.display='none';
+  
+  document.getElementById('projdiscussioninput').style.display='block';
+  
+  new TINY.editor.edit('editor',{
+          id:'discussinput',
+          width:584,
+          height:175,
+          cssclass:'te',
+          controlclass:'tecontrol',
+          rowclass:'teheader',
+          dividerclass:'tedivider',
+          controls:['bold','italic','underline','strikethrough','|','subscript','superscript','|',
+                            'orderedlist','unorderedlist','|','outdent','indent','|','leftalign',
+                            'centeralign','rightalign','blockjustify','|','unformat','|','undo','redo','n',
+                            'font','size','style','|','image','hr','link','unlink','|','cut','copy','paste','print'],
+          footer:true,
+          fonts:['Verdana','Arial','Georgia','Trebuchet MS'],
+          xhtml:true,
+          cssfile:'/stylesheets/tinyeditorstyle.css',
+          bodyid:'editor',
+          footerclass:'tefooter',
+          toggle:{text:'source',activetext:'wysiwyg',cssclass:'toggle'},
+          resize:{cssclass:'resize'}
+  });
+  
+  
+  
+}
+
+
+</script>
+<%= link_to '', '/project_setup_form_'+@wizard.to_s+'?id='+@Project.id.to_s+'&wizard='+@wizard.succ!, :id => 'project_setup_fb'  %>
+
+
+<script type=text/javascript>$(document).ready(function() {
+    $("#project_setup_fb").fancybox({'overlayShow':false, 'autoDimensions':true, 'showCloseButton':false}).trigger('click');
+	 });
+  
+  </script>
+
+<% form_for(:project, :url => '/project/edit?projid='+@Project.id.to_s, :html => {:name => 'project_discussion_form'}) do |f| %>  
+
+<div class="project-container">
+<div class="project_participant_thinmenu_subnav">
+<ul id="project_participant_subnav">
+	<li class="hurdle"><a href="" title="Summary Section">blah blah</a></li>
+	<li class="plan_badge"><a href="" title="Plan Section">blah blah</a></li>
+	<li class="team_badge"><a href="" title="Team Section">blah blah</a></li>
+	<li class="mentor_badge"><a href="" title="Mentor Section">blah blah</a></li>
+	<li class="public"><a href="/project_public_inside?id=<%= @Project.id.to_s %>">blah blah</a></li>
+</ul>
+</div>
+<div class="project_participant_main">
+	<div class="project_participant_main_head">
+		<div class="project_title">
+
+        <% if @Project.logo? %>
+
+          <%= image_tag @Project.logo.url(:thumb) %>
+
+          <% else %>
+		      <h2><%= @Project.projectname %>	</h2>	
+
+          <% end %>          
+	
+      </div>
+		<h3>Team Leader: <%= @Project.team_leader.display_name %></h3>
+		<h4>Location: <%= @Project.project_location %></h4>
+		<ul id="project_participant_nav">
+			<li class="main"><a href="/project_participant?id=<%=@Project.id %>"></li></a>
+			<li class="discussion"><a href="/project_collaboration?id=<%=@Project.id %>"></a>
+			</li>	
+			<li class="events"><a href>blah blah</a></li>
+			<li class="resources"><a href>blah blah blah</a></li>
+		</ul>
+	</div>
+	</div>
+<div class="project_participant_leftcol">
+
+<div class="project_participant_update">
+<h3>Latest Project Update</h3>
+</div>
+<div id="projupdateinput" style="display:none">
+<textarea id="projinput" name="projinput" style="width:400px; height:200px"></textarea>
+
+<a href="/project_setup?id=<%= @Project.id.to_s %>&wizard=<%= @wizard.to_s %>" onclick="saveProjUpdate();">Save</a>
+</div>
+
+
+
+
+
+<div id="projupdate" class="project_participant_update">
+<div class="project_update">
+<%= @dia.body %>
+
+</div>
+<br/>
+<a href="#" onclick="javascript:showProjEditor();">Add an Entry</a>
+
+</div>
+
+
+</div>
+<div class="project_participant_rightcol">
+	<div class="project_participant_stats">At a Glance Stats and Badges Go Here</div>
+	<div class="project_participant_activity"><h3>Activity Stream: Participant Level</h3>Activity Stream Here</div></div>
+
+	
+
+
+</div>
+
+<%- end %>
+
+
+
+

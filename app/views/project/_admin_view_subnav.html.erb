@@ -1,0 +1,26 @@
+<div class="project_admin_thinmenu_subnav">
+	<ul id="project_admin_subnav">
+		<li class="hurdle"><a href="/project_admin?id=<%= @Project.id.to_s %>" title="Admin:Main">Admin: Main</a></li>
+		<li class="plan_badge"><a href="/project_admin_plan?id=<%= @Project.id.to_s %>" title="Admin: Plan Section">Admin: Plan</a></li>
+		<li class="team_badge"><a href="/project_admin_team?id=<%= @Project.id.to_s %>" title="Admin: Team and Participant Section">Admin: Team</a></li>
+		<li class="mentor_badge"><a href="/project_admin_mentor?id=<%= @Project.id.to_s %>" title="Admin: Mentor Section">Admin: Mentor</a></li>
+		<li class="public"><a href="/project_public_inside?id=<%= @Project.id.to_s %>">Project: Public View</a></li>
+		<li class="participant"><a href="/project_participant?id=<%= @Project.id.to_s %>">Project: Participant View</a></li>
+		<li class="invite"><a id="invite_modal" href="/invitations/new?id=<%= @Project.id.to_s %>">Invite Participants</a></li></ul>
+	</ul>
+</div>
+
+<!-- Inserted this script snippet here, so that the modal function for invites is available 
+     to all the views calling this partial -->
+<script type="text/javascript">
+jQuery("#invite_modal").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'OnCleanup'		: function() {
+	    jQuery('invite').observe("submit", function() {
+			event.stop();
+			this.request();
+		})
+	}
+});
+</script>

@@ -1,0 +1,28 @@
+<div id="dialogue_<%= dialogue.id %>" class="plandiv">
+
+  	<h1><%= dialogue.title %></h1>
+	<div class="show_answer_box">
+  		<%= check_box_tag "show_#{dialogue.id}", !dialogue.show, checked = dialogue.show %>
+  	</div>
+  	<div class="show_answer">
+  		Open this Item for Discussion with Project Participants
+	</div> 
+  <div class="plan_answer" id="plan_answer_<%= dialogue.id %>">
+   	<span>Current Answer: </span>
+    <div class="plan_answer_date">
+       As of <%= dialogue.created_at.strftime('%B %d, %Y') %>
+    </div>
+    <div class="plan_answer_body">
+       <%= dialogue.body %>
+    </div>
+  </div>
+  <%= link_to_remote 'Add or Edit Answer', :update => "plan_answer_#{dialogue.id}",
+    :url => { :controller => :dialogue, :action => :project_plan_show_answer_box_admin, :id => dialogue.id, :current_answer => dialogue.body } %>
+</div>
+<%= observe_field ("show_#{dialogue.id}",
+    :url => { :controller => 'project', :action => 'update_show_status' , :id => dialogue.id },
+    :frequency => 0.25,
+    :update => "show_#{dialogue.id}",
+    :with => !dialogue.id)
+%>
+

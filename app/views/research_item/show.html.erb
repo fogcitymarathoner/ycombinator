@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Untitled Document</title>
+		<script src="http://cdn.jquerytools.org/1.1.2/tiny/jquery.tools.min.js"></script>
+		<style>
+
+    .menu_list {
+    	width: 150px;
+    }
+    .menu_head {
+    	padding: 5px 10px;
+    	cursor: pointer;
+    	position: relative;
+    	margin:1px;
+           font-weight:bold;
+           background: #eef4d3 url(left.png) center right no-repeat;
+    }
+    .menu_body {
+    	display:none;
+    }
+    .menu_body a {
+      display:block;
+      color:#006699;
+      background-color:#EFEFEF;
+      padding-left:10px;
+      font-weight:bold;
+      text-decoration:none;
+    }
+    .menu_body a:hover {
+      color: #000000;
+      text-decoration:underline;
+    }
+    
+    </style>
+    
+				
+					<body>
+				<h1><%= @ResearchItem.title %></h1>
+				<strong>Title :</strong> <%= @ResearchItem.title %><br />
+				<strong>Created Date:</strong> <%= @ResearchItem.created_at %><br />
+				</p>
+				<p><%= @ResearchItem.body %></p>
+				<hr />
+				
+				<p><a href="<%= @Link.url %>"><%= @Link.url %></a></p>
+				<br/>
+				<b>Tags:</b><br/><br/>
+				
+				<div id="tagsmenu" class="menu_list">
+      
+		    
+				<% @ritags.each do |t| %>
+
+				 <p class="menu_head"><%= t.tagtext %> </p>
+				  <div class="menu_body">
+               <a href="#">Link-1</a>
+                <a href="#">Link-1</a>
+                 <a href="#">Link-1</a>
+                  <a href="#">Link-1</a>
+           </div>
+		    <% end %>
+		    </div>
+        
+		  
+		    <br/>
+		  
+		    
+		   	
+				
+				<%= link_to 'Back', {:action => 'list'} %>
+
+	
+
+	</body>
+

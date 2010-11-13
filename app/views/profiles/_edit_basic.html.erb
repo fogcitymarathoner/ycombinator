@@ -1,0 +1,47 @@
+<div class="profile_edit_basic">
+<h1>Basic Info:</h1>
+
+<% form_for(@profile) do |f| %>
+ <%= f.error_messages %>
+ 
+ 	<div class="edit_names">
+ 		<div style="display:block; margin-left:210px; float:left;">
+			First Name:<br/> 
+  			Initial:<br/> 
+  			Last Name:
+		</div>
+  		<div style=" float:right;">
+    		<%= f.text_field :firstname %><br/>
+			<%= f.text_field :middleinitial %><br/>
+  			<%= f.text_field :lastname %>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div> 
+<div class="profile_edit_basic">
+  <div class="edit_area">
+    <span style="margin-right:4px; vertical-align:top;">Professional "Headline":</span>
+    <%= f.text_area :headline, :cols => 42, :rows => 2 %>
+  </div>
+  <div class="clearfix"></div>
+</div> 
+<div class="profile_edit_basic">
+  <div class="edit_area">
+    <span style="margin-right:4px; vertical-align:top;">Personal Summary:</span>
+    <%= f.text_area :summary, :cols => 42, :rows => 10 %>
+  </div>
+  <div class="clearfix"></div>
+</div> 
+<div class="profile_edit_basic">
+  <div class="edit_names">
+  	<span style="margin-right:4px;">City:</span>
+	<%= f.text_field :city %><br/>
+	<span style="margin-right:4px;">State:</span>
+	<%= f.text_field :state %><br/>
+    <span style="margin-right:4px;">Zip Code:</span>
+	<%= f.text_field :zipcode %>
+  </div>
+  <div class="clearfix"></div>
+</div> <div style="margin:10px 0px 20px 220px;">
+	 <%= f.submit 'Save Changes' %> or <a href="/myaccount" style="color:#990000;">[cancel]</a></div>
+    <% end %>

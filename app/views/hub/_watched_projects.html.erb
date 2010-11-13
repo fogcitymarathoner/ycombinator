@@ -1,0 +1,15 @@
+
+			<% if @current_profile.watched_project.empty? %>
+				<h2>Not Currently Watching Any Projects</h2>
+				<a href="/project" style="color:#5795ff; font-weight:normal;">[Look Here to Find A Project to Watch or Join!]</a>
+			<% else %>
+				<ul class="myparticipation">
+					<% @current_profile.watched_project.each do |c| %>
+					<li><span style="font-size:14px; font-weight:bold;  display:block;  width:90px; float:left;"><a href="/project_public_inside?id=<%= c.id.to_s %>" title="go to '<%= c.projectname %>'"><%= c.projectname %></a></span>
+					<span style="font-size:14px; font-weight:normal;  display:block;  width:100px; float:left;">&nbsp &nbsp Team Leader:&nbsp</span><span style="font-size:14px; width:100px;"> <%= c.team_leader.name_with_left %></span><span style="font-size:14px; display:block; font-weight:bold; float:right; width:100px;"><a href="" title="apply to join '<%= c.projectname %>'" class="join">[join]</a>&nbsp
+					
+					<%= link_to "[delete]", delete_participant_path(c.id), :class => 'delete' %></span></li>
+					<% end %>
+				</ul>
+					<a href="/project" style="font-size: 14px; color:#5795ff; font-weight:normal; line-height:1.4em; padding-top: 5px; display:block; clear:both;">[Find More to Watch Here]</a>
+			<% end %>

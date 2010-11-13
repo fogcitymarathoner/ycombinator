@@ -1,0 +1,33 @@
+<div class="inside-container">
+<div class="project_participant_thinmenu_subnav">
+<ul id="project_participant_subnav">
+	<li class="hurdle"><a href="/project_participant?id=<%= @Project.id.to_s %>" title="Summary Section">blah blah</a></li>
+	<li class="plan_badge"><a href="/project_participant_plan?id=<%= @Project.id.to_s %>"title="Plan Section">blah blah</a></li>
+	<li class="team_badge"><a href="/project_participant_team?id=<%= @Project.id.to_s %>" title="Team Section">blah blah</a></li>
+	<li class="mentor_badge"><a href="/project_participant_mentor?id=<%= @Project.id.to_s %>" title="Mentor Section">blah blah</a></li>	<li class="public"><a href="/project_public_inside?id=<%= @Project.id.to_s %>">blah blah</a></li>
+</ul>
+</div>
+<div class="project_participant_main">
+	<div class="project_participant_main_head">
+		<div class="project_title">
+
+        <% if @Project.logo? %>
+
+          <%= image_tag @Project.logo.url(:thumb) %>
+
+          <% else %>
+		      <h2><%= @Project.projectname %>	</h2>	
+
+          <% end %>          
+	
+      </div>
+		<h3>Team Leader: <%= @Project.team_leader.display_name %></h3>
+			<h4>Location: <%= @Project.project_location %></h4>
+		<ul id="project_participant_team_nav">
+			<li class="participants"><a href="/project_participant_members?id=<%=@Project.id %>"></li></a>
+			<li class="team_members"><a href="/project_team_members?id=<%=@Project.id %>"></a>
+			</li>	
+		</ul>
+	</div>
+	</div>
+</div>

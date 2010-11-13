@@ -1,0 +1,22 @@
+	<div class="project_public_thinmenu_subnav">
+		<ul id="project_subnav">
+			<li class="start"><%= noproject %></li>
+			<% if @Project.is_team_leader(@current_profile)==true %>
+			 <% elsif @Project.is_participant(@current_profile)==true %>
+			 <% elsif @Project.is_watching(@current_profile)==true %>
+			 	<li class="join"><a href>blah blah</a></li>
+			 <%else%>
+				<li class="watch"><%= link_to "watch_this", { :action => "watch_this", :id => @Project.id }, :confirm => "Are you sure you want to watch this project?" %></li>
+				<% end %>
+			<li class="faq"><a id="faq_modal" title="View FAQ" href="/faq_inside">FAQ</a></li>
+			<script type="text/javascript">
+				$("#faq_modal").fancybox({
+				'scrolling'		: 'no',
+				'titleShow'		: false,
+				'onClosed'		: function() {
+					}
+				});
+			</script>
+		</ul>
+	</div>
+	

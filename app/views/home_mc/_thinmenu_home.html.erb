@@ -1,0 +1,53 @@
+<div class="thinmenu_container">
+<div class="thinmenu_home">
+		<ul id="navlogo_thin">
+			<li class="home_logo"><a href="/">3Strides</a></li>
+		</ul>
+		<ul id="thinnav">		
+		 	
+			<li class="login"><%= link_to 'Login', { :controller => 'user_session_mc', :action => "login" }, :id => 'login-link' %></li>
+			<li class="signup"><%= link_to 'Sign Up', { :controller => 'user_session_mc', :action => "signup" }, :id => 'signup-link' %></li>
+			
+		</ul>
+
+</div>		
+</div>
+<script type="text/javascript">
+	document.observe('dom:loaded', function() {
+	$('login-link').observe('click', function(event) {
+		event.stop();
+		Modalbox.show(this.href,
+		 	{title: 'Login', 
+			width: 500,
+			afterLoad: function() {
+				$('new_user_session').observe('submit', function(event) {
+					event.stop();
+					this.request();
+				})
+			}}
+		);		
+	});
+
+	
+})
+</script>
+<script type="text/javascript">
+	document.observe('dom:loaded', function() {
+	$('signup-link').observe('click', function(event) {
+		event.stop();
+		Modalbox.show(this.href,
+		 	{title: 'Signup', 
+			width: 500,
+			afterLoad: function() {
+				$('new_user_session').observe('submit', function(event) {
+					event.stop();
+					this.request();
+				})
+			}}
+		);		
+	});
+
+	
+})
+</script>
+

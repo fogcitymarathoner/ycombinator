@@ -1,0 +1,9 @@
+
+
+
+<% @tag.each do |t|  %>
+
+	 <a class="individual-tag" onclick="javascript:submittagsearch('<%= "#{t.tagtext}" %>');" href="#"><%= "#{t.tagtext}" %></a><br/>
+
+<% end -%>
+

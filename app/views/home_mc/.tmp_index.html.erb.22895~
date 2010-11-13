@@ -1,0 +1,37 @@
+
+<h1>Unobtrusive Login</h1>
+
+<%#= user_path %>
+<%= link_to 'Login', { :controller => 'user_session_mc', :action => "login" }, :id => 'login-link' %>
+<%= link_to 'Sign Up', { :controller => 'user_session_mc', :action => "signup" }, :id => 'signup-link' %>
+
+<script type="text/javascript">
+	document.observe('dom:loaded', function() {
+	$('login-link').observe('click', function(event) {
+		event.stop();
+		Modalbox.show(this.href,
+		 	{title: 'Loginx', 
+			width: 500,
+			afterLoad: function() {
+				$('new_user_session').observe('submit', function(event) {
+					event.stop();
+					this.request();
+				})
+			}}
+		);		
+	});
+	$('signup-link').observe('click', function(event) {
+		event.stop();
+		Modalbox.show(this.href,
+		 	{title: 'Signup', 
+			width: 500,
+			afterLoad: function() {
+				$('new_user_session').observe('submit', function(event) {
+					event.stop();
+					this.request();
+				})
+			}}
+		);		
+	});
+})
+</script>

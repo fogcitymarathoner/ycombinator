@@ -1,0 +1,26 @@
+<div id="dialogue_<%= dialogue.id %>" class="plandiv">
+  <h1><%= dialogue.title %></h1>
+  <div class="plan_answer">
+   	<span>Current Answer: </span>
+    <div class="plan_answer_date">
+       <%= dialogue.created_at.strftime('%B %d, %Y') %>
+    </div>
+    <div class="plan_answer_body">
+       <%= dialogue.body %>
+    </div>
+    <div class="plan_answer_old">Previous Answers:</div>
+    <% for reply in dialogue.children.sort_by {|d| d.created_at}.reverse -%>
+      <div class="plan_answer_date">
+        <%= reply.created_at.strftime('%B %d, %Y') %>
+      </div>
+      <div class="plan_answer_body_old">
+        <%= reply.body %>
+      </div>
+    <% end -%>
+  </div>
+  <div class="dialogue_reply_answer_box" id="add_answer_<%= dialogue.id %>">
+  <%= link_to_remote 'Add Comment or Question', :update => "add_answer_#{dialogue.id}",
+    :url => { :controller => :dialogue, :action => :project_plan_show_answer_box, :id => dialogue.id } %>
+  </div>
+</div>
+

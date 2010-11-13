@@ -1,0 +1,25 @@
+<body id="hubpage">
+<p style="color: green"><%= flash[:notice] %></p>
+	<%= render(:partial => "/layouts/insidemenu") %>
+	<div class="hub-container">	
+		<%= render(:partial => "hub_thin_nav") %>
+		<%= render(:partial => "hub_head") %>
+		<div class="hub_leftcol">
+			<%= render(:partial => "inbox") %>
+			<div class="hub_hubfeed"><h3>Hub Feed</h3>The Hub News Feed Goes Here
+			</div>
+		</div>
+		<div class="hub_rightcol">
+			<%= render(:partial => "hub_profile") %>
+			<div class="hub_opportunities">
+				<%= render(:partial => "watching_nav") %>
+				<%= render(:partial => "/hub/watched_projects") %>
+			</div>
+		</div>
+	<%=render(:partial => "/layouts/insidefooter") %>	
+	</div>
+
+		
+
+</body>
+

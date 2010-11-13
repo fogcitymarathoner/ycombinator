@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Research Library</title>
+		
+			   <script type='text/javascript' src='/javascripts/prototype.js'>
+            </script>
+            <!--[if IE]>
+                <script language="javascript" type="text/javascript" src="/javascripts/excanvas.js"></script>
+            <![endif]-->
+
+            <script type='text/javascript' src='/javascripts/scroller.js'>
+            </script>
+            
+            <script type="text/javascript" src='/javascripts/scrollercontrol.js'>
+            </script>
+            <link rel='stylesheet' type='text/css' media='all' href='/stylesheets/scroller.css'/>
+            <link rel='stylesheet' type='text/css' media='all' href='/stylesheets/researchstyle.css'/>
+		
+	
+	
+          <style type="text/css">
+              #selection img {
+                  margin-left: 5px;
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+                  cursor: pointer;
+              }
+
+              #selection p {
+                  margin-bottom: 10px;
+                  padding: 0;
+                  width: 400px;
+                  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+                  font-weight: normal;
+              }
+
+              #loader {
+                  margin-top: 5px;
+                  padding: 0;
+              }
+          </style>
+		
+		
+
+  	</head>
+  	<body>
+
+ <form name="myform" action="/search/s/search">
+  Search: <input type='text' name='q' size="80"/>
+  <a href="javascript: submitform()">Search</a>
+  </form>
+  <script type="text/javascript">
+  function submitform()
+  {
+    document.myform.submit();
+  }
+  </script>
+  <br/>
+    <div>
+
+        <div id="first">
+        </div>
+
+        <div id="graphDiv" style="display:none;width: 800px;">
+
+        </div>
+   	
+  </div>
+
+	<div id="scrollerid" style="display:none">1234</div>
+  
+  <div>
+<a href="/research_item/list">Main Library</a>
+</div>
+ 
+				<% if @ResearchItems.blank? %>
+				<p>You have not saved any research items</p>
+				<% else %>
+				<p>Here are your research items</p><br/>
+
+          
+				<% @ResearchItems.each do |c| %>
+					
+					<div class="research_summary">
+					<h3>
+          
+					<%= link_to c.title, {:action => "show", :id => c.id} -%>
+					
+					
+					<%if "#{c.rssurl}" != "" %>
+					   <span id="loader<%= "#{c.id}" %>"></span>
+					<img src="/images/rss.jpg" width="16px" onClick="getRSSFeed('<%= c.rssurl %>',<%=c.id %>);">
+					<% end %>
+						<br/>
+            <%= c.created_at.strftime("%m/%d/%Y at %I:%M%p") -%>
+
+					              <div id="scrollercontainer<%= "#{c.id}" %>"></div>
+					  <% @tagshash.each_pair do |k,v|  %>
+
+              <%if "#{k}" == "#{c.id}" %>
+                <br/>
+          			<% v.each do |t| %>
+          			  
+
+                  <a class="individual-tag" href="/research_item/list?tag=<%= t.tagtext %>"><%= t.tagtext %></a>
+                    
+          			
+          			<% end %>
+                
+          			
+          			          			    
+          			  
+          			<br/>
+
+            		    
+            <% end %>
+
+
+            <% end %>
+            
+           
+            
+            
+          
+
+					</h3>
+          </div>
+				<% end %>
+				</ul>
+				<% end %>
+
+
+	</body>
+</html>

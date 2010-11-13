@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag "tab_box_inbox.css"  %>
+<div id="inbox_nav" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+    <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+		<li class="ui-state-default ui-corner-top">
+        	<a href="/project_participant?id=<%=@Project.id %>"><span>Discussion</span></a>
+		</li>
+		<li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active">
+ 			<a href="/project_plan?id=<%=@Project.id %>"><span>Plan</span></a>
+		</li>
+		<li class="ui-state-default ui-corner-top">
+ 			<a href="/project_team?id=<%=@Project.id %>"><span>Team</span></a>
+		</li>
+		<li class="ui-state-default ui-corner-top">
+ 			<a href="/project_mentor?id=<%=@Project.id %>"><span>Mentor</span></a>
+		</li>
+		<li class="ui-state-default ui-corner-top">
+ 			<a href="/project_research?id=<%=@Project.id %>"><span>Research</span></a>
+		</li>
+    </ul>
+</div>

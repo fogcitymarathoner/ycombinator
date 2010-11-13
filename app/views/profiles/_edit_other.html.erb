@@ -1,0 +1,36 @@
+
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </p>
+
+  <p>
+    <%= f.label :timezone %><br />
+    <%= f.text_field :timezone %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :has_golden_ticket %><br />
+    <%= f.check_box :has_golden_ticket %>
+  </p>
+  <p>
+    <%= f.label :joining_reason %><br />
+    <%= f.text_area :joining_reason %>
+  </p>
+  <p>
+
+
+
+
+  </p>
+
+	 <%= f.submit 'Update' %>
+  <% end %>
+<%= image_tag @profile.avatar.url(:medium) %>

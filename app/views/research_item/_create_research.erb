@@ -1,0 +1,41 @@
+
+	
+
+	
+	<style type="text/css">
+	
+	.url {
+	  
+	  width:500px;
+	  
+	}
+	
+	#create_research {
+	
+	  margin:0px;
+	
+	}
+	
+	   
+  </style>
+
+  
+	
+	
+		
+		<div id="notediv">
+		
+          URL
+					<% fields_for @Link do |link| %>
+					  
+					  <%= link.text_field :url, :class => 'url', :onblur =>"getUrl()" %><br/><br/>
+					
+					<% end %><br/>
+
+					Concepts
+					<% fields_for :tags do |tag| %>
+
+					<%=  tag.text_area("tagtext" , :autocomplete => "off" )%>
+
+					<% end %>
+		      <br/><br/>

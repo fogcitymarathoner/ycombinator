@@ -1,0 +1,34 @@
+				
+				<% @messages.each do |message| %>
+					<% if message.read? %>
+					<li class="inbox_item" style="font-weight:normal;">
+					<% else %>
+					<li class="inbox_item" style="font-weight:bold;">
+					<%end%>
+
+					<div class="message_check"></div>
+					<div class="profile_img">
+							<%= image_tag message.sender.avatar.url(:thumb) %> 
+					</div>
+					<div class="sender">
+    		    			<div class="display_name">		
+         	      			<%=message.sender.name_with %>
+         	  			    <!-- closing </div> is in profile model -->
+					</div>
+  					<div class="subject">
+        	  			<a href="/messages/read/<%=h message.id %>"><%=h message.title %></a>
+   					</div>
+ 					<div class="date">
+   						<%=h message.recieved %>
+					</div>
+					<div class="actions">
+						<ul>
+							<li><%= link_to "[reply]", "" %></li>
+							<li><%= link_to "[delete]", "" %></li>
+						</ul>
+						
+					</div>
+					
+				</li>
+
+		<%end%>

@@ -1,0 +1,13 @@
+
+			<% if @current_profile.participant_project.empty? %>
+				<h2>Not Currently Participating in Any Projects</h2>
+				<a href="/project" style="color:#5795ff; font-weight:normal;">[Look Here to Find A Project to Watch or Join!]</a>
+			<% else %>
+				<ul class="myparticipation">
+					<% @current_profile.participant_project.each do |c| %>
+					<li><span style="font-size:14px; font-weight:bold;  display:block;  width:90px; float:left;"><a href="/project_participant?id=<%= c.id.to_s %>"><%= c.projectname %></a></span>
+					<span style="font-size:14px;font-weight:normal; display:block; width:100px;">&nbsp &nbsp Team Leader:&nbsp</span><span style="float:right; font-size:14px;font-weight:bold;width:250px;"><%= c.team_leader.display_name %></li></span><% end %>
+				</ul>
+				<a href="/project" style="color:#5795ff; font-size:14px; font-weight:normal; line-height:2em; display:block;">[Find More to Join Here]</a>
+
+			<% end %>

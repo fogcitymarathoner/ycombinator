@@ -1,0 +1,27 @@
+<div class="inside_topmenu">
+		<ul class="inside_topsectionmenu">
+			<ul class="inside_logomenu">
+			<ul id="inside_navlogo">
+				<li class="logo"><a href="hubhome">3Strides</a></li>
+			</ul>
+			</ul>
+		<ul class="inside_topsection_span"></ul>
+		<ul class="inside_topsectionmenu_right">
+			<ul id="inside_topnav">
+			<li class="logged_in">Welcome, <%= display_name_short %></li>
+			<li class="logout"><a href="/logout">Logout</a></li>
+		</ul>
+		</ul>
+		</ul>
+		<div class="clearAll"></div>
+		<ul class="inside_mainsectionmenu_top"></ul>
+		<ul class="inside_mainsectionmenu">
+		<ul id="inside_nav">
+					<li class="hubpage"><a href="/hubhome">3Strides: Hub</a></li>
+					<li class="projects"><a href="/project">Projects</a></li>
+					<li class="myaccount"><a href="/myaccount">myAccount</a></li>
+					<li class="myproject"><a href="<%= noproject_menu %>">Project Admin</a></li>
+					<li class="myresearch"><a href="/myresearch">myResearch</a></li>
+		</ul>
+		</ul>
+		</div>		

@@ -1,0 +1,41 @@
+<div id="form-login">
+
+  <fieldset id="login">
+    <h2></h2>
+    <div>
+      The Page You Were Attempting to Access Is Restricted to Logged In Users.
+      <br />
+      Would You Like to Log In Now?
+    </div>
+    <br/>
+    
+    <% form_for @user_session, :url => user_session_path do |f| %>
+      <%= f.error_messages %>
+      <div class="text">
+        <label for="login">Login</label>
+        <%= f.text_field :login %>
+      </div>
+      <div class="clearAll"></div>
+      <div class="text">
+        <label for="password">Password</label>
+        <%= f.password_field :password %>
+      </div>
+      <div class="clearAll"></div>
+      <div class="form_checkbox">
+        <%= f.check_box :remember_me %>
+      </div>
+      <div class="form_checkbox_label">
+        <%= f.label :remember_me %>
+      </div>
+      <div class="clearAll"></div>
+      <div class="form_login_button">
+        <%= image_submit_tag("/images/btn_login_myaccount.png") %>
+      </div>
+    <% end %>
+    <div class="form_pass_recover">
+      <a href="/passrecover">Forgot Password or ID?</a>
+      <div class="clearAll"></div>
+      Not a Member? &nbsp &nbsp<a href="/signup">Sign Up Free</a>
+    </div>
+  </fieldset>
+</div>

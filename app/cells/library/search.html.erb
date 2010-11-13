@@ -1,0 +1,121 @@
+
+ <script type='text/javascript' src='/javascripts/prototype.js'>
+    </script>
+    <!--[if IE]>
+        <script language="javascript" type="text/javascript" src="/javascripts/excanvas.js"></script>
+    <![endif]-->
+    <link rel='stylesheet' type='text/css' media='all' href='/stylesheets/scroller.css'/>
+    <link rel='stylesheet' type='text/css' media='all' href='/stylesheets/researchstyle.css'/>
+    <script type="text/javascript" src="/javascripts/scroller.js">
+    </script>
+    
+    <script type="text/javascript" src="/javascripts/scrollercontrol.js">
+    </script>
+    
+
+
+
+<style type="text/css">
+
+.em, em{
+  
+  font-size:14px;color:black;font-weight:bold;
+  
+}
+
+.buttonspan {
+  
+  
+  font-size:
+  
+  
+}
+
+</style>
+
+  <style type="text/css">
+      #selection img {
+          margin-left: 5px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          cursor: pointer;
+      }
+
+      #selection p {
+          margin-bottom: 10px;
+          padding: 0;
+          width: 400px;
+          font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+          font-weight: normal;
+      }
+
+      #loader {
+          margin-top: 5px;
+          padding: 0;
+      }
+  </style>
+
+
+
+
+</script>
+
+<div id="scrollerid" style="display:none"></div>
+
+<form name="myform" action="/search/s/search">
+ Search: <input type='text' name='q' size="80"/>
+ <a href="javascript: submitform()">Search</a>
+ </form>
+ <script type="text/javascript">
+ function submitform()
+ {
+   document.myform.submit();
+ }
+ </script>
+ <br/>
+
+ 	
+<% @results.each_pair do |k,v|  %>
+  <div class="research_summary">
+
+		
+		<%	v.each_pair do |key,value | %>
+      		
+			  <%if "#{key}" == 'url' %>
+			
+				        <a href="<%= "#{value}" %>"><%= "#{v[:title]}" %></a> <span class="buttonspan"><a href="javascript:confirmTag('<%= "#{v[:query]}" %>','<%= "#{v[:id]}" %>');"><img src="/images/tagicon.jpg"></a></span>
+				        
+				          
+				          <span id="loader<%= "#{v[:id]}" %>"></span>
+                  <span id="scrollercontainer<%= "#{v[:id]}" %>" style="float:top;z-index:-1" ></span>
+                  
+            		
+				        	<%if "#{v[:rssurl]}" != "" %>
+				        	  
+        					  <img src="/images/rss.jpg" width="16px" onClick="getRSSFeed('<%= v[:rssurl] %>', '<%=v[:id] %>');">
+        					  
+        					<% end -%>
+        					<br/>
+        					
+				        <% v[:tags].each do |t| %>
+				            <a class="individual-tag" href="/research_item/list?tag=<%= "#{t}" %>"> <%= "#{t}" %> </a>
+				
+				        <% end -%>
+				        
+  			        <br/>
+				      
+				        <%= "#{v[:snippet]}" %><br/><br/>
+				        
+				
+			<% end -%>
+			
+			
+			 
+			
+		<% end -%>
+		
+
+
+    </div>
+<%end -%>
+

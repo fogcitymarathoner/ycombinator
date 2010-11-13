@@ -1,0 +1,23 @@
+<p>
+  <b>ID:</b>
+  <%=h @participant.id %>
+</p>
+<p>
+  <b>Profile:</b>
+  <%=h @participant.profile_id %>
+</p>
+<p>
+  <b>Project:</b>
+  <%=h @participant.project_id %>
+</p>
+<p>
+  <b>User:</b>
+  <%=h @participant.user_id %>
+</p>
+<p>
+  <b>Role:</b>
+  <%=h @participant.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_participant_path(@participant) %> |
+<%= link_to 'Back', participants_path %>
