@@ -29,7 +29,7 @@ Rails::Initializer.run do |config|
 
  config.gem 'cells'
  config.gem 'paperclip'
- config.gem 'authlogic'
+ config.gem 'authlogic', :version => '2.1.6'
 
 
   # Only load the plugins named here, in the order given (default is alphabetical).
